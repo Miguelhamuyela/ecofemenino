@@ -5,8 +5,13 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Car;
+<<<<<<< HEAD
 use App\Models\Video;
 use App\Models\Galery;
+=======
+use App\Models\News;
+
+>>>>>>> 93c55879d6e2adef074bd27a75999e6d4f4893cc
 class HomeController extends Controller
 {
 
@@ -75,7 +80,24 @@ class HomeController extends Controller
     public function youth()
     {
         // Envia para a view
-        return view('site.youth.index');
+        $newsEducation = News::whereHas('category', function ($query){
+            $query->where('name', ['Educação']);
+        })->get();
+        $newsSport = News::whereHas('category', function ($query){
+            $query->where('name', ['Desporto']);
+        })->get();
+        $newsTech = News::whereHas('category', function ($query){
+            $query->where('name', ['Tecnologia']);
+        })->get();
+        $newsbusiness = News::whereHas('category', function ($query){
+            $query->where('name', ['Empreendedorismo']);
+        })->get();
+        return view('site.youth.index', compact(
+            'newsEducation',
+            'newsSport',
+            'newsTech',
+            'newsbusiness',
+        ));
     }
 
     
