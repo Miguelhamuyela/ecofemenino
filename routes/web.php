@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Site\HomeController;
-use App\Http\Controllers\DashboardController;
+
+
+
 
 /*-------------------------------------------------------
                     Site routes
@@ -21,10 +23,3 @@ Route::get('/news/article', [HomeController::class, 'newsArticle'])->name('site.
 Route::get('/multimedia', [HomeController::class, 'multimedia'])->name('site.multimedia');
 Route::get('/youth', [HomeController::class, 'youth'])->name('site.youth');
 
-
-/*-------------------------------------------------------
-                    Dashboard routes
--------------------------------------------------------*/
-
-Route::get('/admin', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/admin/analytics', [DashboardController::class, 'analytics'])->name('analytics');

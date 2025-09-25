@@ -10787,8 +10787,14 @@ header .header-action-items-2 {
 }
 
 .sports-section-banner {
+  /* background-image: url("../images/sports-banner.jpg"); */
+  position: relative;
+  display: none;
+}
+.sports-section-banner2 {
   background-image: url("../images/sports-banner.jpg");
   position: relative;
+  /* display: none; */
 }
 .sports-section-banner::after {
   content: "";
