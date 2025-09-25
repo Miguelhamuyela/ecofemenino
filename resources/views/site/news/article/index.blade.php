@@ -61,14 +61,14 @@
 
             <div class="col-xl-4 col-md-4 col-sm-6">
                 <div class="gallery-item">
-                    <a class="image-popup-vertical-fit" href="{{ url('assets/user/images/gallery/popup/auria.jpg') }}"
+                    <a class="image-popup-vertical-fit" href="{{ url('assets/user/images/profile/debate.jpg') }}"
                         style="height: 350px !important"
-                        title="<h5>Auria Machado</h5><p>Conhecida como 'Rainha dos Porcos', personalidade marcante no cenário cultural.</p>">
-                        <img src="{{ url('assets/user/images/gallery/auria.jpg') }}" alt="Auria Machado" />
+                        title="<h5>Joana Lina, membro do Comité Nacional da OMA</h5><p>A conferência, que reúne diversas personalidades da vida nacional e de diferentes estratos sociais, insere-se nas celebrações dos 50 anos da Independência Nacional. O evento visa enaltecer o inestimável contributo das mulheres no processo da luta armada de libertação nacional e na conquista da paz efetiva no país.</p>">
+                        <img src="{{ url('assets/user/images/profile/debate.jpg') }}" alt="Auria Machado" />
                     </a>
                     <div class="contents">
-                        <h5 class="member-role">Rainha dos Porcos</h5>
-                        <a href="#" class="member-name">Auria Machado</a>
+                        <h5 class="member-role">Membro do Comité Nacional da OMA</h5>
+                        <a href="#" class="member-name">Joana Lina</a>
                     </div>
                 </div>
             </div>
@@ -91,16 +91,14 @@
 
             <div class="col-xl-4 col-md-4 col-sm-6">
                 <div class="gallery-item">
-                    <a class="image-popup-vertical-fit"
-                        href="{{ url('assets/user/images/gallery/popup/Silvia Lutucuta Ministra da Saude.jpg') }}"
+                    <a class="image-popup-vertical-fit" href="{{ url('assets/user/images/profile/educa.jpg') }}"
                         style="height: 350px !important"
-                        title="<h5>Silvia Lutucuta</h5><p>Ministra da Saúde de Angola desde 2017. Médica cardiologista e professora universitária.</p>">
-                        <img src="{{ url('assets/user/images/gallery/Silvia Lutucuta Ministra da Saude.jpg') }}"
-                            alt="Silvia Lutucuta" />
+                        title="<h5>Luísa Maria Alves Grilo</h5><p>Luísa Maria Alves Grilo. Filiação: Gentil Franklin e Idalina Ribeiro dos Santos, Data de nascimento:  8 de Julho de 1953,  Naturalidade: Província de Malanje</p>">
+                        <img src="{{ url('assets/user/images/profile/educa.jpg') }}" alt="Luísa Maria Alves Grilo" />
                     </a>
                     <div class="contents">
-                        <h5 class="member-role">Ministra da Saúde</h5>
-                        <a href="#" class="member-name">Silvia Lutucuta</a>
+                        <h5 class="member-role">Ministra da Educação</h5>
+                        <a href="#" class="member-name">Luísa Maria Alves Grilo</a>
                     </div>
                 </div>
             </div>
@@ -124,16 +122,15 @@
 
             <div class="col-xl-4 col-md-4 col-sm-6">
                 <div class="gallery-item">
-                    <a class="image-popup-vertical-fit"
-                        href="{{ url('assets/user/images/gallery/popup/Vera Daves Ministra das Financas.jpeg') }}"
+                    <a class="image-popup-vertical-fit" href="{{ url('assets/user/images/profile/keve.jpg') }}"
                         style="height: 350px !important"
-                        title="<h5>Vera Daves</h5><p>Ministra das Finanças de Angola, primeira mulher a assumir a pasta.</p>">
-                        <img src="{{ url('assets/user/images/gallery/Vera Daves Ministra das Financas.jpeg') }}"
-                            alt="Vera Daves" />
+                        title="<h5>Banco Keve marca presença na 1ª Edição da Expo Catoca 2025</h5><p>O Banco Keve confirma a sua participação na primeira edição da Expo Catoca — 30 Anos, a decorrer de 26 a 28 de Agosto de 2025, na Base de Luanda, em Talatona, a partir das 09h00, sob o lema: “Aqui, onde os diamantes encontram a comunidade”.
+A presença do Keve neste evento de referência, que reúne empresas do sector mineiro, instituições financeiras e entidades públicas, demonstra o compromisso contínuo do banco em apoiar o desenvolvimento do sector e reforçar parcerias estratégicas com empresas do segmento.</p>">
+                        <img src="{{ url('assets/user/images/profile/keve.jpg') }}" alt="Vera Daves" />
                     </a>
                     <div class="contents">
-                        <h5 class="member-role">Ministra das Finanças</h5>
-                        <a href="#" class="member-name">Vera Daves</a>
+                        <h5 class="member-role">Mundo das Finanças</h5>
+                        <a href="#" class="member-name">Banco Keve</a>
                     </div>
                 </div>
             </div>
