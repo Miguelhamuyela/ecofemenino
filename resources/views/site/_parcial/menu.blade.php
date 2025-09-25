@@ -82,13 +82,10 @@
                                             Liderança<i class="fas fa-chevron-down"></i></a>
                                         <ul class="dropdown-sub">
                                             <li class="flyout1 flyout2"><a class="flyout-sub-link1"
-                                                    href="{{ route('site.youth') }}#desporto">Desporto</a>
+                                                    href="{{ route('site.youth') }}#tecnologia">Tecnologia</a>
                                             </li>
                                             <li class="flyout1 flyout2"><a class="flyout-sub-link1"
                                                     href="{{ route('site.youth') }}#educacao">Educação</a>
-                                            </li>
-                                            <li class="flyout1 flyout2"><a class="flyout-sub-link1"
-                                                    href="{{ route('site.youth') }}#tecnologia">Tecnologia</a>
                                             </li>
                                             <li class="flyout1 flyout2"><a class="flyout-sub-link1"
                                                     href="{{ route('site.youth') }}#empreendedorismo">Empreendedorismo Jovem</a>

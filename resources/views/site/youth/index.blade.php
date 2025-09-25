@@ -3,21 +3,22 @@
 @section('content')
 
     <!--================= Sports Section End Here =================-->
-    <div class="rts-sports-section section-gap-2" id="desporto" style="background: #e9ecec;">
+    <div class="rts-sports-section section-gap-2" id="tecnologia" style="background: #e9ecec;">
         <div class="container">
             <div class="site-map-area section-gap-0">
                 <div class="container">
                     <div class="site-map">
-                        <h1 class="page-title">Desporto</h1>
+                        <h1 class="page-title">Tecnologia</h1>
                     </div>
                 </div>
             </div>
             @forelse ($newsSport as $data)
                 <div class="sports-section-banner page-section-banner fashion-page-banner mb--70">
                 <div class="overview-content">
-                    <a href="#0" class="news-catagory-tag-2 highlight-bg">Sports</a>
+                    <a href="#0" class="news-catagory-tag-2 highlight-bg">Tecnologia</a>
                     <div class="contents">
-                        <div class="content-title mb--10"><a href="news-details.html">{{ $data->title }}</a></div>
+                        <div class="content-title mb--10"><a href="news-details.html">Barcelona is now wonderkid with
+                                same goal tally.</a></div>
                         <div class="overview-play-btn">
                             <div class="post-bottom-info mb--25">
                                 <a href="author.html" class="post-author item"><img
@@ -45,11 +46,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide1.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -72,11 +77,15 @@
                                 {{-- <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide2.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -99,11 +108,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide3.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -126,11 +139,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide4.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -154,11 +171,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide5.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -182,11 +203,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide6.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -210,11 +235,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide7.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -234,7 +263,7 @@
                                             <a href="#0" class="read-more-btn">Read more</a>
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                         <div class="post-pagination-area1 mt--20">
@@ -326,7 +355,9 @@
                                     <div class="contents">
                                         <div class="news-catagory-tag">Audio
                                             music</div>
-                                        <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
+                                        <div class="post-title"><a href="news-details.html">Modern
+                                                construction latest
+                                                luxury model</a></div>
                                         <div class="post-bottom-info">
                                             <span class="post-date item"><img class="span-icon"
                                                     src="{{ url('assets/user/images/date.svg') }}" alt="date-icon">
@@ -341,7 +372,9 @@
                                     <div class="contents">
                                         <div class="news-catagory-tag">Audio
                                             music</div>
-                                        <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
+                                        <div class="post-title"><a href="news-details.html">Modern
+                                                construction latest
+                                                luxury model</a></div>
                                         <div class="post-bottom-info">
                                             <span class="post-date item"><img class="span-icon"
                                                     src="{{ url('assets/user/images/date.svg') }}" alt="date-icon">
@@ -391,25 +424,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="rts-tags mb--40">
-                                <div class="type-tag-right mb--30">Tags</div>
-                                <ul class="tag mb--30">
-                                    <li><a class="tag-item1" href="#0">Technology</a></li>
-                                    <li><a class="tag-item1" href="#0">Travel</a></li>
-                                    <li><a class="tag-item1" href="#0">Community</a></li>
-                                    <li><a class="tag-item1" href="#0">Canada</a></li>
-                                    <li><a class="tag-item1" href="#0">Accessories</a></li>
-                                    <li><a class="tag-item1" href="#0">Beauty</a></li>
-                                    <li><a class="tag-item1" href="#0">Chemical</a></li>
-                                    <li><a class="tag-item1" href="#0">Business</a></li>
-                                    <li><a class="tag-item1" href="#0">IT Solution</a></li>
-                                    <li><a class="tag-item1" href="#0">Food</a></li>
-                                    <li><a class="tag-item1" href="#0">Painting</a></li>
-                                    <li><a class="tag-item1" href="#0">Personality</a></li>
-                                </ul>
-                                <a href="#" class="ad mt--30"><img
-                                        src="{{ url('assets/user/images/items/ad.jpg') }}" alt=""></a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -435,23 +449,11 @@
             @forelse ($newsEducation as $data)
                <div class="sports-section-banner page-section-banner fashion-page-banner mb--70">
                 <div class="overview-content">
-                    <a href="#0" class="news-catagory-tag-2 highlight-bg">Sports</a>
+                    <a href="#0" class="news-catagory-tag-2 highlight-bg">Tecnologia</a>
                     <div class="contents">
-                        <div class="content-title mb--10"><a href="news-details.html">Barcelona is now wonderkid with
-                                same goal tally.</a></div>
+                        <div class="content-title mb--10"><a href="news-details.html">Fátima de Almeida, CEO da BayQi</a>
+                        </div>
                         <div class="overview-play-btn">
-                            <div class="post-bottom-info mb--25">
-                                <a href="author.html" class="post-author item"><img
-                                        src="{{ url('assets/user/images/icons/user-white.svg') }}" alt="user-icon">Ashley
-                                    Graham</a>
-                                <span class="post-comment item"><img
-                                        src="{{ url('assets/user/images/icons/comment-white.svg') }}"
-                                        alt="comment-icon">January
-                                    16, 2024</span>
-                                <span class="post-share item"><img
-                                        src="{{ url('assets/user/images/icons/share-white.svg') }}" alt="share-icon">16
-                                    Shares</span>
-                            </div>
                             <a href="#0" class="border-btn">Read
                                 More</a>
                         </div>
@@ -466,17 +468,20 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide1.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
                                                                 item"><img
-                                                        src="{{ url('assets/user/images/user.svg') }}"
-                                                        alt="user-icon">By
+                                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">By
                                                     Jenny
                                                     Wilson</a>
                                                 <span class="post-date item"><img
@@ -484,8 +489,7 @@
                                                         alt="date-icon">January
                                                     16, 2024</span>
                                                 <span class="post-share item"><img
-                                                        src="{{ url('assets/user/images/share.svg') }}"
-                                                        alt="share-icon">16
+                                                        src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
                                             </div>
                                             <a href="#0" class="read-more-btn">Read more</a>
@@ -495,11 +499,77 @@
                                 {{-- <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide2.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
+                                            <div class="post-bottom-info">
+                                                <a href="author.html"
+                                                    class="post-author
+                                                                item"><img
+                                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">By
+                                                    Jenny
+                                                    Wilson</a>
+                                                <span class="post-date item"><img
+                                                        src="{{ url('assets/user/images/date.svg') }}"
+                                                        alt="date-icon">January
+                                                    16, 2024</span>
+                                                <span class="post-share item"><img
+                                                        src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
+                                                    Shares</span>
+                                            </div>
+                                            <a href="#0" class="read-more-btn">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-6">
+                                    <div class="rts-post-2 rts-post-2-wide mb--20">
+                                        <div class="post-picture"><a href="news-details.html"><img
+                                                    src="{{ url('assets/user/images/post/wide3.jpg') }}"
+                                                    alt="main-post-image"></a></div>
+                                        <div class="contents">
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
+                                            <div class="post-bottom-info">
+                                                <a href="author.html"
+                                                    class="post-author
+                                                                item"><img
+                                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">By
+                                                    Jenny
+                                                    Wilson</a>
+                                                <span class="post-date item"><img
+                                                        src="{{ url('assets/user/images/date.svg') }}"
+                                                        alt="date-icon">January
+                                                    16, 2024</span>
+                                                <span class="post-share item"><img
+                                                        src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
+                                                    Shares</span>
+                                            </div>
+                                            <a href="#0" class="read-more-btn">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-6">
+                                    <div class="rts-post-2 rts-post-2-wide mb--20">
+                                        <div class="post-picture"><a href="news-details.html"><img
+                                                    src="{{ url('assets/user/images/post/wide4.jpg') }}"
+                                                    alt="main-post-image"></a></div>
+                                        <div class="contents">
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -524,11 +594,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide5.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -553,11 +627,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide6.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -582,11 +660,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide7.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -608,64 +690,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-12 col-md-6">
-                                    <div class="rts-post-2 rts-post-2-wide mb--20">
-                                        <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
-                                                    alt="main-post-image"></a></div>
-                                        <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html"
-                                                    class="post-author
-                                                                item"><img
-                                                        src="{{ url('assets/user/images/user.svg') }}"
-                                                        alt="user-icon">By
-                                                    Jenny
-                                                    Wilson</a>
-                                                <span class="post-date item"><img
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">January
-                                                    16, 2024</span>
-                                                <span class="post-share item"><img
-                                                        src="{{ url('assets/user/images/share.svg') }}"
-                                                        alt="share-icon">16
-                                                    Shares</span>
-                                            </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-md-6">
-                                    <div class="rts-post-2 rts-post-2-wide mb--20">
-                                        <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
-                                                    alt="main-post-image"></a></div>
-                                        <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html"
-                                                    class="post-author
-                                                                item"><img
-                                                        src="{{ url('assets/user/images/user.svg') }}"
-                                                        alt="user-icon">By
-                                                    Jenny
-                                                    Wilson</a>
-                                                <span class="post-date item"><img
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">January
-                                                    16, 2024</span>
-                                                <span class="post-share item"><img
-                                                        src="{{ url('assets/user/images/share.svg') }}"
-                                                        alt="share-icon">16
-                                                    Shares</span>
-                                            </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
-                                        </div>
-                                    </div>
-                                </div> --}}
                             </div>
                         </div>
                         <div class="post-pagination-area1 mt--20">
@@ -675,7 +699,7 @@
                             <a href="#" class="pag-item pag-next"><i class="far fa-long-arrow-right"></i></a>
                         </div>
                     </div>
-                    {{-- <div class="col-xl-3">
+                    <div class="col-xl-3">
                         <div class="side-content sticky-content">
                             <div class="author-box mb--50">
                                 <div class="author-dp"><img src="{{ url('assets/user/images/items/author-dp.png') }}"
@@ -856,13 +880,9 @@
                                         src="{{ url('assets/user/images/items/ad.jpg') }}" alt=""></a>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
-            </div> 
-            @empty
-                <div class="bg-danger text-light text-center p-4 m-auto">Nehuma notícia</div>
-            @endforelse
-            
+            </div>
         </div>
     </div>
     <!--================= Sports Section End Here =================-->
@@ -877,8 +897,7 @@
                     </div>
                 </div>
             </div>
-            @forelse ($newsTech as $data)
-                <div class="sports-section-banner page-section-banner fashion-page-banner mb--70">
+            <div class="sports-section-banner page-section-banner fashion-page-banner mb--70">
                 <div class="overview-content">
                     <a href="#0" class="news-catagory-tag-2 highlight-bg">Sports</a>
                     <div class="contents">
@@ -912,17 +931,20 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide1.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
                                                                 item"><img
-                                                        src="{{ url('assets/user/images/user.svg') }}"
-                                                        alt="user-icon">By
+                                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">By
                                                     Jenny
                                                     Wilson</a>
                                                 <span class="post-date item"><img
@@ -930,22 +952,25 @@
                                                         alt="date-icon">January
                                                     16, 2024</span>
                                                 <span class="post-share item"><img
-                                                        src="{{ url('assets/user/images/share.svg') }}"
-                                                        alt="share-icon">16
+                                                        src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
                                             </div>
                                             <a href="#0" class="read-more-btn">Read more</a>
                                         </div>
                                     </div>
                                 </div>
-                               {{--  <div class="col-xl-12 col-md-6">
+                                <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide2.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -970,11 +995,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide3.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -999,11 +1028,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide4.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -1028,11 +1061,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide5.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -1057,11 +1094,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide6.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -1086,11 +1127,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide7.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -1111,7 +1156,7 @@
                                             <a href="#0" class="read-more-btn">Read more</a>
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                         <div class="post-pagination-area1 mt--20">
@@ -1281,25 +1326,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="rts-tags mb--40">
-                                <div class="type-tag-right mb--30">Tags</div>
-                                <ul class="tag mb--30">
-                                    <li><a class="tag-item1" href="#0">Technology</a></li>
-                                    <li><a class="tag-item1" href="#0">Travel</a></li>
-                                    <li><a class="tag-item1" href="#0">Community</a></li>
-                                    <li><a class="tag-item1" href="#0">Canada</a></li>
-                                    <li><a class="tag-item1" href="#0">Accessories</a></li>
-                                    <li><a class="tag-item1" href="#0">Beauty</a></li>
-                                    <li><a class="tag-item1" href="#0">Chemical</a></li>
-                                    <li><a class="tag-item1" href="#0">Business</a></li>
-                                    <li><a class="tag-item1" href="#0">IT Solution</a></li>
-                                    <li><a class="tag-item1" href="#0">Food</a></li>
-                                    <li><a class="tag-item1" href="#0">Painting</a></li>
-                                    <li><a class="tag-item1" href="#0">Personality</a></li>
-                                </ul>
-                                <a href="#" class="ad mt--30"><img
-                                        src="{{ url('assets/user/images/items/ad.jpg') }}" alt=""></a>
                             </div>
                         </div>
                     </div> --}}
@@ -1325,23 +1351,11 @@
             @forelse ($newsbusiness as $data)
                 <div class="sports-section-banner page-section-banner fashion-page-banner mb--70">
                 <div class="overview-content">
-                    <a href="#0" class="news-catagory-tag-2 highlight-bg">Sports</a>
+                    <a href="#0" class="news-catagory-tag-2 highlight-bg">Tecnologia</a>
                     <div class="contents">
-                        <div class="content-title mb--10"><a href="news-details.html">Barcelona is now wonderkid with
-                                same goal tally.</a></div>
+                        <div class="content-title mb--10"><a href="news-details.html">Fátima de Almeida, CEO da BayQi</a>
+                        </div>
                         <div class="overview-play-btn">
-                            <div class="post-bottom-info mb--25">
-                                <a href="author.html" class="post-author item"><img
-                                        src="{{ url('assets/user/images/icons/user-white.svg') }}" alt="user-icon">Ashley
-                                    Graham</a>
-                                <span class="post-comment item"><img
-                                        src="{{ url('assets/user/images/icons/comment-white.svg') }}"
-                                        alt="comment-icon">January
-                                    16, 2024</span>
-                                <span class="post-share item"><img
-                                        src="{{ url('assets/user/images/icons/share-white.svg') }}" alt="share-icon">16
-                                    Shares</span>
-                            </div>
                             <a href="#0" class="border-btn">Read
                                 More</a>
                         </div>
@@ -1356,11 +1370,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide1.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -1373,8 +1391,7 @@
                                                         alt="date-icon">January
                                                     16, 2024</span>
                                                 <span class="post-share item"><img
-                                                        src="{{ url('assets/user/images/share.svg') }}"
-                                                        alt="share-icon">16
+                                                        src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
                                             </div>
                                             <a href="#0" class="read-more-btn">Read more</a>
@@ -1384,11 +1401,108 @@
                                 {{-- <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide2.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
+                                            <div class="post-bottom-info">
+                                                <a href="author.html"
+                                                    class="post-author
+                                                                item"><img
+                                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">By
+                                                    Jenny
+                                                    Wilson</a>
+                                                <span class="post-date item"><img
+                                                        src="{{ url('assets/user/images/date.svg') }}"
+                                                        alt="date-icon">January
+                                                    16, 2024</span>
+                                                <span class="post-share item"><img
+                                                        src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
+                                                    Shares</span>
+                                            </div>
+                                            <a href="#0" class="read-more-btn">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-6">
+                                    <div class="rts-post-2 rts-post-2-wide mb--20">
+                                        <div class="post-picture"><a href="news-details.html"><img
+                                                    src="{{ url('assets/user/images/post/wide3.jpg') }}"
+                                                    alt="main-post-image"></a></div>
+                                        <div class="contents">
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
+                                            <div class="post-bottom-info">
+                                                <a href="author.html"
+                                                    class="post-author
+                                                                item"><img
+                                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">By
+                                                    Jenny
+                                                    Wilson</a>
+                                                <span class="post-date item"><img
+                                                        src="{{ url('assets/user/images/date.svg') }}"
+                                                        alt="date-icon">January
+                                                    16, 2024</span>
+                                                <span class="post-share item"><img
+                                                        src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
+                                                    Shares</span>
+                                            </div>
+                                            <a href="#0" class="read-more-btn">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-6">
+                                    <div class="rts-post-2 rts-post-2-wide mb--20">
+                                        <div class="post-picture"><a href="news-details.html"><img
+                                                    src="{{ url('assets/user/images/post/wide4.jpg') }}"
+                                                    alt="main-post-image"></a></div>
+                                        <div class="contents">
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
+                                            <div class="post-bottom-info">
+                                                <a href="author.html"
+                                                    class="post-author
+                                                                item"><img
+                                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">By
+                                                    Jenny
+                                                    Wilson</a>
+                                                <span class="post-date item"><img
+                                                        src="{{ url('assets/user/images/date.svg') }}"
+                                                        alt="date-icon">January
+                                                    16, 2024</span>
+                                                <span class="post-share item"><img
+                                                        src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
+                                                    Shares</span>
+                                            </div>
+                                            <a href="#0" class="read-more-btn">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-6">
+                                    <div class="rts-post-2 rts-post-2-wide mb--20">
+                                        <div class="post-picture"><a href="news-details.html"><img
+                                                    src="{{ url('assets/user/images/post/wide5.jpg') }}"
+                                                    alt="main-post-image"></a></div>
+                                        <div class="contents">
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -1412,11 +1526,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide6.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -1440,11 +1558,15 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
+                                                    src="{{ url('assets/user/images/post/wide7.jpg') }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
+                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
+                                                    Every
+                                                    Freelancer Should Know</a></div>
+                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
+                                                sagittis
+                                                bibendum quisque turpis placerat.</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -1465,90 +1587,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-12 col-md-6">
-                                    <div class="rts-post-2 rts-post-2-wide mb--20">
-                                        <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
-                                                    alt="main-post-image"></a></div>
-                                        <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html"
-                                                    class="post-author
-                                                                item"><img
-                                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">By
-                                                    Jenny
-                                                    Wilson</a>
-                                                <span class="post-date item"><img
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">January
-                                                    16, 2024</span>
-                                                <span class="post-share item"><img
-                                                        src="{{ url('assets/user/images/share.svg') }}"
-                                                        alt="share-icon">16
-                                                    Shares</span>
-                                            </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-md-6">
-                                    <div class="rts-post-2 rts-post-2-wide mb--20">
-                                        <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
-                                                    alt="main-post-image"></a></div>
-                                        <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html"
-                                                    class="post-author
-                                                                item"><img
-                                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">By
-                                                    Jenny
-                                                    Wilson</a>
-                                                <span class="post-date item"><img
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">January
-                                                    16, 2024</span>
-                                                <span class="post-share item"><img
-                                                        src="{{ url('assets/user/images/share.svg') }}"
-                                                        alt="share-icon">16
-                                                    Shares</span>
-                                            </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-md-6">
-                                    <div class="rts-post-2 rts-post-2-wide mb--20">
-                                        <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('img/news/'. $data->image) }}"
-                                                    alt="main-post-image"></a></div>
-                                        <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">{{ $data->title }}</a></div>
-                                            <p>{{ $data->subtitle }}</p>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html"
-                                                    class="post-author
-                                                                item"><img
-                                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">By
-                                                    Jenny
-                                                    Wilson</a>
-                                                <span class="post-date item"><img
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">January
-                                                    16, 2024</span>
-                                                <span class="post-share item"><img
-                                                        src="{{ url('assets/user/images/share.svg') }}"
-                                                        alt="share-icon">16
-                                                    Shares</span>
-                                            </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
-                                        </div>
-                                    </div>
-                                </div> --}}
                             </div>
                         </div>
                         <div class="post-pagination-area1 mt--20">
@@ -1719,25 +1757,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="rts-tags mb--40">
-                                <div class="type-tag-right mb--30">Tags</div>
-                                <ul class="tag mb--30">
-                                    <li><a class="tag-item1" href="#0">Technology</a></li>
-                                    <li><a class="tag-item1" href="#0">Travel</a></li>
-                                    <li><a class="tag-item1" href="#0">Community</a></li>
-                                    <li><a class="tag-item1" href="#0">Canada</a></li>
-                                    <li><a class="tag-item1" href="#0">Accessories</a></li>
-                                    <li><a class="tag-item1" href="#0">Beauty</a></li>
-                                    <li><a class="tag-item1" href="#0">Chemical</a></li>
-                                    <li><a class="tag-item1" href="#0">Business</a></li>
-                                    <li><a class="tag-item1" href="#0">IT Solution</a></li>
-                                    <li><a class="tag-item1" href="#0">Food</a></li>
-                                    <li><a class="tag-item1" href="#0">Painting</a></li>
-                                    <li><a class="tag-item1" href="#0">Personality</a></li>
-                                </ul>
-                                <a href="#" class="ad mt--30"><img
-                                        src="{{ url('assets/user/images/items/ad.jpg') }}" alt=""></a>
-                            </div>
                         </div>
                     </div> --}}
                 </div>
@@ -1748,6 +1767,7 @@
         </div>
     </div>
     <!--================= Sports Section End Here =================-->
+
 
 
     <!--================= Subscribe-banner Section Start Here =================-->
