@@ -12,8 +12,8 @@
                     </div>
                 </div>
             </div>
-            @forelse ($newsSport as $data)
-                <div class="sports-section-banner page-section-banner fashion-page-banner mb--70">
+            @forelse ($newsTech as $data)
+                <div class="sports-section-banner2 page-section-banner fashion-page-banner mb--70">
                 <div class="overview-content">
                     <a href="#0" class="news-catagory-tag-2 highlight-bg">Tecnologia</a>
                     <div class="contents">
@@ -46,15 +46,11 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('assets/user/images/post/wide1.jpg') }}"
+                                                    src="{{ url('img/news/'. $data->image) }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
-                                                    Every
-                                                    Freelancer Should Know</a></div>
-                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
-                                                sagittis
-                                                bibendum quisque turpis placerat.</p>
+                                            <div class="post-title"><a href="news-details.html">{{$data->title}}</a></div>
+                                            <p>{{$data->subtitle}}</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
@@ -70,7 +66,7 @@
                                                         src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +97,7 @@
                                                         src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -132,7 +128,7 @@
                                                         src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -164,7 +160,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -196,7 +192,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -228,7 +224,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -260,10 +256,10 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="post-pagination-area1 mt--20">
@@ -273,7 +269,7 @@
                             <a href="#" class="pag-item pag-next"><i class="far fa-long-arrow-right"></i></a>
                         </div>
                     </div>
-                    <div class="col-xl-3">
+                    {{-- <div class="col-xl-3">
                         <div class="side-content sticky-content">
                             <div class="author-box mb--50">
                                 <div class="author-dp"><img src="{{ url('assets/user/images/items/author-dp.png') }}"
@@ -425,7 +421,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             @empty
@@ -468,16 +464,12 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('assets/user/images/post/wide1.jpg') }}"
+                                                    src="{{ url('img/news/'. $data->image) }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
-                                                    Every
-                                                    Freelancer Should Know</a></div>
-                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
-                                                sagittis
-                                                bibendum quisque turpis placerat.</p>
-                                            <div class="post-bottom-info">
+                                            <div class="post-title"><a href="news-details.html">{{$data->title}}</a></div>
+                                            <p>{{$data->subtitle}}</p>
+                                            {{-- <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
                                                                 item"><img
@@ -491,8 +483,8 @@
                                                 <span class="post-share item"><img
                                                         src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
-                                            </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            </div> --}}
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -523,7 +515,7 @@
                                                         src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -554,7 +546,7 @@
                                                         src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -587,7 +579,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -620,7 +612,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -653,7 +645,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -686,18 +678,18 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
                         <div class="post-pagination-area1 mt--20">
                             <a href="#" class="pag-item">1</a>
                             <a href="#" class="pag-item">2</a>
                             <a href="#" class="pag-item">3</a>
                             <a href="#" class="pag-item pag-next"><i class="far fa-long-arrow-right"></i></a>
-                        </div>
+                        </div>{{--
                     </div>
                     <div class="col-xl-3">
                         <div class="side-content sticky-content">
@@ -955,7 +947,7 @@
                                                         src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -988,7 +980,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1021,7 +1013,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1054,7 +1046,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1087,7 +1079,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1120,7 +1112,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1153,7 +1145,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1370,16 +1362,12 @@
                                 <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('assets/user/images/post/wide1.jpg') }}"
+                                                    src="{{ url('img/news/'. $data->image) }}"
                                                     alt="main-post-image"></a></div>
                                         <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">5 Personal Finance Tips
-                                                    Every
-                                                    Freelancer Should Know</a></div>
-                                            <p>Tenetur culpa, senectus inceptos porttitor dictumst animi at? Laoreet
-                                                sagittis
-                                                bibendum quisque turpis placerat.</p>
-                                            <div class="post-bottom-info">
+                                            <div class="post-title"><a href="news-details.html">{{$data->title}}</a></div>
+                                            <p>{{$data->subtitle}}</p>
+                                            {{-- <div class="post-bottom-info">
                                                 <a href="author.html"
                                                     class="post-author
                                                                 item"><img
@@ -1393,8 +1381,8 @@
                                                 <span class="post-share item"><img
                                                         src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
-                                            </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            </div> --}}
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1425,7 +1413,7 @@
                                                         src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1456,7 +1444,7 @@
                                                         src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1487,7 +1475,7 @@
                                                         src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1519,7 +1507,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1551,7 +1539,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1583,12 +1571,12 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ver Mais</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
                         <div class="post-pagination-area1 mt--20">
                             <a href="#" class="pag-item">1</a>
                             <a href="#" class="pag-item">2</a>
