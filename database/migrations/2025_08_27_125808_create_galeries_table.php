@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateGaleriesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('galeries', function (Blueprint $table) {
@@ -18,16 +13,11 @@ class CreateGaleriesTable extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->string('image');
-            $table->softDeletes();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('galeries');

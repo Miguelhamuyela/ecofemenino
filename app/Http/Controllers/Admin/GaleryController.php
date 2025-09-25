@@ -5,91 +5,71 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Galery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GaleryController extends Controller
 {
     public function index()
     {
-        $galeries = Galery::orderByDesc('id')->get();
-        return view('_admin.galeries.galery.index', compact('galeries'));
+        $galeries = Galery::latest()->paginate(10);
+        return view('_admin.galeries.galery.index', compact('galeries')); // Path correto
     }
+
     public function create()
     {
-        return view('_admin.galeries.galeryCreate.index');
+        return view('_admin.galeries.galeryCreate.index'); // Path correto
     }
+
     public function store(Request $request)
     {
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'required|image',
-        ], [
-            'title.required' => 'O título é obrigatório.',
-            'image.required' => 'A imagem é obrigatória.',
-            'image.image' => 'O arquivo deve ser uma imagem válida.',
-            'image.max' => 'A imagem não pode ser maior que 2MB.',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
-        $imageName = null;
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '_' . $image->getClientOriginalName();
-            $image->move(public_path('img/galeries'), $imageName);
-        }
+
+        $path = $request->file('image')->store('public/images/galery');
         Galery::create([
-            'title' => $request->input('title'),
-            'description' => $request->input('description'),
-            'image' => $imageName,
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => basename($path),
         ]);
-        return redirect()->route('admin.galery.index')->with('success', 'Galeria criada com sucesso.');
+
+        return redirect()->route('admin.galery.index')->with('success', 'Imagem criada com sucesso.');
     }
-    public function show(Galery $galery)
-    {
-        return view('_admin.galeries.galeryView.index', compact('galery'));
-    }
+
     public function edit(Galery $galery)
     {
-        return view('_admin.galeries.galeryEdit.index', compact('galery'));
+        return view('_admin.galeries.galeryEdit.index', compact('galery')); // Assumindo subpasta galeryEdit
     }
+
     public function update(Request $request, Galery $galery)
     {
-       // Validação
-        $validated = $request->validate([
-            'title'      => 'required|string|max:255',
+        $request->validate([
+            'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'sometimes|image|mimes:jpg,jpeg,png', // Alterado para 'sometimes'
-        ], [
-            'title.required' => 'O título é obrigatório.',
-            'image.image' => 'A image deve ser uma imagem válida.',
-            'image.mimes' => 'A image deve ser nos formatos: jpg, jpeg, png.',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
 
-
-        // Processar imagem se for enviada
-        if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            // Remover imagem antiga se existir
-            if ($galery->image && file_exists(public_path('img/galerys/' . $galery->image))) {
-                unlink(public_path('img/galerys/' . $galery->image));
-            }
-
-            $image = $request->file('image');
-            $extension = $image->extension();
-            $imageName = md5($image->getClientOriginalName() . strtotime('now')) . '.' . $extension;
-            $image->move(public_path('img/galerys'), $imageName);
-            $validated['image'] = $imageName;
+        if ($request->hasFile('image')) {
+            Storage::delete('public/images/galery/' . $galery->image);
+            $path = $request->file('image')->store('public/images/galery');
+            $request->merge(['image' => basename($path)]);
         }
 
-        // Atualizar data de modificação
-        $validated['lastModifyedDate'] = now()->format('Y-m-d');
-
-        // Atualizar o galery
-        $galery->update($validated);
-
-        return redirect()->route('admin.galery.index')->with('success', 'Autor atualizado com sucesso!');
-        return redirect()->back()->with('error', 'Ocorreu um erro ao atualizar Autor!');
+        $galery->update($request->all());
+        return redirect()->route('admin.galery.index')->with('success', 'Imagem atualizada com sucesso.');
     }
+
+    public function show(Galery $galery)
+    {
+        return view('_admin.galeries.galeryView.index', compact('galery')); // Assumindo subpasta galeryView
+    }
+
     public function destroy(Galery $galery)
     {
+        Storage::delete('public/images/galery/' . $galery->image);
         $galery->delete();
-        return redirect()->route('admin.galery.index')->with('success', 'Galeria removida com sucesso.');
+        return redirect()->route('admin.galery.index')->with('success', 'Imagem deletada com sucesso.');
     }
 }

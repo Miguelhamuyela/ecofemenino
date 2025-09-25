@@ -2,621 +2,261 @@
 @section('title', 'EcoFeminino - Multimídia')
 @section('content')
 
-    <!--================= News Details Section End Here =================-->
-    <div class="rts-news-details-section section-gap-2" style="background-color: #e9ecef;">
-        <div class="container">
-            <div class="rts-post-heading mb--50" id="imagens">
-                <div class="heading-content">
-                    <div class="contents">
-                        <a href="#0" class="news-catagory-tag-3">EcoFeminino</a>
-                        <h2 class="content-title mb--10"><a href="#">Imagens</a></h2>
-                        {{-- <div class="overview-play-btn">
-                            <div class="post-bottom-info">
-                                <a href="author.html" class="post-author item"><img
-                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">Ashley Graham</a>
-                                <span class="post-comment item"><img src="{{ url('assets/user/images/comment.svg') }}"
-                                        alt="comment-icon">January
-                                    16, 2024</span>
-                                <span class="post-share item"><img src="{{ url('assets/user/images/date.svg') }}"
-                                        alt="share-icon">16
-                                    Shares</span>
-                            </div>
-                        </div> --}}
-                    </div>
+<!-- Adicione o CSS e JS do Magnific Popup (se não estiver no layout) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<div class="rts-news-details-section section-gap-2" style="background-color: #e9ecef;">
+    <div class="container">
+        <!-- Seção Imagens -->
+        <div class="rts-post-heading mb--50" id="imagens">
+            <div class="heading-content">
+                <div class="contents">
+                    <a href="#0" class="news-catagory-tag-3">EcoFeminino</a>
+                    <h2 class="content-title mb--10"><a href="#">Imagens</a></h2>
                 </div>
             </div>
-            <!--================= Featured video 1 Section Start Here =================-->
-            <div class="rts-featured_video-section section-bg ptb--60 wow fadeIn"
-                data-wow-duration="1.5s"
-                style="background-color: #e9ecef;">
-                <div class="container">
-                    <div class="swiper rts-cmmnSlider" id="imagens-swiper">
-                        <div class="swiper-wrapper">
+        </div>
+        <div class="rts-featured_video-section section-bg ptb--60 wow fadeIn" data-wow-duration="1.5s" style="background-color: #e9ecef;">
+            <div class="container">
+                <div class="swiper rts-cmmnSlider rts-image-slider">
+                    <div class="swiper-wrapper">
+                        @forelse ($images as $image)
                             <div class="swiper-slide">
                                 <div class="featured-video-card">
                                     <div class="video-thumbnail">
-                                        <img src="{{ url('assets/user/images/trending/fititel.webp') }}"
-                                            alt="video-thumbnail">
+                                        <a href="{{ asset('storage/images/galery/' . $image->image) }}"
+                                           class="image-popup"
+                                           title="{{ $image->title }}"
+                                           data-description="{{ $image->description ?? 'Sem descrição' }}">
+                                            <img src="{{ asset('storage/images/galery/' . $image->image) }}"
+                                                 alt="{{ $image->title }}"
+                                                 style="max-height: 200px; object-fit: cover;">
+                                        </a>
                                         <div class="video-tags-area">
-                                            <a href="#0" class="video-tag red-tag">Sociedade</a>
                                             <a href="#0" class="video-tag red-tag">Sociedade</a>
                                         </div>
                                     </div>
-
                                     <div class="contents">
                                         <div class="post-info">
                                             <div class="item">
                                                 <span>
                                                     <img class="span-icon" src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">
-                                                    June 16, 2024
+                                                         alt="date-icon">
+                                                    {{ $image->created_at->format('F d, Y') }}
                                                 </span>
                                             </div>
                                         </div>
-
-                                        <!-- Apenas este <a> abre o popup -->
-                                        <a class="card-title image-popup-vertical-fit"
-                                            href="{{ url('assets/user/images/trending/fititel.webp') }}"
-                                            title="<h5>Estudantes do ITEL</h5><p>Apresentaram o seu projeto inovador no Angotic.</p>">
-                                            The 3 Beauty Trends That Are Taking Over London Right Now.
-                                        </a>
+                                        <h5>{{ Str::limit($image->title, 50) }}</h5>
                                     </div>
-
                                     <div class="card-action-bar action-bar">
-                                        <span class="post-comment item">
-                                            <img src="{{ url('assets/user/images/comment.svg') }}" alt="date-icon">12
-                                        </span>
-                                        <span class="post-heart item">
-                                            <img src="{{ url('assets/user/images/heart.svg') }}" alt="date-icon">12
-                                        </span>
-                                        <span class="post-share item">
-                                            <img src="{{ url('assets/user/images/share.svg') }}" alt="date-icon">16
-                                            Partilhas
-                                        </span>
+                                        <span class="post-comment item"><img src="{{ url('assets/user/images/comment.svg') }}" alt="date-icon">12</span>
+                                        <span class="post-heart item"><img src="{{ url('assets/user/images/heart.svg') }}" alt="date-icon">12</span>
+                                        <span class="post-share item"><img src="{{ url('assets/user/images/share.svg') }}" alt="date-icon">16 Partilhas</span>
                                     </div>
                                 </div>
                             </div>
+                        @empty
                             <div class="swiper-slide">
-                                <div class="featured-video-card">
-                                    <div class="video-thumbnail"><img
-                                            src="{{ url('assets/user/images/topics/transferir (2).jfif') }}"
-                                            alt="video-thumbnail">
-                                        <div class="video-tags-area">
-                                            <a href="#0" class="video-tag red-tag">Sociedade</a>
-                                            <a href="#0" class="video-tag red-tag">História de Vida</a>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="contents">
-                                        <div class="post-info">
-                                            <div class="item"><span><img class="span-icon"
-                                                        src="{{ url('assets/user/images/date.svg') }}" alt="date-icon">June
-                                                    16,
-                                                    2024</span></div>
-                                        </div>
-                                        <a class="card-title image-popup-vertical-fit"
-                                            href="{{ url('assets/user/images/topics/transferir (2).jfif') }}"
-                                            title="<h5>Estudantes do ITEL</h5><p>Apresentaram o seu projeto inovador no Angotic.</p>">The
-                                            body organism sustain growth and vital
-                                            processes
-                                            and
-                                            to furnish energy.</a>
-                                    </div>
-                                    <div class="card-action-bar action-bar">
-                                        <span class="post-comment item"><img
-                                                src="{{ url('assets/user/images/comment.svg') }}" alt="heart-icon">10</span>
-                                        <span class="post-heart item"><img src="{{ url('assets/user/images/heart.svg') }}"
-                                                alt="share-icon">6</span>
-                                        <span class="post-share item"><img src="{{ url('assets/user/images/share.svg') }}"
-                                                alt="date-icon">10
-                                            Partilhas</span>
-                                    </div>
-                                </div>
+                                <p>Nenhuma imagem cadastrada.</p>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="featured-video-card">
-                                    <div class="video-thumbnail"><img
-                                            src="{{ url('assets/user/images/topics/transferir.jfif') }}"
-                                            alt="video-thumbnail">
-                                        <div class="video-tags-area">
-                                            <a href="#0" class="video-tag red-tag">Economia</a>
-                                            <a href="#0" class="video-tag red-tag">Sociedade</a>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="contents">
-                                        <div class="post-info">
-                                            <div class="item"><span><img class="span-icon"
-                                                        src="{{ url('assets/user/images/date.svg') }}" alt="date-icon">June
-                                                    16,
-                                                    2024</span></div>
-                                        </div>
-                                        <a class="card-title image-popup-vertical-fit"
-                                            href="{{ url('assets/user/images/topics/transferir.jfif') }}"
-                                            title="<h5>Estudantes do ITEL</h5><p>Apresentaram o seu projeto inovador no Angotic.</p>">Economia
-                                            agencies are a need of every country
-                                            and a
-                                            medium
-                                            of Economiaing.</a>
-                                    </div>
-                                    <div class="card-action-bar action-bar">
-                                        <span class="post-comment item"><img
-                                                src="{{ url('assets/user/images/comment.svg') }}"
-                                                alt="date-icon">12</span>
-                                        <span class="post-heart item"><img
-                                                src="{{ url('assets/user/images/heart.svg') }}" alt="date-icon">12</span>
-                                        <span class="post-share item"><img
-                                                src="{{ url('assets/user/images/share.svg') }}" alt="date-icon">16
-                                            Partilhas</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="featured-video-card">
-                                    <div class="video-thumbnail"><img
-                                            src="{{ url('assets/user/images/topics/transferir (1).jfif') }}"
-                                            alt="video-thumbnail">
-                                        <div class="video-tags-area">
-                                            <a href="#0" class="video-tag red-tag">Política</a>
-                                            <a href="#0" class="video-tag red-tag">História de Vida</a>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="contents">
-                                        <div class="post-info">
-                                            <div class="item"><span><img class="span-icon"
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">June
-                                                    16,
-                                                    2024</span></div>
-                                        </div>
-                                        <a class="card-title image-popup-vertical-fit"
-                                            href="{{ url('assets/user/images/topics/transferir (1).jfif') }}"
-                                            title="<h5>Estudantes do ITEL</h5><p>Apresentaram o seu projeto inovador no Angotic.</p>">According
-                                            to eyewitness elephants ran for
-                                            higher
-                                            ground
-                                            ahead.</a>
-                                    </div>
-                                    <div class="card-action-bar action-bar">
-                                        <span class="post-comment item"><img
-                                                src="{{ url('assets/user/images/comment.svg') }}"
-                                                alt="date-icon">12</span>
-                                        <span class="post-heart item"><img
-                                                src="{{ url('assets/user/images/heart.svg') }}" alt="date-icon">12</span>
-                                        <span class="post-share item"><img
-                                                src="{{ url('assets/user/images/share.svg') }}" alt="date-icon">16
-                                            Partilhas</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforelse
                     </div>
                 </div>
             </div>
-            <!--================= Featured video 1 Section End Here =================-->
+        </div>
 
-            <div class="rts-post-heading mb--50" id="videos">
-                <div class="heading-content">
-                    <div class="contents">
-                        <h2 class="content-title mb--10"><a href="#">Videos</a></h2>
-                        {{-- <div class="overview-play-btn">
-                            <div class="post-bottom-info">
-                                <a href="author.html" class="post-author item"><img
-                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">Ashley Graham</a>
-                                <span class="post-comment item"><img src="{{ url('assets/user/images/comment.svg') }}"
-                                        alt="comment-icon">January
-                                    16, 2024</span>
-                                <span class="post-share item"><img src="{{ url('assets/user/images/date.svg') }}"
-                                        alt="share-icon">16
-                                    Shares</span>
-                            </div>
-                        </div> --}}
-                    </div>
+        <!-- Seção Vídeos -->
+        <div class="rts-post-heading mb--50" id="videos">
+            <div class="heading-content">
+                <div class="contents">
+                    <h2 class="content-title mb--10"><a href="#">Vídeos</a></h2>
                 </div>
             </div>
-            <!--================= Featured video 2 Section Start Here =================-->
-            <div class="rts-featured_video-section section-bg ptb--60 wow fadeIn"
-                data-wow-duration="1.5s"
-                style="background-color: #e9ecef;">
-                <div class="container">
-
-                    <div class="swiper rts-cmmnSlider">
-                        <div class="swiper-wrapper">
+        </div>
+        <div class="rts-featured_video-section section-bg ptb--60 wow fadeIn" data-wow-duration="1.5s" style="background-color: #e9ecef;">
+            <div class="container">
+                <div class="swiper rts-cmmnSlider rts-video-slider">
+                    <div class="swiper-wrapper">
+                        @forelse ($videos as $video)
                             <div class="swiper-slide">
                                 <div class="featured-video-card">
                                     <div class="video-thumbnail">
-                                        <img src="{{ url('assets/user/images/trending/fititel.webp') }}"
-                                            alt="video-thumbnail">
+                                        @php
+                                            // Extrair ID do vídeo do YouTube
+                                            $videoId = '';
+                                            if (preg_match('/v=([^&]+)/', $video->url, $matches)) {
+                                                $videoId = $matches[1];
+                                            } elseif (preg_match('/youtu\.be\/([^?]+)/', $video->url, $matches)) {
+                                                $videoId = $matches[1];
+                                            }
+                                        @endphp
+                                        @if ($videoId)
+                                            <a href="{{ $video->url }}" target="_blank" class="video-link">
+                                                <img src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                                     alt="{{ $video->title }}"
+                                                     style="max-height: 200px; object-fit: cover;">
+                                            </a>
+                                        @else
+                                            <a href="{{ $video->url }}" target="_blank" class="video-link">
+                                                <img src="https://via.placeholder.com/320x180?text=Vídeo"
+                                                     alt="Vídeo sem thumbnail"
+                                                     style="max-height: 200px; object-fit: cover;">
+                                            </a>
+                                        @endif
                                         <div class="video-tags-area">
-                                            <a href="#0" class="video-tag red-tag">Sociedade</a>
                                             <a href="#0" class="video-tag red-tag">Sociedade</a>
                                         </div>
                                     </div>
-
                                     <div class="contents">
                                         <div class="post-info">
                                             <div class="item">
                                                 <span>
                                                     <img class="span-icon" src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">
-                                                    June 16, 2024
+                                                         alt="date-icon">
+                                                    {{ $video->created_at->format('F d, Y') }}
                                                 </span>
                                             </div>
                                         </div>
-
-                                        <!-- Apenas este <a> abre o popup -->
-                                        <a class="card-title image-popup-vertical-fit"
-                                            href="{{ url('assets/user/images/trending/fititel.webp') }}"
-                                            title="<h5>Estudantes do ITEL</h5><p>Apresentaram o seu projeto inovador no Angotic.</p>">
-                                            The 3 Beauty Trends That Are Taking Over London Right Now.
-                                        </a>
+                                        <h5>{{ Str::limit($video->title, 50) }}</h5>
+                                        <p>{{ Str::limit($video->description ?? 'Sem descrição', 100) }}</p>
                                     </div>
-
                                     <div class="card-action-bar action-bar">
-                                        <span class="post-comment item">
-                                            <img src="{{ url('assets/user/images/comment.svg') }}" alt="date-icon">12
-                                        </span>
-                                        <span class="post-heart item">
-                                            <img src="{{ url('assets/user/images/heart.svg') }}" alt="date-icon">12
-                                        </span>
-                                        <span class="post-share item">
-                                            <img src="{{ url('assets/user/images/share.svg') }}" alt="date-icon">16
-                                            Partilhas
-                                        </span>
+                                        <span class="post-comment item"><img src="{{ url('assets/user/images/comment.svg') }}" alt="date-icon">12</span>
+                                        <span class="post-heart item"><img src="{{ url('assets/user/images/heart.svg') }}" alt="date-icon">12</span>
+                                        <span class="post-share item"><img src="{{ url('assets/user/images/share.svg') }}" alt="date-icon">16 Partilhas</span>
                                     </div>
                                 </div>
                             </div>
+                        @empty
                             <div class="swiper-slide">
-                                <div class="featured-video-card">
-                                    <div class="video-thumbnail"><img
-                                            src="{{ url('assets/user/images/topics/transferir (2).jfif') }}"
-                                            alt="video-thumbnail">
-                                        <div class="video-tags-area">
-                                            <a href="#0" class="video-tag red-tag">Sociedade</a>
-                                            <a href="#0" class="video-tag red-tag">História de Vida</a>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="contents">
-                                        <div class="post-info">
-                                            <div class="item"><span><img class="span-icon"
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">June
-                                                    16,
-                                                    2024</span></div>
-                                        </div>
-                                        <a class="card-title image-popup-vertical-fit"
-                                            href="{{ url('assets/user/images/topics/transferir (2).jfif') }}"
-                                            title="<h5>Estudantes do ITEL</h5><p>Apresentaram o seu projeto inovador no Angotic.</p>">The
-                                            body organism sustain growth and vital
-                                            processes
-                                            and
-                                            to furnish energy.</a>
-                                    </div>
-                                    <div class="card-action-bar action-bar">
-                                        <span class="post-comment item"><img
-                                                src="{{ url('assets/user/images/comment.svg') }}"
-                                                alt="heart-icon">10</span>
-                                        <span class="post-heart item"><img
-                                                src="{{ url('assets/user/images/heart.svg') }}" alt="share-icon">6</span>
-                                        <span class="post-share item"><img
-                                                src="{{ url('assets/user/images/share.svg') }}" alt="date-icon">10
-                                            Partilhas</span>
-                                    </div>
-                                </div>
+                                <p>Nenhum vídeo cadastrado.</p>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="featured-video-card">
-                                    <div class="video-thumbnail"><img
-                                            src="{{ url('assets/user/images/topics/transferir.jfif') }}"
-                                            alt="video-thumbnail">
-                                        <div class="video-tags-area">
-                                            <a href="#0" class="video-tag red-tag">Economia</a>
-                                            <a href="#0" class="video-tag red-tag">Sociedade</a>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="contents">
-                                        <div class="post-info">
-                                            <div class="item"><span><img class="span-icon"
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">June
-                                                    16,
-                                                    2024</span></div>
-                                        </div>
-                                        <a class="card-title image-popup-vertical-fit"
-                                            href="{{ url('assets/user/images/topics/transferir.jfif') }}"
-                                            title="<h5>Estudantes do ITEL</h5><p>Apresentaram o seu projeto inovador no Angotic.</p>">Economia
-                                            agencies are a need of every country
-                                            and a
-                                            medium
-                                            of Economiaing.</a>
-                                    </div>
-                                    <div class="card-action-bar action-bar">
-                                        <span class="post-comment item"><img
-                                                src="{{ url('assets/user/images/comment.svg') }}"
-                                                alt="date-icon">12</span>
-                                        <span class="post-heart item"><img
-                                                src="{{ url('assets/user/images/heart.svg') }}" alt="date-icon">12</span>
-                                        <span class="post-share item"><img
-                                                src="{{ url('assets/user/images/share.svg') }}" alt="date-icon">16
-                                            Partilhas</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="featured-video-card">
-                                    <div class="video-thumbnail"><img
-                                            src="{{ url('assets/user/images/topics/transferir (1).jfif') }}"
-                                            alt="video-thumbnail">
-                                        <div class="video-tags-area">
-                                            <a href="#0" class="video-tag red-tag">Política</a>
-                                            <a href="#0" class="video-tag red-tag">História de Vida</a>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="contents">
-                                        <div class="post-info">
-                                            <div class="item"><span><img class="span-icon"
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">June
-                                                    16,
-                                                    2024</span></div>
-                                        </div>
-                                        <a class="card-title image-popup-vertical-fit"
-                                            href="{{ url('assets/user/images/topics/transferir (1).jfif') }}"
-                                            title="<h5>Estudantes do ITEL</h5><p>Apresentaram o seu projeto inovador no Angotic.</p>">According
-                                            to eyewitness elephants ran for
-                                            higher
-                                            ground
-                                            ahead.</a>
-                                    </div>
-                                    <div class="card-action-bar action-bar">
-                                        <span class="post-comment item"><img
-                                                src="{{ url('assets/user/images/comment.svg') }}"
-                                                alt="date-icon">12</span>
-                                        <span class="post-heart item"><img
-                                                src="{{ url('assets/user/images/heart.svg') }}" alt="date-icon">12</span>
-                                        <span class="post-share item"><img
-                                                src="{{ url('assets/user/images/share.svg') }}" alt="date-icon">16
-                                            Partilhas</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforelse
                     </div>
                 </div>
             </div>
-            <!--================= Featured video 2 Section End Here =================-->
+        </div>
 
-            <div class="rts-post-heading mb--50" id="podcasts">
-                <div class="heading-content">
-                    <div class="contents">
-                        <h2 class="content-title mb--10"><a href="#">Podcasts</a></h2>
-                        {{-- <div class="overview-play-btn">
-                            <div class="post-bottom-info">
-                                <a href="author.html" class="post-author item"><img
-                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">Ashley Graham</a>
-                                <span class="post-comment item"><img src="{{ url('assets/user/images/comment.svg') }}"
-                                        alt="comment-icon">January
-                                    16, 2024</span>
-                                <span class="post-share item"><img src="{{ url('assets/user/images/date.svg') }}"
-                                        alt="share-icon">16
-                                    Shares</span>
-                            </div>
-                        </div> --}}
-                    </div>
+        <!-- Seção Podcasts -->
+        <div class="rts-post-heading mb--50" id="podcasts">
+            <div class="heading-content">
+                <div class="contents">
+                    <h2 class="content-title mb--10"><a href="#">Podcasts</a></h2>
                 </div>
             </div>
-            <!--================= Featured video 3 Section Start Here =================-->
-            <div class="rts-featured_video-section section-bg ptb--60 wow fadeIn"
-                data-wow-duration="1.5s"
-                style="background-color: #e9ecef;">
-                <div class="container">
-
-                    <div class="swiper rts-cmmnSlider">
-                        <div class="swiper-wrapper">
+        </div>
+        <div class="rts-featured_video-section section-bg ptb--60 wow fadeIn" data-wow-duration="1.5s" style="background-color: #e9ecef;">
+            <div class="container">
+                <div class="swiper rts-cmmnSlider rts-podcast-slider">
+                    <div class="swiper-wrapper">
+                        @forelse ($podcasts as $podcast)
                             <div class="swiper-slide">
                                 <div class="featured-video-card">
                                     <div class="video-thumbnail">
-                                        <img src="{{ url('assets/user/images/trending/fititel.webp') }}"
-                                            alt="video-thumbnail">
+                                        <a href="{{ $podcast->url }}" target="_blank" class="podcast-link">
+                                            <img src="https://via.placeholder.com/320x180?text=Podcast"
+                                                 alt="{{ $podcast->title }}"
+                                                 style="max-height: 200px; object-fit: cover;">
+                                        </a>
+                                        <audio controls style="width: 100%;">
+                                            <source src="{{ $podcast->url }}" type="audio/mpeg">
+                                            Seu navegador não suporta áudio.
+                                        </audio>
                                         <div class="video-tags-area">
-                                            <a href="#0" class="video-tag red-tag">Sociedade</a>
                                             <a href="#0" class="video-tag red-tag">Sociedade</a>
                                         </div>
                                     </div>
-
                                     <div class="contents">
                                         <div class="post-info">
                                             <div class="item">
                                                 <span>
                                                     <img class="span-icon" src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">
-                                                    June 16, 2024
+                                                         alt="date-icon">
+                                                    {{ $podcast->created_at->format('F d, Y') }}
                                                 </span>
                                             </div>
                                         </div>
-
-                                        <!-- Apenas este <a> abre o popup -->
-                                        <a class="card-title image-popup-vertical-fit"
-                                            href="{{ url('assets/user/images/trending/fititel.webp') }}"
-                                            title="<h5>Estudantes do ITEL</h5><p>Apresentaram o seu projeto inovador no Angotic.</p>">
-                                            The 3 Beauty Trends That Are Taking Over London Right Now.
-                                        </a>
+                                        <h5>{{ Str::limit($podcast->title, 50) }}</h5>
+                                        <p>{{ Str::limit($podcast->description ?? 'Sem descrição', 100) }}</p>
                                     </div>
-
                                     <div class="card-action-bar action-bar">
-                                        <span class="post-comment item">
-                                            <img src="{{ url('assets/user/images/comment.svg') }}" alt="date-icon">12
-                                        </span>
-                                        <span class="post-heart item">
-                                            <img src="{{ url('assets/user/images/heart.svg') }}" alt="date-icon">12
-                                        </span>
-                                        <span class="post-share item">
-                                            <img src="{{ url('assets/user/images/share.svg') }}" alt="date-icon">16
-                                            Partilhas
-                                        </span>
+                                        <span class="post-comment item"><img src="{{ url('assets/user/images/comment.svg') }}" alt="date-icon">12</span>
+                                        <span class="post-heart item"><img src="{{ url('assets/user/images/heart.svg') }}" alt="date-icon">12</span>
+                                        <span class="post-share item"><img src="{{ url('assets/user/images/share.svg') }}" alt="date-icon">16 Partilhas</span>
                                     </div>
                                 </div>
                             </div>
+                        @empty
                             <div class="swiper-slide">
-                                <div class="featured-video-card">
-                                    <div class="video-thumbnail"><img
-                                            src="{{ url('assets/user/images/topics/transferir (2).jfif') }}"
-                                            alt="video-thumbnail">
-                                        <div class="video-tags-area">
-                                            <a href="#0" class="video-tag red-tag">Sociedade</a>
-                                            <a href="#0" class="video-tag red-tag">História de Vida</a>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="contents">
-                                        <div class="post-info">
-                                            <div class="item"><span><img class="span-icon"
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">June
-                                                    16,
-                                                    2024</span></div>
-                                        </div>
-                                        <a class="card-title image-popup-vertical-fit"
-                                            href="{{ url('assets/user/images/topics/transferir (2).jfif') }}"
-                                            title="<h5>Estudantes do ITEL</h5><p>Apresentaram o seu projeto inovador no Angotic.</p>">The
-                                            body organism sustain growth and vital
-                                            processes
-                                            and
-                                            to furnish energy.</a>
-                                    </div>
-                                    <div class="card-action-bar action-bar">
-                                        <span class="post-comment item"><img
-                                                src="{{ url('assets/user/images/comment.svg') }}"
-                                                alt="heart-icon">10</span>
-                                        <span class="post-heart item"><img
-                                                src="{{ url('assets/user/images/heart.svg') }}" alt="share-icon">6</span>
-                                        <span class="post-share item"><img
-                                                src="{{ url('assets/user/images/share.svg') }}" alt="date-icon">10
-                                            Partilhas</span>
-                                    </div>
-                                </div>
+                                <p>Nenhum podcast cadastrado.</p>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="featured-video-card">
-                                    <div class="video-thumbnail"><img
-                                            src="{{ url('assets/user/images/topics/transferir.jfif') }}"
-                                            alt="video-thumbnail">
-                                        <div class="video-tags-area">
-                                            <a href="#0" class="video-tag red-tag">Economia</a>
-                                            <a href="#0" class="video-tag red-tag">Sociedade</a>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="contents">
-                                        <div class="post-info">
-                                            <div class="item"><span><img class="span-icon"
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">June
-                                                    16,
-                                                    2024</span></div>
-                                        </div>
-                                        <a class="card-title image-popup-vertical-fit"
-                                            href="{{ url('assets/user/images/topics/transferir.jfif') }}"
-                                            title="<h5>Estudantes do ITEL</h5><p>Apresentaram o seu projeto inovador no Angotic.</p>">Economia
-                                            agencies are a need of every country
-                                            and a
-                                            medium
-                                            of Economiaing.</a>
-                                    </div>
-                                    <div class="card-action-bar action-bar">
-                                        <span class="post-comment item"><img
-                                                src="{{ url('assets/user/images/comment.svg') }}"
-                                                alt="date-icon">12</span>
-                                        <span class="post-heart item"><img
-                                                src="{{ url('assets/user/images/heart.svg') }}" alt="date-icon">12</span>
-                                        <span class="post-share item"><img
-                                                src="{{ url('assets/user/images/share.svg') }}" alt="date-icon">16
-                                            Partilhas</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="featured-video-card">
-                                    <div class="video-thumbnail"><img
-                                            src="{{ url('assets/user/images/topics/transferir (1).jfif') }}"
-                                            alt="video-thumbnail">
-                                        <div class="video-tags-area">
-                                            <a href="#0" class="video-tag red-tag">Política</a>
-                                            <a href="#0" class="video-tag red-tag">História de Vida</a>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="contents">
-                                        <div class="post-info">
-                                            <div class="item"><span><img class="span-icon"
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">June
-                                                    16,
-                                                    2024</span></div>
-                                        </div>
-                                        <a class="card-title image-popup-vertical-fit"
-                                            href="{{ url('assets/user/images/topics/transferir (1).jfif') }}"
-                                            title="<h5>Estudantes do ITEL</h5><p>Apresentaram o seu projeto inovador no Angotic.</p>">According
-                                            to eyewitness elephants ran for
-                                            higher
-                                            ground
-                                            ahead.</a>
-                                    </div>
-                                    <div class="card-action-bar action-bar">
-                                        <span class="post-comment item"><img
-                                                src="{{ url('assets/user/images/comment.svg') }}"
-                                                alt="date-icon">12</span>
-                                        <span class="post-heart item"><img
-                                                src="{{ url('assets/user/images/heart.svg') }}" alt="date-icon">12</span>
-                                        <span class="post-share item"><img
-                                                src="{{ url('assets/user/images/share.svg') }}" alt="date-icon">16
-                                            Partilhas</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforelse
                     </div>
                 </div>
             </div>
-            <!--================= Featured video 3 Section End Here =================-->
-
         </div>
     </div>
-    <!--================= News Details Section End Here =================-->
+</div>
 
-    <style>
-        .news-catagory-tag-3 {
-            background: #ff1856 !important;
-        }
-    </style>
+<style>
+    .news-catagory-tag-3 {
+        background: #ff1856 !important;
+    }
+    .mfp-title {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .mfp-description {
+        font-size: 14px;
+        color: #666;
+    }
+    .swiper-slide {
+        width: auto !important; /* Permite que os slides tenham largura dinâmica */
+        margin-right: 20px; /* Espaço entre itens */
+    }
+    .video-thumbnail {
+        position: relative;
+    }
+    .video-link, .podcast-link, .image-popup {
+        display: block;
+    }
+</style>
 
-    <script>
-        var swiper = new Swiper(".rts-cmmnSlider", {
-            loop: true, // loop infinito
+<script>
+    // Inicializar Swiper para cada seção
+    document.querySelectorAll('.rts-cmmnSlider').forEach(function(slider) {
+        new Swiper(slider, {
+            loop: false, // Desativa o loop para evitar duplicação
             autoplay: {
-                delay: 3000, // tempo entre slides (3s)
-                disableOnInteraction: false, // continua mesmo após interação
-                reverseDirection: false, // false = esquerda → direita (padrão)
+                delay: 3000,
+                disableOnInteraction: false,
             },
-            slidesPerView: 1, // um slide de cada vez
-            spaceBetween: 20, // espaço entre slides
-            speed: 1000, // velocidade da transição
+            slidesPerView: 'auto', // Mostra todos os itens sem forçar número fixo
+            spaceBetween: 20,
+            speed: 1000,
         });
-    </script>
+    });
 
+    // Inicializar Magnific Popup para imagens
+    $(document).ready(function() {
+        $('.image-popup').magnificPopup({
+            type: 'image',
+            gallery: {
+                enabled: true // Permite navegação entre imagens
+            },
+            titleSrc: function(item) {
+                return item.el.attr('title') + '<div class="mfp-description">' + item.el.data('description') + '</div>';
+            }
+        });
 
+        // Garantir que cliques nos links de vídeo/podcast não sejam bloqueados pelo Swiper
+        $('.video-link, .podcast-link').on('click', function(e) {
+            e.preventDefault();
+            window.open($(this).attr('href'), '_blank');
+        });
+    });
+</script>
 
 @endsection

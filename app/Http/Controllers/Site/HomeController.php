@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Car;
-
+use App\Models\Video;
+use App\Models\Galery;
 class HomeController extends Controller
 {
 
@@ -63,13 +64,20 @@ class HomeController extends Controller
 
     public function multimedia()
     {
-        // Envia para a view
-        return view('site.multimedia.index');
+        $images = Galery::latest()->get();
+        $videos = Video::where('type', 'video')->latest()->get();
+        $podcasts = Video::where('type', 'podcast')->latest()->get();
+
+        return view('site.multimedia.index', compact('images', 'videos', 'podcasts'));
     }
+
+    
     public function youth()
     {
         // Envia para a view
         return view('site.youth.index');
     }
+
+    
 }
 

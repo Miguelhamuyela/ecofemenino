@@ -131,20 +131,25 @@ Route::prefix('_admin/publications')->name('admin.')->group(function () {
     Route::get('publicationView/{publication}', [PublicationController::class, 'show'])->name('publication.view');
     Route::get('publicationDelete/{publication}', [PublicationController::class, 'destroy'])->name('publication.delete');
 });
+
+/*-------------------------------------------------------
+                    Multimedia Routes
+-------------------------------------------------------*/
 /* -----------------------------------------------
-                    video Routes
+                    Video Routes
 --------------------------------------------------*/
 Route::prefix('_admin/videos')->name('admin.')->group(function () {
     Route::get('video', [VideoController::class, 'index'])->name('video.index');
     Route::get('videoCreate', [VideoController::class, 'create'])->name('video.create');
     Route::post('videoStore', [VideoController::class, 'store'])->name('video.store');
-    Route::get('videoEdit/{video}', [videoController::class, 'edit'])->name('video.edit');
-    Route::put('videoUpdate/{video}', [videoController::class, 'update'])->name('video.update');
-    Route::get('videoView/{video}', [videoController::class, 'show'])->name('video.view');
-    Route::get('videoDelete/{video}', [videoController::class, 'destroy'])->name('video.delete');
+    Route::get('videoEdit/{video}', [VideoController::class, 'edit'])->name('video.edit');
+    Route::put('videoUpdate/{video}', [VideoController::class, 'update'])->name('video.update');
+    Route::get('videoView/{video}', [VideoController::class, 'show'])->name('video.view');
+    Route::delete('videoDelete/{video}', [VideoController::class, 'destroy'])->name('video.delete');
 });
+
 /* -----------------------------------------------
-                    galery Routes
+                    Galery Routes
 --------------------------------------------------*/
 Route::prefix('_admin/galeries')->name('admin.')->group(function () {
     Route::get('galery', [GaleryController::class, 'index'])->name('galery.index');
@@ -153,6 +158,5 @@ Route::prefix('_admin/galeries')->name('admin.')->group(function () {
     Route::get('galeryEdit/{galery}', [GaleryController::class, 'edit'])->name('galery.edit');
     Route::put('galeryUpdate/{galery}', [GaleryController::class, 'update'])->name('galery.update');
     Route::get('galeryView/{galery}', [GaleryController::class, 'show'])->name('galery.view');
-    Route::get('galeryDelete/{galery}', [GaleryController::class, 'destroy'])->name('galery.delete');
+    Route::delete('galeryDelete/{galery}', [GaleryController::class, 'destroy'])->name('galery.delete');
 });
-

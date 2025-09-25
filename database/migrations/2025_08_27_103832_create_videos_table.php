@@ -6,29 +6,20 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateVideosTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('detach');
+            $table->enum('type', ['video', 'podcast'])->default('video');
+            $table->enum('detach', ['normal', 'destaque', 'urgente'])->default('normal');
             $table->text('description')->nullable();
             $table->string('url');
-            $table->softDeletes();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('videos');
