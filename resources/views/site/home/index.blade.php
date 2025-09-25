@@ -648,22 +648,6 @@
                 <div class="col-xl-4 col-md-4 col-sm-6">
                     <div class="gallery-item">
                         <a class="image-popup-vertical-fit"
-                            href="{{ url('assets/user/images/gallery/popup/Yola Semedo Cantora.jpg') }}"
-                            style="height: 350px !important"
-                            title="<h5>Yola Semedo</h5><p>Cantora angolana, ícone da música romântica e semba contemporâneo.</p>">
-                            <img src="{{ url('assets/user/images/gallery/Yola Semedo Cantora.jpg') }}"
-                                alt="Yola Semedo" />
-                        </a>
-                        <div class="contents">
-                            <h5 class="member-role">Cantora</h5>
-                            <a href="#" class="member-name">Yola Semedo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-4 col-sm-6">
-                    <div class="gallery-item">
-                        <a class="image-popup-vertical-fit"
                             href="{{ url('assets/user/images/gallery/popup/Silvia Lutucuta Ministra da Saude.jpg') }}"
                             style="height: 350px !important"
                             title="<h5>Silvia Lutucuta</h5><p>Ministra da Saúde de Angola desde 2017. Médica cardiologista e professora universitária.</p>">
@@ -673,37 +657,6 @@
                         <div class="contents">
                             <h5 class="member-role">Ministra da Saúde</h5>
                             <a href="#" class="member-name">Silvia Lutucuta</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-4 col-sm-6">
-                    <div class="gallery-item">
-                        <a class="image-popup-vertical-fit"
-                            href="{{ url('assets/user/images/gallery/popup/Leila Lopes Miss.jpg') }}"
-                            style="height: 350px !important"
-                            title="<h5>Leila Lopes</h5><p>Miss Universo 2011, referência da beleza angolana a nível internacional.</p>">
-                            <img src="{{ url('assets/user/images/gallery/Leila Lopes Miss.jpg') }}" alt="Leila Lopes" />
-                        </a>
-                        <div class="contents">
-                            <h5 class="member-role">Miss</h5>
-                            <a href="#" class="member-name">Leila Lopes</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-4 col-sm-6">
-                    <div class="gallery-item">
-                        <a class="image-popup-vertical-fit"
-                            href="{{ url('assets/user/images/gallery/popup/Vera Daves Ministra das Financas.jpeg') }}"
-                            style="height: 350px !important"
-                            title="<h5>Vera Daves</h5><p>Ministra das Finanças de Angola, primeira mulher a assumir a pasta.</p>">
-                            <img src="{{ url('assets/user/images/gallery/Vera Daves Ministra das Financas.jpeg') }}"
-                                alt="Vera Daves" />
-                        </a>
-                        <div class="contents">
-                            <h5 class="member-role">Ministra das Finanças</h5>
-                            <a href="#" class="member-name">Vera Daves</a>
                         </div>
                     </div>
                 </div>
