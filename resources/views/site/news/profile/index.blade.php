@@ -77,295 +77,118 @@
             </div>
             <!--================= Author Profile Section End Here =================-->
 
-             <!--================= Featured video Section Start Here =================-->
-    <div class="rts-featured_video-section section-bg ptb--60 wow fadeIn" id="debate-femenino" data-wow-duration="1.5s" style="background: #e9ecef !important;" >
+            <!--================= Gallery Section Start Here =================-->
+    <div class="rts-gallery-section gallary-page-section pt--40 mb--40">
         <div class="container">
             <div class="news-topbar news-topbar-2">
                 <h2 class="section-title">Mais Perfis</h2>
-                <div class="wide-border" style="background: #a09797 !important;"></div>
-                <div class="slider-navigation">
-                    <div class="swiper-button-prev navigation-btn"><i class="far fa-chevron-left"></i></div>
-                    <div class="swiper-button-next navigation-btn"><i class="far fa-chevron-right"></i></div>
-                </div>
+                <div class="wide-border" style="width: 55rem !important"></div>
             </div>
-            <!--================= Read Section Start Here =================-->
-            <div class="rts-read-section1 section-gap-2 wow fadeIn" data-wow-duration="1.5s">
-                <div class="container">
 
-                    <div class="row no-gutters3">
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                            <div class="rts-post1 rts-post-medium1">
-                                <div class="post-picture">
-                                    <div class="overlay"></div>
-
-                                    <!-- Aqui: link da imagem com popup -->
-                                    <a href="{{ url('assets/user/images/more/image1.png') }}"
-                                        class="image-popup-vertical-fit"
-                                        title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>">
-                                        <img src="{{ url('assets/user/images/more/image1.png') }}" alt="main-post-image">
-                                    </a>
-
-                                    <div class="section-content">
-                                        <a href="catagory-details.html" class="news-catagory-tag">FASHION</a>
-                                        <div class="contents">
-                                            <div class="post-title"><a
-                                                    href="{{ url('assets/user/images/more/image1.png') }}"
-                                                    class="image-popup-vertical-fit"
-                                                    title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>">Postpones
-                                                    tour after
-                                                    syndrome leaves</a></div>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html" class="post-author item1">Alan Fresco</a>
-                                                <div class="post-bottom">
-                                                    <span class="post-date item1">April 03, 2024</span>
-                                                    <span class="post-time">1 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                            <div class="rts-post1 rts-post-medium1">
-                                <div class="post-picture">
-                                    <div class="overlay"></div>
-                                    <a href="{{ url('assets/user/images/more/image2.png') }}"
-                                        class="image-popup-vertical-fit"
-                                        title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>"><img
-                                            src="{{ url('assets/user/images/more/image2.png') }}" alt="main-post-image"></a>
-                                    <div class="section-content">
-                                        <a href="catagory-details.html" class="news-catagory-tag">MUSIC</a>
-                                        <div class="contents">
-                                            <div class="post-title"><a
-                                                    href="{{ url('assets/user/images/more/image2.png') }}"
-                                                    class="image-popup-vertical-fit"
-                                                    title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>">With
-                                                    ‘Jurassic World’
-                                                    ending,
-                                                    Bryce Dallas</a></div>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html" class="post-author item1">Barry Tone</a>
-                                                <div class="post-bottom">
-                                                    <span class="post-date item1">April
-                                                        03, 2024</span>
-                                                    <span class="post-time">1 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                            <div class="rts-post1 rts-post-medium1">
-                                <div class="post-picture">
-                                    <div class="overlay"></div>
-                                    <a href="{{ url('assets/user/images/more/image3.png') }}"
-                                        class="image-popup-vertical-fit"
-                                        title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>"><img
-                                            src="{{ url('assets/user/images/more/image3.png') }}"
-                                            alt="main-post-image"></a>
-                                    <div class="section-content">
-                                        <a href="catagory-details.html" class="news-catagory-tag">LIFESTYLE</a>
-                                        <div class="contents">
-                                            <div class="post-title"><a
-                                                    href="{{ url('assets/user/images/more/image3.png') }}"
-                                                    class="image-popup-vertical-fit"
-                                                    title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>">‘The
-                                                    Bachelor’ made a
-                                                    ‘sideshow’</a></div>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html" class="post-author item1">Hilari Ouse</a>
-                                                <div class="post-bottom">
-                                                    <span class="post-date item1">April
-                                                        03, 2024</span>
-                                                    <span class="post-time">1 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                            <div class="rts-post1 rts-post-medium1">
-                                <div class="post-picture">
-                                    <div class="overlay"></div>
-                                    <a href="{{ url('assets/user/images/more/image4.png') }}"
-                                        class="image-popup-vertical-fit"
-                                        title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>"><img
-                                            src="{{ url('assets/user/images/more/image4.png') }}"
-                                            alt="main-post-image"></a>
-                                    <div class="section-content">
-                                        <a href="catagory-details.html" class="news-catagory-tag">SPORTS</a>
-                                        <div class="contents">
-                                            <div class="post-title"><a
-                                                    href="{{ url('assets/user/images/more/image4.png') }}"
-                                                    class="image-popup-vertical-fit"
-                                                    title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>">Curry
-                                                    exploits help
-                                                    Warriors
-                                                    level Finals</a></div>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html" class="post-author item1">Norman Gordon</a>
-                                                <div class="post-bottom">
-                                                    <span class="post-date item1">April
-                                                        03, 2024</span>
-                                                    <span class="post-time">1 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="row">
+                <div class="col-xl-4 col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a class="image-popup-vertical-fit" href="{{ url('assets/user/images/gallery/popup/auria.jpg') }}"
+                            style="height: 350px !important"
+                            title="<h5>Auria Machado</h5><p>Conhecida como 'Rainha dos Porcos', personalidade marcante no cenário cultural.</p>">
+                            <img src="{{ url('assets/user/images/gallery/auria.jpg') }}" alt="Auria Machado" />
+                        </a>
+                        <div class="contents">
+                            <h5 class="member-role">Rainha dos Porcos</h5>
+                            <a href="#" class="member-name">Auria Machado</a>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="rts-read-section1 section-gap-2 wow fadeIn" data-wow-duration="1.5s">
-                <div class="container">
-
-                    <div class="row no-gutters3">
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                            <div class="rts-post1 rts-post-medium1">
-                                <div class="post-picture">
-                                    <div class="overlay"></div>
-
-                                    <!-- Aqui: link da imagem com popup -->
-                                    <a href="{{ url('assets/user/images/more/image1.png') }}"
-                                        class="image-popup-vertical-fit"
-                                        title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>">
-                                        <img src="{{ url('assets/user/images/more/image1.png') }}" alt="main-post-image">
-                                    </a>
-
-                                    <div class="section-content">
-                                        <a href="catagory-details.html" class="news-catagory-tag">FASHION</a>
-                                        <div class="contents">
-                                            <div class="post-title"><a
-                                                    href="{{ url('assets/user/images/more/image1.png') }}"
-                                                    class="image-popup-vertical-fit"
-                                                    title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>">Postpones
-                                                    tour after
-                                                    syndrome leaves</a></div>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html" class="post-author item1">Alan Fresco</a>
-                                                <div class="post-bottom">
-                                                    <span class="post-date item1">April 03, 2024</span>
-                                                    <span class="post-time">1 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                            <div class="rts-post1 rts-post-medium1">
-                                <div class="post-picture">
-                                    <div class="overlay"></div>
-                                    <a href="{{ url('assets/user/images/more/image2.png') }}"
-                                        class="image-popup-vertical-fit"
-                                        title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>"><img
-                                            src="{{ url('assets/user/images/more/image2.png') }}"
-                                            alt="main-post-image"></a>
-                                    <div class="section-content">
-                                        <a href="catagory-details.html" class="news-catagory-tag">MUSIC</a>
-                                        <div class="contents">
-                                            <div class="post-title"><a
-                                                    href="{{ url('assets/user/images/more/image2.png') }}"
-                                                    class="image-popup-vertical-fit"
-                                                    title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>">With
-                                                    ‘Jurassic World’
-                                                    ending,
-                                                    Bryce Dallas</a></div>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html" class="post-author item1">Barry Tone</a>
-                                                <div class="post-bottom">
-                                                    <span class="post-date item1">April
-                                                        03, 2024</span>
-                                                    <span class="post-time">1 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                            <div class="rts-post1 rts-post-medium1">
-                                <div class="post-picture">
-                                    <div class="overlay"></div>
-                                    <a href="{{ url('assets/user/images/more/image3.png') }}"
-                                        class="image-popup-vertical-fit"
-                                        title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>"><img
-                                            src="{{ url('assets/user/images/more/image3.png') }}"
-                                            alt="main-post-image"></a>
-                                    <div class="section-content">
-                                        <a href="catagory-details.html" class="news-catagory-tag">LIFESTYLE</a>
-                                        <div class="contents">
-                                            <div class="post-title"><a
-                                                    href="{{ url('assets/user/images/more/image3.png') }}"
-                                                    class="image-popup-vertical-fit"
-                                                    title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>">‘The
-                                                    Bachelor’ made a
-                                                    ‘sideshow’</a></div>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html" class="post-author item1">Hilari Ouse</a>
-                                                <div class="post-bottom">
-                                                    <span class="post-date item1">April
-                                                        03, 2024</span>
-                                                    <span class="post-time">1 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                            <div class="rts-post1 rts-post-medium1">
-                                <div class="post-picture">
-                                    <div class="overlay"></div>
-                                    <a href="{{ url('assets/user/images/more/image4.png') }}"
-                                        class="image-popup-vertical-fit"
-                                        title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>"><img
-                                            src="{{ url('assets/user/images/more/image4.png') }}"
-                                            alt="main-post-image"></a>
-                                    <div class="section-content">
-                                        <a href="catagory-details.html" class="news-catagory-tag">SPORTS</a>
-                                        <div class="contents">
-                                            <div class="post-title"><a
-                                                    href="{{ url('assets/user/images/more/image4.png') }}"
-                                                    class="image-popup-vertical-fit"
-                                                    title="<h5>Post Title</h5><p>Descrição ou resumo do post.</p>">Curry
-                                                    exploits help
-                                                    Warriors
-                                                    level Finals</a></div>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html" class="post-author item1">Norman Gordon</a>
-                                                <div class="post-bottom">
-                                                    <span class="post-date item1">April
-                                                        03, 2024</span>
-                                                    <span class="post-time">1 day ago</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="col-xl-4 col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a class="image-popup-vertical-fit"
+                            href="{{ url('assets/user/images/gallery/popup/Ana Lemos Apresentadora..jpg') }}"
+                            style="height: 350px !important"
+                            title="<h5>Ana Lemos</h5><p>Apresentadora reconhecida pela sua presença em programas televisivos.</p>">
+                            <img src="{{ url('assets/user/images/gallery/Ana Lemos Apresentadora..jpg') }}"
+                                alt="Ana Lemos" />
+                        </a>
+                        <div class="contents">
+                            <h5 class="member-role">Apresentadora</h5>
+                            <a href="#" class="member-name">Ana Lemos</a>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-xl-4 col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a class="image-popup-vertical-fit"
+                            href="{{ url('assets/user/images/gallery/popup/Yola Semedo Cantora.jpg') }}"
+                            style="height: 350px !important"
+                            title="<h5>Yola Semedo</h5><p>Cantora angolana, ícone da música romântica e semba contemporâneo.</p>">
+                            <img src="{{ url('assets/user/images/gallery/Yola Semedo Cantora.jpg') }}"
+                                alt="Yola Semedo" />
+                        </a>
+                        <div class="contents">
+                            <h5 class="member-role">Cantora</h5>
+                            <a href="#" class="member-name">Yola Semedo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a class="image-popup-vertical-fit"
+                            href="{{ url('assets/user/images/gallery/popup/Silvia Lutucuta Ministra da Saude.jpg') }}"
+                            style="height: 350px !important"
+                            title="<h5>Silvia Lutucuta</h5><p>Ministra da Saúde de Angola desde 2017. Médica cardiologista e professora universitária.</p>">
+                            <img src="{{ url('assets/user/images/gallery/Silvia Lutucuta Ministra da Saude.jpg') }}"
+                                alt="Silvia Lutucuta" />
+                        </a>
+                        <div class="contents">
+                            <h5 class="member-role">Ministra da Saúde</h5>
+                            <a href="#" class="member-name">Silvia Lutucuta</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a class="image-popup-vertical-fit"
+                            href="{{ url('assets/user/images/gallery/popup/Leila Lopes Miss.jpg') }}"
+                            style="height: 350px !important"
+                            title="<h5>Leila Lopes</h5><p>Miss Universo 2011, referência da beleza angolana a nível internacional.</p>">
+                            <img src="{{ url('assets/user/images/gallery/Leila Lopes Miss.jpg') }}" alt="Leila Lopes" />
+                        </a>
+                        <div class="contents">
+                            <h5 class="member-role">Miss</h5>
+                            <a href="#" class="member-name">Leila Lopes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <a class="image-popup-vertical-fit"
+                            href="{{ url('assets/user/images/gallery/popup/Vera Daves Ministra das Financas.jpeg') }}"
+                            style="height: 350px !important"
+                            title="<h5>Vera Daves</h5><p>Ministra das Finanças de Angola, primeira mulher a assumir a pasta.</p>">
+                            <img src="{{ url('assets/user/images/gallery/Vera Daves Ministra das Financas.jpeg') }}"
+                                alt="Vera Daves" />
+                        </a>
+                        <div class="contents">
+                            <h5 class="member-role">Ministra das Finanças</h5>
+                            <a href="#" class="member-name">Vera Daves</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-6 mx-auto">
+                    <a class="view-more-news" href="{{ route('site.news.profile') }}">
+                        Ver Mais<i class="far fa-long-arrow-right"></i>
+                    </a>
+                </div>
             </div>
 
-            <!--================= Read Section End Here =================-->
         </div>
     </div>
-    <!--================= Featured video Section End Here =================-->
+    <!--================= Gallery Section End Here =================-->
 
         </div>
     </div>
