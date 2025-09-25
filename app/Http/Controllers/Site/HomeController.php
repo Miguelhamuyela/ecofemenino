@@ -5,13 +5,10 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Car;
-<<<<<<< HEAD
-use App\Models\Video;
 use App\Models\Galery;
-=======
+use App\Models\Video;
 use App\Models\News;
 
->>>>>>> 93c55879d6e2adef074bd27a75999e6d4f4893cc
 class HomeController extends Controller
 {
 

@@ -2,7 +2,7 @@
 @section('title', 'EcoFeminino - Multimídia')
 @section('content')
 
-<!-- Adicione o CSS e JS do Magnific Popup (se não estiver no layout) -->
+<!-- Adicione o CSS e JS do Magnific Popup (mova para site.layout.main se possível) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
@@ -213,8 +213,8 @@
         color: #666;
     }
     .swiper-slide {
-        width: auto !important; /* Permite que os slides tenham largura dinâmica */
-        margin-right: 20px; /* Espaço entre itens */
+        width: auto !important;
+        margin-right: 20px;
     }
     .video-thumbnail {
         position: relative;
@@ -228,14 +228,16 @@
     // Inicializar Swiper para cada seção
     document.querySelectorAll('.rts-cmmnSlider').forEach(function(slider) {
         new Swiper(slider, {
-            loop: false, // Desativa o loop para evitar duplicação
+            loop: false, // Desativa loop para evitar duplicação
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false,
             },
-            slidesPerView: 'auto', // Mostra todos os itens sem forçar número fixo
+            slidesPerView: 'auto', // Mostra itens lado a lado
             spaceBetween: 20,
             speed: 1000,
+            allowTouchMove: true, // Permite interação manual
+            disableOnInteraction: false,
         });
     });
 
@@ -244,16 +246,25 @@
         $('.image-popup').magnificPopup({
             type: 'image',
             gallery: {
-                enabled: true // Permite navegação entre imagens
+                enabled: true // Navegação entre imagens
             },
             titleSrc: function(item) {
                 return item.el.attr('title') + '<div class="mfp-description">' + item.el.data('description') + '</div>';
+            },
+            callbacks: {
+                open: function() {
+                    console.log('Magnific Popup opened');
+                },
+                error: function() {
+                    console.log('Error opening Magnific Popup');
+                }
             }
         });
 
-        // Garantir que cliques nos links de vídeo/podcast não sejam bloqueados pelo Swiper
+        // Garantir cliques em vídeos/podcasts
         $('.video-link, .podcast-link').on('click', function(e) {
             e.preventDefault();
+            e.stopPropagation(); // Impede o Swiper de bloquear o clique
             window.open($(this).attr('href'), '_blank');
         });
     });
