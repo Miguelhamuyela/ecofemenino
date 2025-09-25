@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Car;
+use App\Models\News;
 
 class HomeController extends Controller
 {
@@ -69,7 +70,24 @@ class HomeController extends Controller
     public function youth()
     {
         // Envia para a view
-        return view('site.youth.index');
+        $newsEducation = News::whereHas('category', function ($query){
+            $query->where('name', ['Educação']);
+        })->get();
+        $newsSport = News::whereHas('category', function ($query){
+            $query->where('name', ['Desporto']);
+        })->get();
+        $newsTech = News::whereHas('category', function ($query){
+            $query->where('name', ['Tecnologia']);
+        })->get();
+        $newsbusiness = News::whereHas('category', function ($query){
+            $query->where('name', ['Empreendedorismo']);
+        })->get();
+        return view('site.youth.index', compact(
+            'newsEducation',
+            'newsSport',
+            'newsTech',
+            'newsbusiness',
+        ));
     }
 }
 
