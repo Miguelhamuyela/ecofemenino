@@ -21,22 +21,30 @@ class GaleryController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-        ]);
+{
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'description' => 'nullable|string',
+    ]);
 
-        $path = $request->file('image')->store('public/images/galery');
-        Galery::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'image' => basename($path),
-        ]);
-
-        return redirect()->route('admin.galery.index')->with('success', 'Imagem criada com sucesso.');
+    // Criar a pasta se não existir
+    $directory = storage_path('app/public/images/galery');
+    if (!file_exists($directory)) {
+        mkdir($directory, 0755, true);
     }
+
+    $imageName = time() . '.' . $request->image->extension();
+    $request->image->storeAs('public/images/galery', $imageName);
+
+    Galery::create([
+        'title' => $request->title,
+        'image' => $imageName,
+        'description' => $request->description,
+    ]);
+
+    return redirect()->route('admin.galery.index')->with('success', 'Imagem cadastrada com sucesso!');
+}
 
     public function edit(Galery $galery)
     {

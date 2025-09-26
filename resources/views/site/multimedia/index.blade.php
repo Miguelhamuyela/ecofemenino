@@ -2,7 +2,7 @@
 @section('title', 'EcoFeminino - Multimídia')
 @section('content')
 
-<!-- Adicione o CSS e JS do Magnific Popup (se não estiver no layout) -->
+<!-- Magnific Popup CSS/JS (mova para layout.main se possível) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
@@ -32,7 +32,8 @@
                                            data-description="{{ $image->description ?? 'Sem descrição' }}">
                                             <img src="{{ asset('storage/images/galery/' . $image->image) }}"
                                                  alt="{{ $image->title }}"
-                                                 style="max-height: 200px; object-fit: cover;">
+                                                 style="max-height: 200px; object-fit: cover;"
+                                                 onerror="this.src='https://via.placeholder.com/200?text=Imagem+Quebrada';">
                                         </a>
                                         <div class="video-tags-area">
                                             <a href="#0" class="video-tag red-tag">Sociedade</a>
@@ -84,7 +85,6 @@
                                 <div class="featured-video-card">
                                     <div class="video-thumbnail">
                                         @php
-                                            // Extrair ID do vídeo do YouTube
                                             $videoId = '';
                                             if (preg_match('/v=([^&]+)/', $video->url, $matches)) {
                                                 $videoId = $matches[1];
@@ -96,13 +96,15 @@
                                             <a href="{{ $video->url }}" target="_blank" class="video-link">
                                                 <img src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
                                                      alt="{{ $video->title }}"
-                                                     style="max-height: 200px; object-fit: cover;">
+                                                     style="max-height: 200px; object-fit: cover;"
+                                                     onerror="this.src='https://via.placeholder.com/320x180?text=Vídeo+Quebrado';">
                                             </a>
                                         @else
                                             <a href="{{ $video->url }}" target="_blank" class="video-link">
                                                 <img src="https://via.placeholder.com/320x180?text=Vídeo"
                                                      alt="Vídeo sem thumbnail"
-                                                     style="max-height: 200px; object-fit: cover;">
+                                                     style="max-height: 200px; object-fit: cover;"
+                                                     onerror="this.src='https://via.placeholder.com/320x180?text=Vídeo+Quebrado';">
                                             </a>
                                         @endif
                                         <div class="video-tags-area">
@@ -158,7 +160,8 @@
                                         <a href="{{ $podcast->url }}" target="_blank" class="podcast-link">
                                             <img src="https://via.placeholder.com/320x180?text=Podcast"
                                                  alt="{{ $podcast->title }}"
-                                                 style="max-height: 200px; object-fit: cover;">
+                                                 style="max-height: 200px; object-fit: cover;"
+                                                 onerror="this.src='https://via.placeholder.com/320x180?text=Podcast+Quebrado';">
                                         </a>
                                         <audio controls style="width: 100%;">
                                             <source src="{{ $podcast->url }}" type="audio/mpeg">
@@ -213,8 +216,8 @@
         color: #666;
     }
     .swiper-slide {
-        width: auto !important; /* Permite que os slides tenham largura dinâmica */
-        margin-right: 20px; /* Espaço entre itens */
+        width: auto !important;
+        margin-right: 20px;
     }
     .video-thumbnail {
         position: relative;
@@ -228,14 +231,15 @@
     // Inicializar Swiper para cada seção
     document.querySelectorAll('.rts-cmmnSlider').forEach(function(slider) {
         new Swiper(slider, {
-            loop: false, // Desativa o loop para evitar duplicação
+            loop: false,
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false,
             },
-            slidesPerView: 'auto', // Mostra todos os itens sem forçar número fixo
+            slidesPerView: 'auto',
             spaceBetween: 20,
             speed: 1000,
+            allowTouchMove: true,
         });
     });
 
@@ -244,16 +248,17 @@
         $('.image-popup').magnificPopup({
             type: 'image',
             gallery: {
-                enabled: true // Permite navegação entre imagens
+                enabled: true
             },
             titleSrc: function(item) {
                 return item.el.attr('title') + '<div class="mfp-description">' + item.el.data('description') + '</div>';
             }
         });
 
-        // Garantir que cliques nos links de vídeo/podcast não sejam bloqueados pelo Swiper
+        // Garantir cliques em vídeos/podcasts
         $('.video-link, .podcast-link').on('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
             window.open($(this).attr('href'), '_blank');
         });
     });
