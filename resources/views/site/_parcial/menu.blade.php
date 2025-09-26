@@ -15,7 +15,7 @@
                             {{-- <li class="dropdown"><a class="menu-item item-2"
                                     href="{{ route('site.about') }}">Sobre Nós</a></li> --}}
                             <li class="dropdown"><a class="menu-item item-2"
-                                    href="{{ route('site.multimedia') }}">Multimídia<i
+                                    href="{{ route('site.multimedia') }}">Videos e Podcasts<i
                                         class="fas fa-chevron-down"></i></a>
                                 <ul class="dropdown-sub">
                                     {{-- <li class="flyout-right1 flyout"><a class="flyout-link-1"
