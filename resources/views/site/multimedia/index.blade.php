@@ -158,12 +158,29 @@
                             <div class="swiper-slide">
                                 <div class="featured-video-card">
                                     <div class="video-thumbnail">
-                                        <a href="{{ $podcast->url }}" target="_blank" class="podcast-link">
-                                            <img src="https://via.placeholder.com/320x180?text=Podcast"
-                                                 alt="{{ $podcast->title }}"
-                                                 style="max-height: 200px; object-fit: cover;"
-                                                 onerror="this.src='https://via.placeholder.com/320x180?text=Podcast+Quebrado';">
-                                        </a>
+                                        @php
+                                            $podcastId = '';
+                                            if (preg_match('/v=([^&]+)/', $podcast->url, $matches)) {
+                                                $podcastId = $matches[1];
+                                            } elseif (preg_match('/youtu\.be\/([^?]+)/', $podcast->url, $matches)) {
+                                                $podcastId = $matches[1];
+                                            }
+                                        @endphp
+                                        @if ($podcastId)
+                                            <a href="{{ $podcast->url }}" target="_blank" class="podcast-link">
+                                                <img src="https://img.youtube.com/vi/{{ $podcastId }}/hqdefault.jpg"
+                                                     alt="{{ $podcast->title }}"
+                                                     style="max-height: 200px; object-fit: cover;"
+                                                     onerror="this.src='https://via.placeholder.com/320x180?text=Podcast+Quebrado';">
+                                            </a>
+                                        @else
+                                            <a href="{{ $podcast->url }}" target="_blank" class="podcast-link">
+                                                <img src="https://via.placeholder.com/320x180?text=Podcast"
+                                                     alt="{{ $podcast->title }}"
+                                                     style="max-height: 200px; object-fit: cover;"
+                                                     onerror="this.src='https://via.placeholder.com/320x180?text=Podcast+Quebrado';">
+                                            </a>
+                                        @endif
                                         <audio controls style="width: 100%;">
                                             <source src="{{ $podcast->url }}" type="audio/mpeg">
                                             Seu navegador não suporta áudio.
