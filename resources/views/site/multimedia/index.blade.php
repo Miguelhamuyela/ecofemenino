@@ -97,20 +97,18 @@
                                             <a href="{{ $video->url }}" target="_blank" class="video-link">
                                                 <img src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
                                                      alt="{{ $video->title }}"
-                                                     style="width: 100%; height: 180px; object-fit: cover; object-position: center;"
+                                                     style="max-height: 200px; object-fit: cover;"
                                                      onerror="this.src='https://via.placeholder.com/320x180?text=Vídeo+Quebrado';">
                                             </a>
                                         @else
                                             <a href="{{ $video->url }}" target="_blank" class="video-link">
                                                 <img src="https://via.placeholder.com/320x180?text=Vídeo"
                                                      alt="Vídeo sem thumbnail"
-                                                     style="width: 100%; height: 180px; object-fit: cover; object-position: center;"
+                                                     style="max-height: 200px; object-fit: cover;"
                                                      onerror="this.src='https://via.placeholder.com/320x180?text=Vídeo+Quebrado';">
                                             </a>
                                         @endif
-                                        <div class="video-tags-area">
-                                            <a href="#0" class="video-tag red-tag">Sociedade</a>
-                                        </div>
+                                       
                                     </div>
                                     <div class="contents">
                                         <div class="post-info">
@@ -170,14 +168,14 @@
                                             <a href="{{ $podcast->url }}" target="_blank" class="podcast-link">
                                                 <img src="https://img.youtube.com/vi/{{ $podcastId }}/hqdefault.jpg"
                                                      alt="{{ $podcast->title }}"
-                                                     style="width: 100%; height: 180px; object-fit: cover; object-position: center;"
+                                                     style="max-height: 200px; object-fit: cover;"
                                                      onerror="this.src='https://via.placeholder.com/320x180?text=Podcast+Quebrado';">
                                             </a>
                                         @else
                                             <a href="{{ $podcast->url }}" target="_blank" class="podcast-link">
                                                 <img src="https://via.placeholder.com/320x180?text=Podcast"
                                                      alt="{{ $podcast->title }}"
-                                                     style="width: 100%; height: 180px; object-fit: cover; object-position: center;"
+                                                     style="max-height: 200px; object-fit: cover;"
                                                      onerror="this.src='https://via.placeholder.com/320x180?text=Podcast+Quebrado';">
                                             </a>
                                         @endif
@@ -185,9 +183,7 @@
                                             <source src="{{ $podcast->url }}" type="audio/mpeg">
                                             Seu navegador não suporta áudio.
                                         </audio>
-                                        <div class="video-tags-area">
-                                            <a href="#0" class="video-tag red-tag">Sociedade</a>
-                                        </div>
+                                       
                                     </div>
                                     <div class="contents">
                                         <div class="post-info">
@@ -239,13 +235,10 @@
     }
     .video-thumbnail {
         position: relative;
-        width: 100%;
-        max-width: 320px;
-        overflow: hidden;
     }
     .video-link, .podcast-link {
         display: block;
-        z-index: 1000;
+        z-index: 10;
     }
 </style>
 
@@ -269,14 +262,11 @@
     // Garantir cliques em vídeos/podcasts
     $(document).ready(function() {
         console.log('Inicializando jQuery');
-        $('.video-link, .podcast-link').off('click').on('click', function(e) {
+        $('.video-link, .podcast-link').on('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            var url = $(this).attr('href');
-            console.log('Link clicado:', url);
-            if (url) {
-                window.open(url, '_blank');
-            }
+            console.log('Link clicado:', $(this).attr('href'));
+            window.open($(this).attr('href'), '_blank');
         });
     });
 </script>
