@@ -95,16 +95,16 @@
                                         @endphp
                                         @if ($videoId)
                                             <a href="{{ $video->url }}" target="_blank" class="video-link">
-                                                <img src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                                <img src="https://img.youtube.com/vi/{{ $videoId }}/maxresdefault.jpg"
                                                      alt="{{ $video->title }}"
-                                                     style="max-height: 200px; object-fit: cover;"
+                                                     style="width: 100%; aspect-ratio: 16/9; object-fit: contain;"
                                                      onerror="this.src='https://via.placeholder.com/320x180?text=Vídeo+Quebrado';">
                                             </a>
                                         @else
                                             <a href="{{ $video->url }}" target="_blank" class="video-link">
                                                 <img src="https://via.placeholder.com/320x180?text=Vídeo"
                                                      alt="Vídeo sem thumbnail"
-                                                     style="max-height: 200px; object-fit: cover;"
+                                                     style="width: 100%; aspect-ratio: 16/9; object-fit: contain;"
                                                      onerror="this.src='https://via.placeholder.com/320x180?text=Vídeo+Quebrado';">
                                             </a>
                                         @endif
@@ -170,14 +170,14 @@
                                             <a href="{{ $podcast->url }}" target="_blank" class="podcast-link">
                                                 <img src="https://img.youtube.com/vi/{{ $podcastId }}/hqdefault.jpg"
                                                      alt="{{ $podcast->title }}"
-                                                     style="max-height: 200px; object-fit: cover;"
+                                                     style="width: 100%; aspect-ratio: 16/9; object-fit: contain;"
                                                      onerror="this.src='https://via.placeholder.com/320x180?text=Podcast+Quebrado';">
                                             </a>
                                         @else
                                             <a href="{{ $podcast->url }}" target="_blank" class="podcast-link">
                                                 <img src="https://via.placeholder.com/320x180?text=Podcast"
                                                      alt="{{ $podcast->title }}"
-                                                     style="max-height: 200px; object-fit: cover;"
+                                                     style="width: 100%; aspect-ratio: 16/9; object-fit: contain;"
                                                      onerror="this.src='https://via.placeholder.com/320x180?text=Podcast+Quebrado';">
                                             </a>
                                         @endif
@@ -239,6 +239,8 @@
     }
     .video-thumbnail {
         position: relative;
+        width: 100%;
+        max-width: 320px; /* Limita a largura máxima para consistência */
     }
     .video-link, .podcast-link {
         display: block;
