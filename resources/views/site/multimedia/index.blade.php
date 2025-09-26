@@ -95,16 +95,16 @@
                                         @endphp
                                         @if ($videoId)
                                             <a href="{{ $video->url }}" target="_blank" class="video-link">
-                                                <img src="https://img.youtube.com/vi/{{ $videoId }}/maxresdefault.jpg"
+                                                <img src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
                                                      alt="{{ $video->title }}"
-                                                     style="width: 100%; aspect-ratio: 16/9; object-fit: contain;"
+                                                     style="width: 100%; height: 180px; object-fit: cover; object-position: center;"
                                                      onerror="this.src='https://via.placeholder.com/320x180?text=Vídeo+Quebrado';">
                                             </a>
                                         @else
                                             <a href="{{ $video->url }}" target="_blank" class="video-link">
                                                 <img src="https://via.placeholder.com/320x180?text=Vídeo"
                                                      alt="Vídeo sem thumbnail"
-                                                     style="width: 100%; aspect-ratio: 16/9; object-fit: contain;"
+                                                     style="width: 100%; height: 180px; object-fit: cover; object-position: center;"
                                                      onerror="this.src='https://via.placeholder.com/320x180?text=Vídeo+Quebrado';">
                                             </a>
                                         @endif
@@ -170,14 +170,14 @@
                                             <a href="{{ $podcast->url }}" target="_blank" class="podcast-link">
                                                 <img src="https://img.youtube.com/vi/{{ $podcastId }}/hqdefault.jpg"
                                                      alt="{{ $podcast->title }}"
-                                                     style="width: 100%; aspect-ratio: 16/9; object-fit: contain;"
+                                                     style="width: 100%; height: 180px; object-fit: cover; object-position: center;"
                                                      onerror="this.src='https://via.placeholder.com/320x180?text=Podcast+Quebrado';">
                                             </a>
                                         @else
                                             <a href="{{ $podcast->url }}" target="_blank" class="podcast-link">
                                                 <img src="https://via.placeholder.com/320x180?text=Podcast"
                                                      alt="{{ $podcast->title }}"
-                                                     style="width: 100%; aspect-ratio: 16/9; object-fit: contain;"
+                                                     style="width: 100%; height: 180px; object-fit: cover; object-position: center;"
                                                      onerror="this.src='https://via.placeholder.com/320x180?text=Podcast+Quebrado';">
                                             </a>
                                         @endif
@@ -240,11 +240,12 @@
     .video-thumbnail {
         position: relative;
         width: 100%;
-        max-width: 320px; /* Limita a largura máxima para consistência */
+        max-width: 320px;
+        overflow: hidden;
     }
     .video-link, .podcast-link {
         display: block;
-        z-index: 10;
+        z-index: 1000;
     }
 </style>
 
@@ -268,11 +269,14 @@
     // Garantir cliques em vídeos/podcasts
     $(document).ready(function() {
         console.log('Inicializando jQuery');
-        $('.video-link, .podcast-link').on('click', function(e) {
+        $('.video-link, .podcast-link').off('click').on('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            console.log('Link clicado:', $(this).attr('href'));
-            window.open($(this).attr('href'), '_blank');
+            var url = $(this).attr('href');
+            console.log('Link clicado:', url);
+            if (url) {
+                window.open(url, '_blank');
+            }
         });
     });
 </script>
