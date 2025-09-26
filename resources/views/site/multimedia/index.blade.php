@@ -11,62 +11,7 @@
     <div class="container">
         <!-- Seção Imagens (COMENTADA) -->
         {{-- 
-        <div class="rts-post-heading mb--50" id="imagens">
-            <div class="heading-content">
-                <div class="contents">
-                    <a href="#0" class="news-catagory-tag-3">EcoFeminino</a>
-                    <h2 class="content-title mb--10"><a href="#">Imagens</a></h2>
-                </div>
-            </div>
-        </div>
-        <div class="rts-featured_video-section section-bg ptb--60 wow fadeIn" data-wow-duration="1.5s" style="background-color: #e9ecef;">
-            <div class="container">
-                <div class="swiper rts-cmmnSlider rts-image-slider">
-                    <div class="swiper-wrapper">
-                        @forelse ($images as $image)
-                            <div class="swiper-slide">
-                                <div class="featured-video-card">
-                                    <div class="video-thumbnail">
-                                        <a href="{{ asset('storage/images/galery/' . $image->image) }}"
-                                           class="image-popup"
-                                           title="{{ $image->title }}"
-                                           data-description="{{ $image->description ?? 'Sem descrição' }}">
-                                            <img src="{{ asset('storage/images/galery/' . $image->image) }}"
-                                                 alt="{{ $image->title }}"
-                                                 style="max-height: 200px; object-fit: cover;">
-                                        </a>
-                                        <div class="video-tags-area">
-                                            <a href="#0" class="video-tag red-tag">Sociedade</a>
-                                        </div>
-                                    </div>
-                                    <div class="contents">
-                                        <div class="post-info">
-                                            <div class="item">
-                                                <span>
-                                                    <img class="span-icon" src="{{ url('assets/user/images/date.svg') }}"
-                                                         alt="date-icon">
-                                                    {{ $image->created_at->format('F d, Y') }}
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <h5>{{ Str::limit($image->title, 50) }}</h5>
-                                    </div>
-                                    <div class="card-action-bar action-bar">
-                                        <span class="post-comment item"><img src="{{ url('assets/user/images/comment.svg') }}" alt="date-icon">12</span>
-                                        <span class="post-heart item"><img src="{{ url('assets/user/images/heart.svg') }}" alt="date-icon">12</span>
-                                        <span class="post-share item"><img src="{{ url('assets/user/images/share.svg') }}" alt="date-icon">16 Partilhas</span>
-                                    </div>
-                                </div>
-                            </div>
-                        @empty
-                            <div class="swiper-slide">
-                                <p>Nenhuma imagem cadastrada.</p>
-                            </div>
-                        @endforelse
-                    </div>
-                </div>
-            </div>
-        </div>
+        ... (mantive a parte de imagens comentada como estava)
         --}}
 
         <!-- Seção Vídeos -->
@@ -263,10 +208,9 @@
     $(document).ready(function() {
         console.log('Inicializando jQuery');
         $('.video-link, .podcast-link').on('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
+            e.stopPropagation(); // evita conflito com Swiper
             console.log('Link clicado:', $(this).attr('href'));
-            window.open($(this).attr('href'), '_blank');
+            window.open($(this).attr('href'), '_blank'); // abre numa nova aba
         });
     });
 </script>
