@@ -9,10 +9,6 @@
 
 <div class="rts-news-details-section section-gap-2" style="background-color: #e9ecef;">
     <div class="container">
-        <!-- Seção Imagens (COMENTADA) -->
-        {{-- 
-        ... (mantive a parte de imagens comentada como estava)
-        --}}
 
         <!-- Seção Vídeos -->
         <div class="rts-post-heading mb--50" id="videos">
@@ -53,7 +49,6 @@
                                                      onerror="this.src='https://via.placeholder.com/320x180?text=Vídeo+Quebrado';">
                                             </a>
                                         @endif
-                                       
                                     </div>
                                     <div class="contents">
                                         <div class="post-info">
@@ -128,7 +123,6 @@
                                             <source src="{{ $podcast->url }}" type="audio/mpeg">
                                             Seu navegador não suporta áudio.
                                         </audio>
-                                       
                                     </div>
                                     <div class="contents">
                                         <div class="post-info">
@@ -201,16 +195,22 @@
             spaceBetween: 20,
             speed: 1000,
             allowTouchMove: true,
+
+            // 🔑 permite que links dentro do slide funcionem
+            preventClicks: false,
+            preventClicksPropagation: false,
         });
     });
 
     // Garantir cliques em vídeos/podcasts
     $(document).ready(function() {
         console.log('Inicializando jQuery');
-        $('.video-link, .podcast-link').on('click', function(e) {
-            e.stopPropagation(); // evita conflito com Swiper
-            console.log('Link clicado:', $(this).attr('href'));
-            window.open($(this).attr('href'), '_blank'); // abre numa nova aba
+        $('.video-link, .podcast-link').off('click').on('click', function(e) {
+            e.stopPropagation(); // evita conflito com swipe
+            let url = $(this).attr('href');
+            console.log('Abrindo link:', url);
+            window.open(url, '_blank'); // abre numa nova aba
+            return false; // garante que o Swiper não bloqueie
         });
     });
 </script>
