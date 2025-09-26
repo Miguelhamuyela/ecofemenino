@@ -9,7 +9,8 @@
 
 <div class="rts-news-details-section section-gap-2" style="background-color: #e9ecef;">
     <div class="container">
-        <!-- Seção Imagens -->
+        <!-- Seção Imagens (COMENTADA) -->
+        {{-- 
         <div class="rts-post-heading mb--50" id="imagens">
             <div class="heading-content">
                 <div class="contents">
@@ -66,6 +67,7 @@
                 </div>
             </div>
         </div>
+        --}}
 
         <!-- Seção Vídeos -->
         <div class="rts-post-heading mb--50" id="videos">
@@ -84,7 +86,6 @@
                                 <div class="featured-video-card">
                                     <div class="video-thumbnail">
                                         @php
-                                            // Extrair ID do vídeo do YouTube
                                             $videoId = '';
                                             if (preg_match('/v=([^&]+)/', $video->url, $matches)) {
                                                 $videoId = $matches[1];
@@ -96,13 +97,15 @@
                                             <a href="{{ $video->url }}" target="_blank" class="video-link">
                                                 <img src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
                                                      alt="{{ $video->title }}"
-                                                     style="max-height: 200px; object-fit: cover;">
+                                                     style="max-height: 200px; object-fit: cover;"
+                                                     onerror="this.src='https://via.placeholder.com/320x180?text=Vídeo+Quebrado';">
                                             </a>
                                         @else
                                             <a href="{{ $video->url }}" target="_blank" class="video-link">
                                                 <img src="https://via.placeholder.com/320x180?text=Vídeo"
                                                      alt="Vídeo sem thumbnail"
-                                                     style="max-height: 200px; object-fit: cover;">
+                                                     style="max-height: 200px; object-fit: cover;"
+                                                     onerror="this.src='https://via.placeholder.com/320x180?text=Vídeo+Quebrado';">
                                             </a>
                                         @endif
                                         <div class="video-tags-area">
@@ -158,7 +161,8 @@
                                         <a href="{{ $podcast->url }}" target="_blank" class="podcast-link">
                                             <img src="https://via.placeholder.com/320x180?text=Podcast"
                                                  alt="{{ $podcast->title }}"
-                                                 style="max-height: 200px; object-fit: cover;">
+                                                 style="max-height: 200px; object-fit: cover;"
+                                                 onerror="this.src='https://via.placeholder.com/320x180?text=Podcast+Quebrado';">
                                         </a>
                                         <audio controls style="width: 100%;">
                                             <source src="{{ $podcast->url }}" type="audio/mpeg">
@@ -213,47 +217,42 @@
         color: #666;
     }
     .swiper-slide {
-        width: auto !important; /* Permite que os slides tenham largura dinâmica */
-        margin-right: 20px; /* Espaço entre itens */
+        width: auto !important;
+        margin-right: 20px;
     }
     .video-thumbnail {
         position: relative;
     }
-    .video-link, .podcast-link, .image-popup {
+    .video-link, .podcast-link {
         display: block;
+        z-index: 10;
     }
 </style>
 
 <script>
     // Inicializar Swiper para cada seção
     document.querySelectorAll('.rts-cmmnSlider').forEach(function(slider) {
+        console.log('Inicializando Swiper com', slider.querySelectorAll('.swiper-slide').length, 'slides');
         new Swiper(slider, {
-            loop: false, // Desativa o loop para evitar duplicação
+            loop: false,
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false,
             },
-            slidesPerView: 'auto', // Mostra todos os itens sem forçar número fixo
+            slidesPerView: 'auto',
             spaceBetween: 20,
             speed: 1000,
+            allowTouchMove: true,
         });
     });
 
-    // Inicializar Magnific Popup para imagens
+    // Garantir cliques em vídeos/podcasts
     $(document).ready(function() {
-        $('.image-popup').magnificPopup({
-            type: 'image',
-            gallery: {
-                enabled: true // Permite navegação entre imagens
-            },
-            titleSrc: function(item) {
-                return item.el.attr('title') + '<div class="mfp-description">' + item.el.data('description') + '</div>';
-            }
-        });
-
-        // Garantir que cliques nos links de vídeo/podcast não sejam bloqueados pelo Swiper
+        console.log('Inicializando jQuery');
         $('.video-link, .podcast-link').on('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
+            console.log('Link clicado:', $(this).attr('href'));
             window.open($(this).attr('href'), '_blank');
         });
     });
