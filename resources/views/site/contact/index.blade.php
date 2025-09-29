@@ -41,31 +41,31 @@
                     <div class="office-information">
                         <h3 class="side-content-title2">Informações de Contato</h3>
                         <div class="email-info item-info">
-                            <div class="title-icon"><img src="{{url('assets/user/images/icons/email-icon.svg')}}" alt="title-icon">
-                            </div>
+                            <div class="icon1" alt="email-icon"></div>
+
                             <div class="infos">
                                 <span class="email-title info-title">Envie-nos um email para</span>
                                 <a href="mailto:info@sangbad.com" class="email-address info">geral@ecofeminino.ao</a>
                             </div>
                         </div>
                         <div class="sms-info item-info">
-                            <div class="title-icon"><img src="{{url('assets/user/images/icons/phone-icon.svg')}}" alt="title-icon">
-                            </div>
+                            <div class="icon2" alt="phone-icon"></div>
+
                             <div class="infos">
                                 <span class="sms-title info-title">Ligue para</span>
                                 <a href="tel:+60244763842" class="sms-number info">+244 222 447 638</a>
                             </div>
                         </div>
                         <div class="address-info item-info">
-                            <div class="title-icon"><img src="{{url('assets/user/images/icons/location-icon.svg')}}" alt="title-icon">
-                            </div>
+                            <div class="icon3" alt="location-icon"></div>
+
                             <div class="infos">
                                 <span class="address-title info-title">Endereço</span>
                                 <span class="sms-number info">Cidade Alta <br>
                                     Mutamba, Luanda</span>
                             </div>
                         </div>
-                        <a href="https://www.ecofeminino.ao/" class="site-link"><img src="{{url('assets/user/images/icons/web-icon.svg')}}" alt="">
+                        <a href="https://www.ecofeminino.ao/" class="site-link"><div class="icon4" alt="web-icon"></div>
                             https://ecofeminino.ao</a>
                         <div class="social-link-area">
                             <h4 class="social-title">Encontre-nos aqui:</h4>
@@ -98,5 +98,58 @@
         </div>
     </div>
     <!--================= Map Section End Here =================-->
+
+    <style>
+        .icon1 {
+            width: 24px;
+            height: 24px;
+            background-color: red;
+            /* cor que vai aplicar */
+            -webkit-mask: url("assets/user/images/icons/email-icon.svg") no-repeat center;
+            -webkit-mask-size: contain;
+            mask: url("assets/user/images/icons/email-icon.svg") no-repeat center;
+            mask-size: contain;
+            margin-right: 10px;
+        }
+
+        .icon2 {
+            width: 24px;
+            height: 24px;
+            background-color: red;
+            /* cor que vai aplicar */
+            -webkit-mask: url("assets/user/images/icons/phone-icon.svg") no-repeat center;
+            -webkit-mask-size: contain;
+            mask: url("assets/user/images/icons/phone-icon.svg") no-repeat center;
+            mask-size: contain;
+            margin-right: 10px;
+        }
+
+        .icon3 {
+            width: 24px;
+            height: 24px;
+            background-color: red;
+            /* cor que vai aplicar */
+            -webkit-mask: url("assets/user/images/icons/location-icon.svg") no-repeat center;
+            -webkit-mask-size: contain;
+            mask: url("assets/user/images/icons/location-icon.svg") no-repeat center;
+            mask-size: contain;
+            margin-right: 10px;
+        }
+
+        .icon4 {
+            width: 24px;
+            height: 24px;
+            background-color: red;
+            /* cor que vai aplicar */
+            -webkit-mask: url("assets/user/images/icons/web-icon.svg") no-repeat center;
+            -webkit-mask-size: contain;
+            mask: url("assets/user/images/icons/web-icon.svg") no-repeat center;
+            mask-size: contain;
+            margin-right: 10px;
+        }
+        .post-comment-btn{
+            background-color: red !important;
+        }
+    </style>
 
 @endsection

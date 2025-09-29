@@ -51,7 +51,7 @@ class HomeController extends Controller
         // Envia para a view
         return view('site.news.event.index');
     }
-    
+
     public function newsEventDetail()
     {
         // Envia para a view
@@ -66,27 +66,35 @@ class HomeController extends Controller
 
     public function multimedia()
     {
-        $images = Galery::latest()->get();
+
+        $images = Galery::orderBy('created_at', 'desc')->take(6)->get();
         $videos = Video::where('type', 'video')->latest()->get();
         $podcasts = Video::where('type', 'podcast')->latest()->get();
+
+        /* dd([
+            'images' => $images->count(),
+            'videos' => $videos->count(),
+            'podcasts' => $podcasts->count(),
+        ]); */
+
 
         return view('site.multimedia.index', compact('images', 'videos', 'podcasts'));
     }
 
-    
+
     public function youth()
     {
         // Envia para a view
-        $newsEducation = News::whereHas('category', function ($query){
+        $newsEducation = News::whereHas('category', function ($query) {
             $query->where('name', ['Educação']);
         })->get();
-        $newsSport = News::whereHas('category', function ($query){
+        $newsSport = News::whereHas('category', function ($query) {
             $query->where('name', ['Desporto']);
         })->get();
-        $newsTech = News::whereHas('category', function ($query){
+        $newsTech = News::whereHas('category', function ($query) {
             $query->where('name', ['Tecnologia']);
         })->get();
-        $newsbusiness = News::whereHas('category', function ($query){
+        $newsbusiness = News::whereHas('category', function ($query) {
             $query->where('name', ['Empreendedorismo']);
         })->get();
         return view('site.youth.index', compact(
@@ -96,7 +104,4 @@ class HomeController extends Controller
             'newsbusiness',
         ));
     }
-
-    
 }
-

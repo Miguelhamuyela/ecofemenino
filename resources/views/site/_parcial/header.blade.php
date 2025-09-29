@@ -1,8 +1,8 @@
-    <!--================= Preloader Section Start Here =================-->
+{{--     <!--================= Preloader Section Start Here =================-->
     <div id="rts__preloader">
         <div class="loader">Eco<span>Feminino</span></div>
     </div>
-    <!--================= Preloader End Here =================-->
+    <!--================= Preloader End Here =================--> --}}
 
     <!--================= Header Section Start Here =================-->
     <div class="anywere"></div>
