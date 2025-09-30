@@ -51,9 +51,9 @@
             </div>
             <div class="rts-gallery-section gallary-page-section pt--40 mb--40">
                 <div class="row">
-                    <div class="col-xl-4 col-md-4 col-sm-6">
-                        <div class="video-item">
-                            @foreach ($videos as $video)
+                    @foreach ($videos as $video)
+                        <div class="col-xl-4 col-md-4 col-sm-6 video-item">
+                            <div class="video-item">
                                 @if (strpos($video->url, 'youtube.com') !== false || strpos($video->url, 'youtu.be') !== false)
                                     @php
                                         // Extrair o ID do vídeo da URL
@@ -66,7 +66,7 @@
                                     @endphp
 
                                     @if ($video_id)
-                                        <iframe width="150%" height="400px"
+                                        <iframe
                                             src="https://www.youtube.com/embed/{{ $video_id }}" frameborder="0"
                                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>
@@ -79,9 +79,9 @@
                                         Seu navegador não suporta o elemento de vídeo.
                                     </video>
                                 @endif
-                            @endforeach
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
 
@@ -95,37 +95,50 @@
             </div>
             <div class="rts-gallery-section gallary-page-section pt--40 mb--40">
                 <div class="row">
-                    <div class="col-xl-4 col-md-4 col-sm-6">
-                        <div class="video-item">
-                            @foreach ($podcasts as $podcast)
-                                @if (strpos($podcast->url, 'youtube.com') !== false || strpos($podcast->url, 'youtu.be') !== false)
-                                    @php
-                                        // Extrair o ID do vídeo da URL
-                                        preg_match(
-                                            '/(?:youtube\.com\/(?:[^\/]+\/[^\/]+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/',
-                                            $podcast->url,
-                                            $matches,
-                                        );
-                                        $podcast_id = $matches[1] ?? null;
-                                    @endphp
+                    @foreach ($podcasts as $video)
+                        <div class="col-xl-4 col-md-4 col-sm-6 video-item">
+                            <div class="video-item">
+                                @php
+                                    $video_id = null;
+                                    $parts = parse_url($video->url);
 
-                                    @if ($podcast_id)
-                                        <iframe
-                                            src="https://www.youtube.com/embed/{{ $podcast_id }}" frameborder="0"
-                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen></iframe>
-                                    @else
-                                        <p class="text-danger">⚠️ Vídeo não encontrado.</p>
-                                    @endif
+                                    if (!empty($parts['host']) && str_contains($parts['host'], 'youtu.be')) {
+                                        // Caso: https://youtu.be/VIDEOID
+                                        $video_id = ltrim($parts['path'], '/');
+                                    } elseif (!empty($parts['query'])) {
+                                        // Caso: https://www.youtube.com/watch?v=VIDEOID
+                                        parse_str($parts['query'], $query);
+                                        $video_id = $query['v'] ?? null;
+                                    } elseif (
+                                        !empty($parts['path']) &&
+                                        preg_match('/\/embed\/([a-zA-Z0-9_-]{11})/', $parts['path'], $m)
+                                    ) {
+                                        // Caso: https://www.youtube.com/embed/VIDEOID
+                                        $video_id = $m[1];
+                                    } elseif (
+                                        !empty($parts['path']) &&
+                                        preg_match('/\/live\/([a-zA-Z0-9_-]{11})/', $parts['path'], $m)
+                                    ) {
+                                        // Caso: https://www.youtube.com/live/VIDEOID
+                                        $video_id = $m[1];
+                                    }
+                                @endphp
+
+                                @if ($video_id)
+                                    <iframe
+                                        src="https://www.youtube.com/embed/{{ $video_id }}" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
                                 @else
-                                    <video controls>
-                                        <source src="{{ $podcast->url }}" type="video/mp4">
-                                        Seu navegador não suporta o elemento de vídeo.
-                                    </video>
+                                    {{-- Fallback: mostra link para abrir no YouTube --}}
+                                    <p class="text-warning">
+                                        ⚠️ Este vídeo não pode ser incorporado.
+                                        <a href="{{ $video->url }}" target="_blank">Abrir no YouTube</a>
+                                    </p>
                                 @endif
-                            @endforeach
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

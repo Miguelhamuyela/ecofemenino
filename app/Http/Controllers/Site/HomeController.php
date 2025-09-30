@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Model\Car;
 use App\Models\Galery;
 use App\Models\Video;
 use App\Models\News;
@@ -14,8 +12,18 @@ class HomeController extends Controller
 
     public function index()
     {
+        $newsTrending = News::where('status', 'published')
+            ->where('detach', 'destaque')
+            ->whereHas('category', function ($query) {
+                $query->where('name', 'Política');
+            })
+            ->orderByDesc('id')
+            ->take(1)
+            ->get();
+        $newsTrending2 = News::where('status', 'published')->orderByDesc('id')->take(2)->get();
+        $videos = Video::where('type', 'video')->latest()->get();
         // Envia para a view
-        return view('site.home.index');
+        return view('site.home.index', compact('newsTrending', 'newsTrending2', 'videos'));
     }
 
     public function contact()
@@ -62,46 +70,5 @@ class HomeController extends Controller
     {
         // Envia para a view
         return view('site.news.article.index');
-    }
-
-    public function multimedia()
-    {
-
-        $images = Galery::orderBy('created_at', 'desc')->take(6)->get();
-        $videos = Video::where('type', 'video')->latest()->get();
-        $podcasts = Video::where('type', 'podcast')->latest()->get();
-
-        /* dd([
-            'images' => $images->count(),
-            'videos' => $videos->count(),
-            'podcasts' => $podcasts->count(),
-        ]); */
-
-
-        return view('site.multimedia.index', compact('images', 'videos', 'podcasts'));
-    }
-
-
-    public function youth()
-    {
-        // Envia para a view
-        $newsEducation = News::whereHas('category', function ($query) {
-            $query->where('name', ['Educação']);
-        })->get();
-        $newsSport = News::whereHas('category', function ($query) {
-            $query->where('name', ['Desporto']);
-        })->get();
-        $newsTech = News::whereHas('category', function ($query) {
-            $query->where('name', ['Tecnologia']);
-        })->get();
-        $newsbusiness = News::whereHas('category', function ($query) {
-            $query->where('name', ['Empreendedorismo']);
-        })->get();
-        return view('site.youth.index', compact(
-            'newsEducation',
-            'newsSport',
-            'newsTech',
-            'newsbusiness',
-        ));
     }
 }

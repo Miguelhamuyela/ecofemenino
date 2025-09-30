@@ -10,13 +10,19 @@
                         <div class="rts-menu rts-menu1 m-0">
                             <nav class="menus menu-toggle">
                                 <ul class="nav__menu">
-                                    <li class="dropdown"><a class="menu-item item-1 item-2 active"
-                                            href="{{ route('site.home') }}">Início</a></li>
+                                    <li class="dropdown">
+                                        <a class="menu-item item-1 item-2 {{ request()->routeIs('site.home') ? 'active' : '' }}"
+                                            href="{{ route('site.home') }}">
+                                            Início
+                                        </a>
+                                    </li>
                                     {{-- <li class="dropdown"><a class="menu-item item-2"
                                             href="{{ route('site.about') }}">Sobre Nós</a></li> --}}
-                                    <li class="dropdown"><a class="menu-item item-2"
-                                            href="{{ route('site.multimedia') }}">Multimídia<i
-                                                class="fas fa-chevron-down"></i></a>
+                                    <li class="dropdown"><a
+                                            class="menu-item item-2 {{ request()->routeIs('site.multimedia*') ? 'active' : '' }}"
+                                            href="{{ route('site.multimedia') }}">
+                                            Multimídia <i class="fas fa-chevron-down"></i>
+                                        </a>
                                         <ul class="dropdown-sub">
                                             <li class="flyout-right1 flyout"><a class="flyout-link-1"
                                                     href="{{ route('site.multimedia') }}#imagens">Imagens</a></li>
@@ -26,9 +32,11 @@
                                                     href="{{ route('site.multimedia') }}#podcasts">Podcasts</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a class="menu-item item-2"
-                                            href="{{ route('site.news.profile') }}">Atualidades<i
-                                                class="fas fa-chevron-down"></i></a>
+                                    <li class="dropdown"><a
+                                            class="menu-item item-2 {{ request()->routeIs('site.news.*') ? 'active' : '' }}"
+                                            href="{{ route('site.news.profile') }}">
+                                            Atualidades <i class="fas fa-chevron-down"></i>
+                                        </a>
                                         <ul class="dropdown-sub">
                                             <li class="flyout-right1 flyout"><a class="flyout-link-1"
                                                     href="{{ route('site.news.profile') }}">Perfil Inspirador</a></li>
@@ -64,22 +72,27 @@
                                                             href="{{ route('site.news.article') }}#editorial">Editorial</a>
                                                     </li>
                                                     <li class="flyout1 flyout2"><a class="flyout-sub-link1"
-                                                            href="{{ route('site.news.article') }}#debate-femenino">Debate Femenino</a>
+                                                            href="{{ route('site.news.article') }}#debate-femenino">Debate
+                                                            Femenino</a>
                                                     </li>
                                                     <li class="flyout1 flyout2"><a class="flyout-sub-link1"
-                                                            href="{{ route('site.news.article') }}#direitos-humanos">Direito Humanos e Género</a>
+                                                            href="{{ route('site.news.article') }}#direitos-humanos">Direito
+                                                            Humanos e Género</a>
                                                     </li>
                                                     <li class="flyout1 flyout2"><a class="flyout-sub-link1"
-                                                            href="{{ route('site.news.article') }}#coluna-internacional">Coluna Internacional</a>
+                                                            href="{{ route('site.news.article') }}#coluna-internacional">Coluna
+                                                            Internacional</a>
                                                     </li>
                                                 </ul>
                                             </li>
                                         </ul>
                                     </li>
 
-                                    <li class="dropdown"><a class="menu-item item-2"
-                                            href="{{ route('site.youth') }}">Juventude e
-                                            Liderança<i class="fas fa-chevron-down"></i></a>
+                                    <li class="dropdown"><a
+                                            class="menu-item item-2 {{ request()->routeIs('site.youth') ? 'active' : '' }}"
+                                            href="{{ route('site.youth') }}">
+                                            Juventude e Liderança <i class="fas fa-chevron-down"></i>
+                                        </a>
                                         <ul class="dropdown-sub">
                                             <li class="flyout1 flyout2"><a class="flyout-sub-link1"
                                                     href="{{ route('site.youth') }}#tecnologia">Tecnologia</a>
@@ -88,12 +101,13 @@
                                                     href="{{ route('site.youth') }}#educacao">Educação</a>
                                             </li>
                                             <li class="flyout1 flyout2"><a class="flyout-sub-link1"
-                                                    href="{{ route('site.youth') }}#empreendedorismo">Empreendedorismo Jovem</a>
+                                                    href="{{ route('site.youth') }}#empreendedorismo">Empreendedorismo
+                                                    Jovem</a>
                                             </li>
                                         </ul>
 
                                     </li>
-                                    <li><a class="menu-item item-2" href="{{ route('site.contact') }}">Contacto</a>
+                                    <li><a class="menu-item item-2 {{ request()->routeIs('site.contact') ? 'active' : ''}}"  href="{{ route('site.contact') }}">Contacto</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -151,7 +165,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a class="menu-item item-2" href="{{ route('site.news.profile') }}">Atualidades<i
+                    <li class="dropdown"><a class="menu-item item-2"
+                            href="{{ route('site.news.profile') }}">Atualidades<i
                                 class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-sub">
                             <li class="flyout-right1 flyout"><a class="flyout-link-1" href="author.html">Perfil

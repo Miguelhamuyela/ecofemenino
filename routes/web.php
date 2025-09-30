@@ -2,10 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Site\HomeController;
-use App\Http\Controllers\Admin\VideoController;
-use App\Http\Controllers\Admin\GaleryController;
- 
-
+use App\Http\Controllers\Site\MultimediaController;
+use App\Http\Controllers\Site\YouthController;
 
 
 /*-------------------------------------------------------
@@ -22,6 +20,6 @@ Route::get('/news/event', [HomeController::class, 'newsEvent'])->name('site.news
 /* {{-- This Route need id event --}} */
 Route::get('/news/event/detail', [HomeController::class, 'newsEventDetail'])->name('site.news.event.detail');
 Route::get('/news/article', [HomeController::class, 'newsArticle'])->name('site.news.article');
-Route::get('/multimedia', [HomeController::class, 'multimedia'])->name('site.multimedia');
-Route::get('/youth', [HomeController::class, 'youth'])->name('site.youth');
+Route::get('/multimedia', [MultimediaController::class, 'index'])->name('site.multimedia');
+Route::get('/youth', [YouthController::class, 'index'])->name('site.youth');
 

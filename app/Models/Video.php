@@ -11,4 +11,5 @@ class Video extends Model
     use SoftDeletes;
 
     protected $fillable = ['title', 'type', 'detach', 'description', 'url'];
+    
 }

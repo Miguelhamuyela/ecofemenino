@@ -207,7 +207,7 @@
     <div class="rts-trending-section section-gap-2 wow fadeIn" data-wow-duration="1.5s">
         <div class="container">
             <div class="news-topbar news-topbar-2">
-                <h2 class="section-title">Notícias em alta</h2>
+                <h2 class="section-title">Notícias em Alta</h2>
                 <div class="wide-border"></div>
                 <div class="filter-buttons">
                     <div class="filter-btn filter-navigation-btn active" data-show=".technology">Tecnologia</div>
@@ -217,66 +217,70 @@
                     <div class="filter-btn filter-navigation-btn" data-show=".technology">TI</div>
                 </div>
             </div>
+
+            {{-- Notícias em Alta --}}
             <div class="rts-post-area technology">
                 <div class="row">
-                    <div class="col-xl-8 col-lg-8">
-                        <div class="rts-main-post rts-post-2 rts-post-2-large rts-post-2-inside">
-                            <div class="post-picture">
-                                <a class="image-popup-vertical-fit" href="assets/user/images/oma-2.webp"
-                                    title="<h5>OMA</h5><p>A Organização da Mulher Angolana (OMA) convocou o seu 8.º Congresso Ordinário em Luanda.</p>">
-                                    <img src="assets/user/images/oma-2.webp" alt="main-post-image">
-                                </a>
-                            </div>
-                            <div class="contents">
-                                <a href="#0" class="news-catagory-tag-2">Política</a>
-                                <div class="post-title">
-                                    <a href="news-details.html">A Organização da Mulher Angolana (OMA) anunciou hoje, em
-                                        Luanda, a convocação do seu 8.º Congresso Ordinário.</a>
-                                </div>
-                                <div class="post-bottom-info">
-                                    <a href="author.html" class="post-author item">
-                                        <img src="assets/user/images/user.svg" alt="user-icon">Ashley Graham
+                    @foreach($newsTrending as $new)
+                        <div class="col-xl-8 col-lg-8">
+                            <div class="rts-main-post rts-post-2 rts-post-2-large rts-post-2-inside">
+                                <div class="post-picture">
+                                    <a class="image-popup-vertical-fit" href="assets/user/images/oma-2.webp"
+                                        title="<h5>OMA</h5><p>A Organização da Mulher Angolana (OMA) convocou o seu 8.º Congresso Ordinário em Luanda.</p>">
+                                        <img src="{{ url('img/news/' . $new->image) }}" alt="main-post-image">
                                     </a>
-                                    <span class="post-date item">
-                                        <img src="assets/user/images/date.svg" alt="date-icon">16 Janeiro, 2025
-                                    </span>
-                                    <span class="post-date item">
-                                        <img src="assets/user/images/share.svg" alt="date-icon">16 Partilhas
-                                    </span>
+                                </div>
+                                <div class="contents">
+                                    <a href="#0" class="news-catagory-tag-2">{{ $new->category->name }}</a>
+                                    <div class="post-title">
+                                        <a href="news-details.html">{{ $new->title }}</a>
+                                    </div>
+                                    <div class="post-bottom-info">
+                                        {{-- <a href="author.html" class="post-author item">
+                                            <img src="assets/user/images/user.svg" alt="user-icon">{{ $new->autor->name }}
+                                        </a> --}}
+                                        <span class="post-date item">
+                                            <img src="assets/user/images/date.svg" alt="date-icon">{{ $new->created_at->format('d M, Y') }}
+                                        </span>
+                                        <span class="post-date item">
+                                            <img src="assets/user/images/share.svg" alt="date-icon">16 Partilhas
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+                    @endforeach
+                    {{-- Destaques --}}
                     <div class="col-xl-4 col-lg-4 col-sm-12">
                         <div class="row">
+                            @foreach($newsTrending2 as $new)
                             <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12">
                                 <div class="rts-post-2 rts-post-2-medium rts-post-2-inside mb--20">
-                                    <div class="post-picture">
+                                    <div class="post-picture" style="height: 15.3rem">
                                         <a class="image-popup-vertical-fit"
-                                            href="assets/user/images/trending/fititel.webp"
+                                            href="{{url('img/news/' . $new->image)}}"
                                             title="<h5>Estudantes do ITEL</h5><p>Apresentaram o seu projeto no Angotic, destacando inovação tecnológica.</p>">
-                                            <img src="assets/user/images/trending/fititel.webp" alt="main-post-image">
+                                            <img src="{{url('img/news/' . $new->image)}}" alt="main-post-image">
                                         </a>
                                     </div>
                                     <div class="contents">
-                                        <a href="#0" class="news-catagory-tag-2">Tecnologia</a>
+                                        <a href="#0" class="news-catagory-tag-2">{{ $new->category->name }}</a>
                                         <div class="post-title">
-                                            <a href="news-details.html">Estudantes do ITEL expõe seu Projeto no Angotic</a>
+                                            <a href="news-details.html">{{ $new->title }}</a>
                                         </div>
                                         <div class="post-bottom-info">
-                                            <a href="author.html" class="post-author item">
-                                                <img src="assets/user/images/user.svg" alt="user-icon">Penny Tool
-                                            </a>
+                                            {{-- <a href="author.html" class="post-author item">
+                                                <img src="assets/user/images/user.svg" alt="user-icon">{{ $new->autor->name }}
+                                            </a> --}}
                                             <span class="post-date item">
-                                                <img src="assets/user/images/date.svg" alt="date-icon">16 Janeiro, 2025
+                                                <img src="assets/user/images/date.svg" alt="date-icon">{{ $new->created_at->format('d M, Y') }}
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12">
+                            @endforeach
+                            {{-- <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12">
                                 <div class="rts-post-2 rts-post-2-medium rts-post-2-inside">
                                     <div class="post-picture">
                                         <a class="image-popup-vertical-fit"
@@ -301,7 +305,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -952,155 +956,38 @@
                     <div class="swiper-button-next navigation-btn"><i class="far fa-chevron-right"></i></div>
                 </div>
             </div>
-            <div class="swiper rts-cmmnSlider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="featured-video-card">
-                            <div class="video-thumbnail"><img src="{{ url('assets/user/images/trending/fititel.webp') }}"
-                                    alt="video-thumbnail">
-                                <div class="video-tags-area">
-                                    <a href="#0" class="video-tag red-tag">Fashion</a>
-                                    <a href="#0" class="video-tag red-tag">Fashion</a>
-                                </div>
-                            </div>
-                            <div class="play-btn play-video"><a class="popup-video"
-                                    href="https://www.youtube.com/watch?v=hQ41QrQE_iE"
-                                    data-effect="mfp-move-horizontal"><img
-                                        src="{{ url('assets/user/images/play-btn-2.svg') }}" alt="play-btn"></a></div>
+            <div class="rts-gallery-section gallary-page-section pt--40 mb--40">
+                <div class="row">
+                    @foreach ($videos as $video)
+                        <div class="col-xl-4 col-md-4 col-sm-6 video-item">
+                            <div class="video-item">
+                                @if (strpos($video->url, 'youtube.com') !== false || strpos($video->url, 'youtu.be') !== false)
+                                    @php
+                                        // Extrair o ID do vídeo da URL
+                                        preg_match(
+                                            '/(?:youtube\.com\/(?:[^\/]+\/[^\/]+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/',
+                                            $video->url,
+                                            $matches,
+                                        );
+                                        $video_id = $matches[1] ?? null;
+                                    @endphp
 
-                            <div class="contents">
-                                <div class="post-info">
-                                    <div class="item"><span><img class="span-icon"
-                                                src="{{ url('assets/user/images/date.svg') }}" alt="date-icon">June
-                                            16,
-                                            2024</span></div>
-                                </div>
-                                <a href="#0" class="card-title">The 3
-                                    Beauty Trends That Are Taking Over
-                                    London Right
-                                    Now.</a>
-                            </div>
-                            <div class="card-action-bar action-bar">
-                                <span class="post-comment item"><img src="{{ url('assets/user/images/comment.svg') }}"
-                                        alt="date-icon">12</span>
-                                <span class="post-heart item"><img src="{{ url('assets/user/images/heart.svg') }}"
-                                        alt="date-icon">12</span>
-                                <span class="post-share item"><img src="{{ url('assets/user/images/share.svg') }}"
-                                        alt="date-icon">16
-                                    Partilhas</span>
+                                    @if ($video_id)
+                                        <iframe src="https://www.youtube.com/embed/{{ $video_id }}" frameborder="0"
+                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                    @else
+                                        <p class="text-danger">⚠️ Vídeo não encontrado.</p>
+                                    @endif
+                                @else
+                                    <video width="150%" height="400px" controls>
+                                        <source src="{{ $video->url }}" type="video/mp4">
+                                        Seu navegador não suporta o elemento de vídeo.
+                                    </video>
+                                @endif
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="featured-video-card">
-                            <div class="video-thumbnail"><img
-                                    src="{{ url('assets/user/images/topics/transferir (2).jfif') }}"
-                                    alt="video-thumbnail">
-                                <div class="video-tags-area">
-                                    <a href="#0" class="video-tag red-tag">Fashion</a>
-                                    <a href="#0" class="video-tag red-tag">Life Style</a>
-                                </div>
-                            </div>
-                            <div class="play-btn play-video"><a class="popup-video"
-                                    href="https://www.youtube.com/watch?v=hQ41QrQE_iE"
-                                    data-effect="mfp-move-horizontal"><img
-                                        src="{{ url('assets/user/images/play-btn-2.svg') }}" alt="play-btn"></a></div>
-
-                            <div class="contents">
-                                <div class="post-info">
-                                    <div class="item"><span><img class="span-icon"
-                                                src="{{ url('assets/user/images/date.svg') }}" alt="date-icon">June
-                                            16,
-                                            2024</span></div>
-                                </div>
-                                <a href="#0" class="card-title">The body organism sustain growth and vital processes
-                                    and
-                                    to furnish energy.</a>
-                            </div>
-                            <div class="card-action-bar action-bar">
-                                <span class="post-comment item"><img src="{{ url('assets/user/images/comment.svg') }}"
-                                        alt="heart-icon">10</span>
-                                <span class="post-heart item"><img src="{{ url('assets/user/images/heart.svg') }}"
-                                        alt="share-icon">6</span>
-                                <span class="post-share item"><img src="{{ url('assets/user/images/share.svg') }}"
-                                        alt="date-icon">10
-                                    Partilhas</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="featured-video-card">
-                            <div class="video-thumbnail"><img
-                                    src="{{ url('assets/user/images/topics/transferir.jfif') }}" alt="video-thumbnail">
-                                <div class="video-tags-area">
-                                    <a href="#0" class="video-tag red-tag">Travel</a>
-                                    <a href="#0" class="video-tag red-tag">Fashion</a>
-                                </div>
-                            </div>
-                            <div class="play-btn play-video"><a class="popup-video"
-                                    href="https://www.youtube.com/watch?v=hQ41QrQE_iE"
-                                    data-effect="mfp-move-horizontal"><img
-                                        src="{{ url('assets/user/images/play-btn-2.svg') }}" alt="play-btn"></a></div>
-
-                            <div class="contents">
-                                <div class="post-info">
-                                    <div class="item"><span><img class="span-icon"
-                                                src="{{ url('assets/user/images/date.svg') }}" alt="date-icon">June
-                                            16,
-                                            2024</span></div>
-                                </div>
-                                <a href="#0" class="card-title">Travel agencies are a need of every country and a
-                                    medium
-                                    of traveling.</a>
-                            </div>
-                            <div class="card-action-bar action-bar">
-                                <span class="post-comment item"><img src="{{ url('assets/user/images/comment.svg') }}"
-                                        alt="date-icon">12</span>
-                                <span class="post-heart item"><img src="{{ url('assets/user/images/heart.svg') }}"
-                                        alt="date-icon">12</span>
-                                <span class="post-share item"><img src="{{ url('assets/user/images/share.svg') }}"
-                                        alt="date-icon">16
-                                    Partilhas</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="featured-video-card">
-                            <div class="video-thumbnail"><img
-                                    src="{{ url('assets/user/images/topics/transferir (1).jfif') }}"
-                                    alt="video-thumbnail">
-                                <div class="video-tags-area">
-                                    <a href="#0" class="video-tag red-tag">Animal</a>
-                                    <a href="#0" class="video-tag red-tag">Life History</a>
-                                </div>
-                            </div>
-                            <div class="play-btn play-video"><a class="popup-video"
-                                    href="https://www.youtube.com/watch?v=hQ41QrQE_iE"
-                                    data-effect="mfp-move-horizontal"><img
-                                        src="{{ url('assets/user/images/play-btn-2.svg') }}" alt="play-btn"></a></div>
-
-                            <div class="contents">
-                                <div class="post-info">
-                                    <div class="item"><span><img class="span-icon"
-                                                src="{{ url('assets/user/images/date.svg') }}" alt="date-icon">June
-                                            16,
-                                            2024</span></div>
-                                </div>
-                                <a href="#0" class="card-title">According to eyewitness elephants ran for higher
-                                    ground
-                                    ahead.</a>
-                            </div>
-                            <div class="card-action-bar action-bar">
-                                <span class="post-comment item"><img src="{{ url('assets/user/images/comment.svg') }}"
-                                        alt="date-icon">12</span>
-                                <span class="post-heart item"><img src="{{ url('assets/user/images/heart.svg') }}"
-                                        alt="date-icon">12</span>
-                                <span class="post-share item"><img src="{{ url('assets/user/images/share.svg') }}"
-                                        alt="date-icon">16
-                                    Partilhas</span>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -1219,8 +1106,7 @@
                             <div class="col-xl-12 col-md-12">
                                 <div class="rts-post-2 rts-post-2-wide">
                                     <div class="post-picture">
-                                        <a class="image-popup-vertical-fit"
-                                            href="assets/user/images/trending/bodiva.jfif"
+                                        <a class="image-popup-vertical-fit" href="assets/user/images/trending/bodiva.jfif"
                                             title="<h5>FILDA 2025</h5><p>Negociações na BODIVA atingem montantes record em Junho, movimentando 394 mil milhões de kwanzas.</p>">
                                             <img src="assets/user/images/trending/bodiva.jfif" alt="main-post-image">
                                         </a>
