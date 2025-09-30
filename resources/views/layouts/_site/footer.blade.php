@@ -1,69 +1,87 @@
-<!-- Footer start -->
-        <footer id="uc-footer" class="uc-footer panel uc-dark">
-            <div class="footer-outer py-4 lg:py-6 xl:py-9 bg-white dark:bg-gray-900">
-                <div class="container max-w-xl">
-                    <div class="footer-inner vstack gap-4 justify-center lg:fs-5 text-gray-900 dark:text-white">
-                        <div class="footer-logo text-center">
-                            <img class="uc-logo w-100px text-gray-900 dark:text-white" src="{{ url('site/assets/images/demo-eight/common/radar.png')}}" alt="News5" data-uc-svg>
+    <!--================= Footer Start Here =================-->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-sm-6">
+                        <div class="footer-widget">
+                            <div class="footer-logo"><img class="logo-default" src="{{url('assets/user/images/eco2.png')}}" alt="ecofemenino-logo">
+                                <img class="logo-dark" src="{{url('assets/user/images/eco2.png')}}"
+                                    alt="Barrons24-logo">
+                            </div>
+                            <p class="text">Quando um impressor desconhecido pegou,
+                                 para fazer um livro de amostras, ficou top.</p>
+                            <a href="sign-up.html" class="find-us">Nos encontre aqui <i
+                                    class="far fa-long-arrow-right"></i></a>
+                            <ul class="social-links">
+                                <li> <a href="#" class="platform platform-2"><i
+                                            class="fab fa-facebook-f"></i></a></li>
+                                <li> <a href="#" class="platform platform-2"><i class="fab fa-pinterest-p"></i></a>
+                                </li>
+                                <li><a href="#" class="platform platform-2"><i
+                                            class="fab fa-linkedin-in"></i></a></li>
+                                <li> <a href="#" class="platform platform-2"><i class="fab fa-vimeo-v"></i></a>
+                                </li>
+                            </ul>
                         </div>
-                        <nav class="footer-nav">
-                            <ul class="nav-x gap-2 lg:gap-3 justify-center text-center fw-medium">
-                                <li><a class="hover:text-opacity-70 dark:hover:text-white duration-150" href="#">Mundo</a></li>
-                                <li class="vr dark:border-gray-200"></li>
-                                <li><a class="hover:text-opacity-70 dark:hover:text-white duration-150" href="#">Tecnologias</a></li>
-                                <li class="vr dark:border-gray-200"></li>
-                                <li><a class="hover:text-opacity-70 dark:hover:text-white duration-150" href="#">Economia</a></li>
-                                <li class="vr dark:border-gray-200"></li>
-                                <li><a class="hover:text-opacity-70 dark:hover:text-white duration-150" href="#">Turismo</a></li>
-                                <li class="vr dark:border-gray-200"></li>
-                                <li><a class="hover:text-opacity-70 dark:hover:text-white duration-150" href="#">Podcast</a></li>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-6">
+                        <div class="footer-widget">
+                            <h3 class="footer-widget-title">Categorias</h3>
+                            <ul class="widget-items cata-widget">
+                                <li class="widget-list-item item-2"><a href="catagory-details.html">Moda</a></li>
+                                <li class="widget-list-item item-2"><a href="catagory-details.html">Tecnologia</a></li>
+                                <li class="widget-list-item item-2"><a href="catagory-details2.html">Cultura</a></li>
+                                <li class="widget-list-item item-2"><a href="catagory-details2.html">Música</a></li>
+                                <li class="widget-list-item item-2"><a href="catagory-details.html">Viagem</a></li>
+                                <li class="widget-list-item item-2"><a href="catagory-details2.html">Política</a></li>
+                                <li class="widget-list-item item-2"><a href="catagory-details.html">Gastronomia</a></li>
+                                <li class="widget-list-item item-2"><a href="catagory-details2.html">Saúde</a></li>
+                                <li class="widget-list-item item-2"><a href="catagory-details.html">Desporto</a></li>
                             </ul>
-                        </nav>
-                        <div class="footer-social hstack justify-center gap-2 lg:gap-3">
-                            <ul class="nav-x gap-2">
-                                <li>
-                                    <a class="hover:text-gray-900 dark:hover:text-white duration-150" href="#fb"><i class="icon icon-2 unicon-logo-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a class="hover:text-gray-900 dark:hover:text-white duration-150" href="#x"><i class="icon icon-2 unicon-logo-x-filled"></i></a>
-                                </li>
-                                <li>
-                                    <a class="hover:text-gray-900 dark:hover:text-white duration-150" href="#in"><i class="icon icon-2 unicon-logo-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a class="hover:text-gray-900 dark:hover:text-white duration-150" href="#yt"><i class="icon icon-2 unicon-logo-youtube"></i></a>
-                                </li>
-                            </ul>
-                            <div class="vr"></div>
-                            <div class="d-inline-block">
-                                <a href="#" class="hstack gap-1 text-none fw-medium">
-                                    <i class="icon icon-1 unicon-earth-filled"></i>
-                                    <span>English</span>
-                                    <span data-uc-drop-parent-icon=""></span>
-                                </a>
-                                <div class="p-2 bg-white dark:bg-gray-800 shadow-xs w-150px" data-uc-drop="mode: click; boundary: !.uc-footer-bottom; animation: uc-animation-slide-top-small; duration: 150;">
-                                    <ul class="nav-y gap-1 fw-medium items-end">
-                                        <li><a href="#en">English</a></li>
-                                        <li><a href="#ar">العربية</a></li>
-                                        <li><a href="#ch">中文</a></li>
-                                    </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-6">
+                        <h3 class="footer-widget-title">Entertainment</h3>
+                        <ul class="footer-widget">
+                            <li class="widget-list-item item-2"><a href="catagory-details2.html">Mundo dos Famoso</a></li>
+                            <li class="widget-list-item item-2"><a href="catagory-details.html">Filmes</a></li>
+                            <li class="widget-list-item item-2"><a href="catagory-details2.html">Música</a></li>
+                            <li class="widget-list-item item-2"><a href="catagory-details.html">TV</a></li>
+                            <li class="widget-list-item item-2"><a href="catagory-details2.html">Entretenimento</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-6">
+                        <div class="footer-widget">
+                            <h3 class="footer-widget-title">Publicações Recentes</h3>
+                            <div class="recent-post">
+                                <div class="picture"><a href="news-details.htm"><img src="{{url('assets/user/images/trending/tecno.jfif')}}"
+                                            alt="side-post-image"></a></div>
+                                <div class="content">
+                                    <div class="recent-post-title"><a href="#0">Atualmente tenho amado a tecnologia</a>
+                                    </div>
+                                    <a href="author.html" class="post-author item"><img class="span-icon"
+                                            src="{{url('assets/user/images/user.svg')}}" alt="user-icon">Ashley Graham</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="footer-copyright vstack sm:hstack justify-center items-center gap-1 lg:gap-2">
-                            <p>News5 © <script>
-                                document.write(
-                                    new Date().getFullYear()
-                                )
-                            </script>, All rights reserved.</p>
-                            <ul class="nav-x gap-2 fw-medium">
-                                <li><a class="uc-link text-underline hover:text-gray-900 dark:hover:text-white duration-150" href="page-privacy.html">Termos de Privacidade</a></li>
-                                <li><a class="uc-link text-underline hover:text-gray-900 dark:hover:text-white duration-150" href="page-terms.html">Termos e Condições</a></li>
-                            </ul>
+                            <div class="recent-post">
+                                <div class="picture"><a href="news-details.htm"><img src="{{url('assets/user/images/trending/transferir.jfif')}}"
+                                            alt="side-post-image"></a></div>
+                                <div class="content">
+                                    <div class="recent-post-title"><a href="#0">A educação tem tido fácil acesso</a>
+                                    </div>
+                                    <a href="author.html" class="post-author item"><img class="span-icon"
+                                            src="{{url('assets/user/images/user.svg')}}" alt="user-icon">Ashley Graham</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
-
-        <!-- Footer end -->
+            <div class="footer-bottom-area">
+                <span class="copyright">© 2024 All rights reserved <span class="separator">|</span> News and Magazine
+                    HTML.</span>
+            </div>
+        </div>
+    </div>
+    <!--================= Footer End Here =================-->

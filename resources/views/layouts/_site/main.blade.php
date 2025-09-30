@@ -1,125 +1,132 @@
 <!DOCTYPE html>
-<html lang="zxx" dir="ltr">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')</title>
-    <meta name="description"
-        content="News5 a clean, modern and pixel-perfect multipurpose blogging HTML5 website template.">
-    <meta name="keywords"
-        content="saas, saas template, site template, software, startup, digital product, html5, landing, marketing, bootstrap, uikit3, agency, ai, digital agency, it solutions, nodejs">
-    <link rel="canonical" href="https://unistudio.co/html/News5">
-    <meta name="theme-color" content="#2757fd">
+    <title>@yield('title', 'EcoFeminino')</title>
 
-    <!--! BEGIN: Favicon-->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ url('site/assets/images/demo-eight/common/radar.png') }}">
-    <!--! END: Favicon-->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" href="{{ url('assets/user/images/24..png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('assets/user/images/ecofem1.png') }}">
 
-    <!-- Open Graph Tags -->
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="News5">
-    <meta property="og:description"
-        content="Full-featured, professional-looking news, editorial and magazine website template.">
-    <meta property="og:url" content="https://unistudio.co/html/news5/">
-    <meta property="og:site_name" content="News5">
-    <meta property="og:image" content="https://unistudio.co/html/news5/assets/images/common/seo-image.jpg">
-    <meta property="og:image:width" content="1180">
-    <meta property="og:image:height" content="600">
-    <meta property="og:image:type" content="image/png">
-
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="News5">
-    <meta name="twitter:description"
-        content="Full-featured, professional-looking news, editorial and magazine website template.">
-    <meta name="twitter:image" content="https://unistudio.co/html/news5/assets/images/common/seo-image.jpg">
-
-    <link rel="canonical" href="https://unistudio.co/html/news5/">
-
-    <!-- preload head styles -->
-    <link rel="preload" href="{{ url('site/assets/css/unicons.min.css') }}" as="style">
-    <link rel="preload" href="{{ url('site/assets/css/swiper-bundle.min.css') }}" as="style">
-
-    <!-- preload footer scripts -->
-    <link rel="preload" href="{{ url('site/assets/js/libs/jquery.min.js') }}" as="script">
-    <link rel="preload" href="{{ url('site/assets/js/libs/scrollmagic.min.js') }}" as="script">
-    <link rel="preload" href="{{ url('site/assets/js/libs/swiper-bundle.min.js') }}" as="script">
-    <link rel="preload" href="{{ url('site/assets/js/libs/anime.min.js') }}" as="script">
-    <link rel="preload" href="{{ url('site/assets/js/helpers/data-attr-helper.js') }}" as="script">
-    <link rel="preload" href="{{ url('site/assets/js/helpers/swiper-helper.js') }}" as="script">
-    <link rel="preload" href="{{ url('site/assets/js/helpers/anime-helper.js') }}" as="script">
-    <link rel="preload" href="{{ url('site/assets/js/helpers/anime-helper-defined-timelines.js') }}" as="script">
-    <link rel="preload" href="{{ url('site/assets/js/uikit-components-bs.js') }}" as="script">
-    <link rel="preload" href="{{ url('site/assets/js/app.js') }}" as="script">
-
-    <!-- app head for bootstrap core -->
-    <script src="{{ url('site/assets/js/app-head-bs.js') }}"></script>
-
-    <!-- include uni-core components -->
-    <link rel="stylesheet" href="{{ url('site/assets/js/uni-core/css/uni-core.min.css') }}">
-
-    <!-- include styles -->
-    <link rel="stylesheet" href="{{ url('site/assets/css/unicons.min.css') }}">
-    <link rel="stylesheet" href="{{ url('site/assets/css/prettify.min.css') }}">
-    <link rel="stylesheet" href="{{ url('site/assets/css/swiper-bundle.min.css') }}">
-
-    <!-- include main style -->
-    <link rel="stylesheet" href="{{ url('site/assets/css/theme/demo-eight.min.css') }}">
-
-    <!-- include scripts -->
-    <script src="{{ url('site/assets/js/uni-core/js/uni-core-bundle.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ url('assets/user/css/bootstrap.min.css') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ url('assets/user/css/all.min.css') }}">
+    <!-- Animate -->
+    <link rel="stylesheet" href="{{ url('assets/user/css/animate.min.css') }}">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{{ url('assets/user/css/magnific-popup.css') }}">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="{{ url('assets/user/css/swiper.min.css') }}">
+    <!-- Menu -->
+    <link rel="stylesheet" href="{{ url('assets/user/css/metisMenu.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/user/css/rtsmenu.css') }}">
+    <!-- Main -->
+    <link rel="stylesheet" href="{{ url('assets/user/css/main.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/user/css/my_style.css') }}">
 </head>
 
-<body class="uni-body panel bg-slate-50 text-gray-900 dark:bg-black dark:text-white text-opacity-50 overflow-x-hidden">
+<body class="bg-1">
 
-    {{-- todos o componentes --}}
-    @include('layouts._site.searchModal')
-    @include('layouts._site.menuPanel')
-    @include('layouts._site.cartPanel')
-    @include('layouts._site.favoritesmodal')
-    @include('layouts._site.newsletterModal')
-    @include('layouts._site.accountModal')
-    @include('layouts._site.gdprModal')
-    @include('layouts._site.bottomActions')
     @include('layouts._site.header')
-    {{-- conteudo --}}
-
-    {{-- menu --}}
     @yield('content')
-
     @include('layouts._site.footer')
 
+    <!-- Scroll to Top -->
+    <div class="scroll-top-btn">
+        <i class="fas fa-angle-up arrow-up"></i>
+        <i class="fas fa-circle-notch"></i>
+    </div>
 
-    <!-- include jquery & bootstrap js -->
-    <script defer src="{{ url('site/assets/js/libs/jquery.min.js') }}"></script>
-    <script defer src="{{ url('site/assets/js/libs/bootstrap.min.js') }}"></script>
+    <!-- Scripts -->
+    <script src="{{ url('assets/user/js/vendors/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ url('assets/user/js/vendors/bootstrap.min.js') }}"></script>
+    <script src="{{ url('assets/user/js/vendors/wow.min.js') }}"></script>
+    <script src="{{ url('assets/user/js/vendors/swiper-bundle.min.js') }}"></script>
+    <script src="{{ url('assets/user/js/vendors/metisMenu.min.js') }}"></script>
+    <script src="{{ url('assets/user/js/vendors/rtsmenu.js') }}"></script>
+    <script src="{{ url('assets/user/js/vendors/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url('assets/user/js/main.js') }}"></script>
 
-    <!-- include scripts -->
-    <script defer src="{{ url('site/assets/js/libs/anime.min.js') }}"></script>
-    <script defer src="{{ url('site/assets/js/libs/swiper-bundle.min.js') }}"></script>
-    <script defer src="{{ url('site/assets/js/libs/scrollmagic.min.js') }}"></script>
-    <script defer src="{{ url('site/assets/js/helpers/data-attr-helper.js') }}"></script>
-    <script defer src="{{ url('site/assets/js/helpers/swiper-helper.js') }}"></script>
-    <script defer src="{{ url('site/assets/js/helpers/anime-helper.js') }}"></script>
-    <script defer src="{{ url('site/assets/js/helpers/anime-helper-defined-timelines.js') }}"></script>
-    <script defer src="{{ url('site/assets/js/uikit-components-bs.js') }}"></script>
-
-    <!-- include app script -->
-    <script defer src="{{ url('site/assets/js/app.js') }}"></script>
-
+    <!-- Inicialização única -->
     <script>
-        // Schema toggle via URL
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const getSchema = urlParams.get("schema");
-        if (getSchema === "dark") {
-            setDarkMode(1);
-        } else if (getSchema === "light") {
-            setDarkMode(0);
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1) Remove slides duplicados POR DATA-ID (antes de inicializar o Swiper)
+            document.querySelectorAll('.rts-cmmnSlider').forEach(function(slider) {
+                const seen = new Set();
+                // seleciona slides *originais* na wrapper
+                slider.querySelectorAll('.swiper-wrapper > .swiper-slide').forEach(function(slide) {
+                    // chave única: data-id (se existir) ou src da imagem
+                    const key = slide.getAttribute('data-id') || (slide.querySelector('img') ? slide
+                        .querySelector('img').src : null);
+                    if (key) {
+                        if (seen.has(key)) {
+                            slide.remove();
+                        } else {
+                            seen.add(key);
+                        }
+                    }
+                });
+            });
+
+            // 2) Inicializa Swiper apenas uma vez por elemento (evita reinit duplicado)
+            document.querySelectorAll('.rts-cmmnSlider').forEach(function(slider) {
+                // se já tiver um swiper associado, pula
+                if (slider.swiper) return;
+
+                // só inicializa se tiver ao menos 1 slide
+                const slideCount = slider.querySelectorAll('.swiper-slide').length;
+                if (slideCount === 0) return;
+
+                slider.swiper = new Swiper(slider, {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                    loop: false,
+                    autoplay: false,
+                    navigation: {
+                        nextEl: slider.querySelector('.swiper-button-next'),
+                        prevEl: slider.querySelector('.swiper-button-prev'),
+                    },
+                    breakpoints: {
+                        1200: {
+                            slidesPerView: 4
+                        },
+                        992: {
+                            slidesPerView: 3
+                        },
+                        768: {
+                            slidesPerView: 2
+                        },
+                        576: {
+                            slidesPerView: 1
+                        }
+                    }
+                });
+            });
+
+            // 3) Inicializa Magnific Popup uma vez
+            if (typeof jQuery !== 'undefined' && typeof jQuery.fn.magnificPopup !== 'undefined') {
+                jQuery('.rts-cmmnSlider').magnificPopup({
+                    delegate: 'a.image-popup',
+                    type: 'image',
+                    gallery: {
+                        enabled: true
+                    },
+                    mainClass: 'mfp-img-mobile mfp-with-zoom',
+                    image: {
+                        verticalFit: true,
+                        titleSrc: function(item) {
+                            return item.el ? item.el.attr('title') || '' : '';
+                        }
+                    }
+                });
+            }
+        });
     </script>
+
 </body>
 
 </html>

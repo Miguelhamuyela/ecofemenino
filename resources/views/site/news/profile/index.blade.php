@@ -1,4 +1,4 @@
-@extends('site.layout.main')
+@extends('layouts._site.main')
 @section('title', 'EcoFeminino - Perfil Inspirador')
 @section('content')
 
