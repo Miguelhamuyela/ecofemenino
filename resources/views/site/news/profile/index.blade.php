@@ -86,95 +86,21 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-xl-4 col-md-4 col-sm-6">
-                            <div class="gallery-item ">
-                                <a class="image-popup-vertical-fit image-m"
-                                    href="{{ url('assets/user/images/gallery/popup/auria.jpg') }}"
-                                    title="<h5>Auria Machado</h5><p>Conhecida como 'Rainha dos Porcos', personalidade marcante no cenário cultural.</p>">
-                                    <img src="{{ url('assets/user/images/gallery/auria.jpg') }}" alt="Auria Machado" />
-                                </a>
-                                <div class="contents">
-                                    <h5 class="member-role">Rainha dos Porcos</h5>
-                                    <a href="#" class="member-name">Auria Machado</a>
+                        @foreach ($newsProfile as $new)
+                            <div class="col-xl-4 col-md-4 col-sm-6">
+                                <div class="gallery-item ">
+                                    <a class="image-popup-vertical-fit image-m" href="{{ url('img/news/' . $new->image) }}"
+                                        title="<h5>{{ $new->subtitle }}</h5><p>{{ strip_tags($new->description) }}</p>">
+                                        <img src="{{ url('img/news/' . $new->image) }}" alt="Image_Perfil" />
+                                    </a>
+                                    <div class="contents">
+                                        <h5 class="member-role">{{ $new->title }}</h5>
+                                        <a href="#" class="member-name">{{ $new->subtitle }}</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-xl-4 col-md-4 col-sm-6">
-                            <div class="gallery-item ">
-                                <a class="image-popup-vertical-fit image-m"
-                                    href="{{ url('assets/user/images/gallery/popup/Ana Lemos Apresentadora..jpg') }}"
-                                    title="<h5>Ana Lemos</h5><p>Apresentadora reconhecida pela sua presença em programas televisivos.</p>">
-                                    <img src="{{ url('assets/user/images/gallery/Ana Lemos Apresentadora..jpg') }}"
-                                        alt="Ana Lemos" />
-                                </a>
-                                <div class="contents">
-                                    <h5 class="member-role">Apresentadora</h5>
-                                    <a href="#" class="member-name">Ana Lemos</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 col-md-4 col-sm-6">
-                            <div class="gallery-item ">
-                                <a class="image-popup-vertical-fit image-m"
-                                    href="{{ url('assets/user/images/gallery/popup/Yola Semedo Cantora.jpg') }}"
-                                    title="<h5>Yola Semedo</h5><p>Cantora angolana, ícone da música romântica e semba contemporâneo.</p>">
-                                    <img src="{{ url('assets/user/images/gallery/Yola Semedo Cantora.jpg') }}"
-                                        alt="Yola Semedo" />
-                                </a>
-                                <div class="contents">
-                                    <h5 class="member-role">Cantora</h5>
-                                    <a href="#" class="member-name">Yola Semedo</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 col-md-4 col-sm-6">
-                            <div class="gallery-item ">
-                                <a class="image-popup-vertical-fit image-m"
-                                    href="{{ url('assets/user/images/gallery/popup/Silvia Lutucuta Ministra da Saude.jpg') }}"
-                                    title="<h5>Silvia Lutucuta</h5><p>Ministra da Saúde de Angola desde 2017. Médica cardiologista e professora universitária.</p>">
-                                    <img src="{{ url('assets/user/images/gallery/Silvia Lutucuta Ministra da Saude.jpg') }}"
-                                        alt="Silvia Lutucuta" />
-                                </a>
-                                <div class="contents">
-                                    <h5 class="member-role">Ministra da Saúde</h5>
-                                    <a href="#" class="member-name">Silvia Lutucuta</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 col-md-4 col-sm-6">
-                            <div class="gallery-item ">
-                                <a class="image-popup-vertical-fit image-m"
-                                    href="{{ url('assets/user/images/gallery/popup/Leila Lopes Miss.jpg') }}"
-                                    title="<h5>Leila Lopes</h5><p>Miss Universo 2011, referência da beleza angolana a nível internacional.</p>">
-                                    <img src="{{ url('assets/user/images/gallery/Leila Lopes Miss.jpg') }}"
-                                        alt="Leila Lopes" />
-                                </a>
-                                <div class="contents">
-                                    <h5 class="member-role">Miss</h5>
-                                    <a href="#" class="member-name">Leila Lopes</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 col-md-4 col-sm-6">
-                            <div class="gallery-item ">
-                                <a class="image-popup-vertical-fit image-m"
-                                    href="{{ url('assets/user/images/gallery/popup/Vera Daves Ministra das Financas.jpeg') }}"
-                                    title="<h5>Vera Daves</h5><p>Ministra das Finanças de Angola, primeira mulher a assumir a pasta.</p>">
-                                    <img src="{{ url('assets/user/images/gallery/Vera Daves Ministra das Financas.jpeg') }}"
-                                        alt="Vera Daves" />
-                                </a>
-                                <div class="contents">
-                                    <h5 class="member-role">Ministra das Finanças</h5>
-                                    <a href="#" class="member-name">Vera Daves</a>
-                                </div>
-                            </div>
-                        </div>
-
+                        @endforeach
+                        
                         <div class="col-xl-6 mx-auto">
                             <a class="view-more-news" href="{{ route('site.news.profile') }}">
                                 Ver Mais<i class="far fa-long-arrow-right"></i>

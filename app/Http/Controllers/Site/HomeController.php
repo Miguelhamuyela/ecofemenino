@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
-use App\Models\Galery;
 use App\Models\Video;
 use App\Models\News;
 
@@ -12,6 +11,7 @@ class HomeController extends Controller
 
     public function index()
     {
+        
         $newsTrending = News::where('status', 'published')
             ->where('detach', 'destaque')
             ->whereHas('category', function ($query) {
@@ -22,9 +22,19 @@ class HomeController extends Controller
             ->get();
 
         $newsTrending2 = News::where('status', 'published')
+            ->where('detach', 'alta')
             ->orderByDesc('id')
             ->take(2)
             ->get();
+
+        $newsProfile = News::where('status', 'published')
+            ->whereHas('category', function ($query) {
+                $query->where('name', 'Perfil Inspirador'); // aqui não precisa array, pode ser string
+            })
+            ->orderBy('id') // ordena de forma crescente
+            ->take(3)
+            ->get();
+
 
         $newness = News::where('status', 'published')
             ->where('detach', 'novidade')
@@ -40,7 +50,6 @@ class HomeController extends Controller
 
         $videos = Video::where('type', 'video')->latest()->get();
         // Envia para a view
-        return view('site.home.index', compact('newsTrending', 'newsTrending2', 'newness', 'atualizations', 'videos'));
+        return view('site.home.index', compact('newsTrending', 'newsTrending2', 'newsProfile', 'newness', 'atualizations', 'videos'));
     }
-
 }

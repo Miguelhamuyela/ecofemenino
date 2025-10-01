@@ -37,6 +37,7 @@
              <option value="destaque">Destaque</option>
              <option value="novidade">Novidade</option>
              <option value="atualizacao">Atualização</option>
+             <option value="alta">Em Alta</option>
          </select>
      </div>
 

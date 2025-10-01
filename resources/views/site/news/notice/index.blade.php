@@ -2,7 +2,7 @@
 @section('title', 'Ecofemenino - Notícias')
 @section('content')
 
-    <!--================= Sports Section End Here =================-->
+    <!--================= Política Section End Here =================-->
     <div class="rts-sports-section section-gap-2" id="mulher-na-politica" style="background: #e9ecec;">
         <div class="container">
             <div class="site-map-area section-gap-0">
@@ -12,7 +12,8 @@
                     </div>
                 </div>
             </div>
-            <div class="sports-section-banner page-section-banner fashion-page-banner mb--70"
+
+            {{-- <div class="sports-section-banner page-section-banner fashion-page-banner mb--70"
                 style="background-image: url('{{ url('assets/user/images/profile/areaSocial.jpg') }}');">
                 <div class="overview-content">
                     <a href="#0" class="news-catagory-tag-2 highlight-bg">Política</a>
@@ -37,43 +38,45 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
+
             <div class="sports-posts-section">
                 <div class="row">
                     <div class="col-xl-9">
                         <div class="rts-post-area trendingnews">
                             <div class="row">
-                                <div class="col-xl-12 col-md-6">
-                                    <div class="rts-post-2 rts-post-2-wide mb--20">
-                                        <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('assets/user/images/profile/segurancaSocial.jpg') }}"
-                                                    alt="main-post-image"></a></div>
-                                        <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">Ministra da Administração
-                                                    Pública, Trabalho e Segurança Social</a></div>
-                                            <p>Teresa Rodrigues Dias. Filiação: Tomé Dias e de Maria Teresa Pires Rodrigues.
-                                                Data de nascimento: 4 de Fevereiro de 1965. Naturalidade: Província do
-                                                Namibe.</p>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html"
-                                                    class="post-author
+                                @foreach ($noticePolitic as $new)
+                                    <div class="col-xl-12 col-md-6 ">
+                                        <div class="rts-post-2 rts-post-2-wide mb--20">
+                                            <div class="post-picture atualization"><a href="news-details.html"><img
+                                                        src="{{ url('img/news/' . $new->image) }}"
+                                                        alt="main-post-image"></a></div>
+                                            <div class="contents">
+                                                <div class="post-title"><a href="news-details.html">{{ $new->title }}</a></div>
+                                                <p>{{ strip_tags($new->description) }}</p>
+                                                <div class="post-bottom-info">
+                                                    <a href="author.html"
+                                                        class="post-author
                                                                 item"><img
-                                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">By
-                                                    Jenny
-                                                    Wilson</a>
-                                                <span class="post-date item"><img
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">January
-                                                    16, 2024</span>
-                                                <span class="post-share item"><img
-                                                        src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
-                                                    Shares</span>
+                                                            src="{{ url('assets/user/images/user.svg') }}"
+                                                            alt="user-icon">By
+                                                        Jenny
+                                                        Wilson</a>
+                                                    <span class="post-date item"><img
+                                                            src="{{ url('assets/user/images/date.svg') }}"
+                                                            alt="date-icon">J{{ $new->created_at->format('d M, Y') }}</span>
+                                                    <span class="post-share item"><img
+                                                            src="{{ url('assets/user/images/share.svg') }}"
+                                                            alt="share-icon">16
+                                                        Shares</span>
+                                                </div>
+                                                <a href="#0" class="read-more-btn">Read more</a>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-12 col-md-6">
+                                @endforeach
+
+                                {{-- <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture" style="width: 70rem;"><a href="news-details.html"><img
                                                     src="{{ url('assets/user/images/profile/ambiente.jpg') }}"
@@ -126,16 +129,16 @@
                                                         alt="date-icon">January
                                                     16, 2024</span>
                                                 <span class="post-share item"><img
-                                                        src="{{ url('assets/user/images/share.svg') }}"
-                                                        alt="share-icon">16
+                                                        src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
                                             </div>
                                             <a href="#0" class="read-more-btn">Read more</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
+
                         <div class="post-pagination-area1 mt--20">
                             <a href="#" class="pag-item">1</a>
                             <a href="#" class="pag-item">2</a>
@@ -143,6 +146,7 @@
                             <a href="#" class="pag-item pag-next"><i class="far fa-long-arrow-right"></i></a>
                         </div>
                     </div>
+
                     <div class="col-xl-3">
                         <div class="side-content sticky-content">
                             <div class="author-box mb--50">
@@ -194,9 +198,9 @@
             </div>
         </div>
     </div>
-    <!--================= Sports Section End Here =================-->
+    <!--================= Política Section End Here =================-->
 
-    <!--================= Sports Section End Here =================-->
+    <!--================= Economia Section End Here =================-->
     <div class="rts-sports-section section-gap-2" id="mulher-na-economia" style="background: #e9ecec;">
         <div class="container">
             <div class="site-map-area section-gap-0">
@@ -206,69 +210,43 @@
                     </div>
                 </div>
             </div>
-            <div class="sports-section-banner page-section-banner fashion-page-banner mb--70"
-                style="background-image: url('{{ url('assets/user/images/profile/pesca.jpg') }}');">
-                <div class="overview-content">
-                    <a href="#0" class="news-catagory-tag-2 highlight-bg">Economia</a>
-                    <div class="contents">
-                        <div class="content-title mb--10"><a href="news-details.html">Ministra das Pescas e Recursos
-                                Marinhos</a></div>
-                        <div class="overview-play-btn">
-                            <div class="post-bottom-info mb--25">
-                                <a href="author.html" class="post-author item"><img
-                                        src="{{ url('assets/user/images/icons/user-white.svg') }}" alt="user-icon">Ashley
-                                    Graham</a>
-                                <span class="post-comment item"><img
-                                        src="{{ url('assets/user/images/icons/comment-white.svg') }}"
-                                        alt="comment-icon">January
-                                    16, 2024</span>
-                                <span class="post-share item"><img
-                                        src="{{ url('assets/user/images/icons/share-white.svg') }}" alt="share-icon">16
-                                    Shares</span>
-                            </div>
-                            <a href="#0" class="border-btn">Read
-                                More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="sports-posts-section">
                 <div class="row">
                     <div class="col-xl-9">
                         <div class="rts-post-area trendingnews">
                             <div class="row">
-                                <div class="col-xl-12 col-md-6">
-                                    <div class="rts-post-2 rts-post-2-wide mb--20">
-                                        <div class="post-picture"><a href="news-details.html"><img
-                                                    src="{{ url('assets/user/images/profile/vera.jpg') }}"
-                                                    alt="main-post-image"></a></div>
-                                        <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">Ministra das Finanças</a>
-                                            </div>
-                                            <p>Vera Esperança dos Santos Daves de Sousa (Luanda, 18 de maio de 1983) é uma
-                                                política, jornalista e economista angolana, Ministra das Finanças do governo
-                                                angolano desde 2019.</p>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html"
-                                                    class="post-author
+
+                                @foreach ($noticeEconomy as $new)
+                                    <div class="col-xl-12 col-md-6 ">
+                                        <div class="rts-post-2 rts-post-2-wide mb--20">
+                                            <div class="post-picture atualization"><a href="news-details.html"><img
+                                                        src="{{ url('img/news/' . $new->image) }}"
+                                                        alt="main-post-image"></a></div>
+                                            <div class="contents">
+                                                <div class="post-title"><a href="news-details.html">{{ $new->title }}</a></div>
+                                                <p>{{ strip_tags($new->description) }}</p>
+                                                <div class="post-bottom-info">
+                                                    <a href="author.html"
+                                                        class="post-author
                                                                 item"><img
-                                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">By
-                                                    Jenny
-                                                    Wilson</a>
-                                                <span class="post-date item"><img
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">January
-                                                    16, 2024</span>
-                                                <span class="post-share item"><img
-                                                        src="{{ url('assets/user/images/share.svg') }}"
-                                                        alt="share-icon">16
-                                                    Shares</span>
+                                                            src="{{ url('assets/user/images/user.svg') }}"
+                                                            alt="user-icon">By
+                                                        Jenny
+                                                        Wilson</a>
+                                                    <span class="post-date item"><img
+                                                            src="{{ url('assets/user/images/date.svg') }}"
+                                                            alt="date-icon">J{{ $new->created_at->format('d M, Y') }}</span>
+                                                    <span class="post-share item"><img
+                                                            src="{{ url('assets/user/images/share.svg') }}"
+                                                            alt="share-icon">16
+                                                        Shares</span>
+                                                </div>
+                                                <a href="#0" class="read-more-btn">Read more</a>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-12 col-md-6">
+                                @endforeach
+                                {{-- <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture" style="width: 85rem;"><a href="news-details.html"><img
                                                     src="{{ url('assets/user/images/profile/fada.jpg') }}"
@@ -332,7 +310,7 @@
                                             <a href="#0" class="read-more-btn">Read more</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="post-pagination-area1 mt--20">
@@ -393,9 +371,9 @@
             </div>
         </div>
     </div>
-    <!--================= Sports Section End Here =================-->
+    <!--================= Economia Section End Here =================-->
 
-    <!--================= Sports Section End Here =================-->
+    <!--================= Sociedade e Cultura Section End Here =================-->
     <div class="rts-sports-section section-gap-2" id="sociedade-e-cultura" style="background: #e9ecec;">
         <div class="container">
             <div class="site-map-area section-gap-0">
@@ -405,70 +383,42 @@
                     </div>
                 </div>
             </div>
-            <div class="sports-section-banner page-section-banner fashion-page-banner mb--70"
-                style="background-image: url('{{ url('assets/user/images/profile/educa.jpg') }}');">
-                <div class="overview-content">
-                    <a href="#0" class="news-catagory-tag-2 highlight-bg">Educação</a>
-                    <div class="contents">
-                        <div class="content-title mb--10"><a href="news-details.html">Ministra da Educação</a></div>
-                        <div class="overview-play-btn">
-                            <div class="post-bottom-info mb--25">
-                                <a href="author.html" class="post-author item"><img
-                                        src="{{ url('assets/user/images/icons/user-white.svg') }}" alt="user-icon">Ashley
-                                    Graham</a>
-                                <span class="post-comment item"><img
-                                        src="{{ url('assets/user/images/icons/comment-white.svg') }}"
-                                        alt="comment-icon">January
-                                    16, 2024</span>
-                                <span class="post-share item"><img
-                                        src="{{ url('assets/user/images/icons/share-white.svg') }}" alt="share-icon">16
-                                    Shares</span>
-                            </div>
-                            <a href="#0" class="border-btn">Read
-                                More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="sports-posts-section">
                 <div class="row">
                     <div class="col-xl-9">
                         <div class="rts-post-area trendingnews">
                             <div class="row">
-                                <div class="col-xl-12 col-md-6">
-                                    <div class="rts-post-2 rts-post-2-wide mb--20">
-                                        <div class="post-picture" style="width:100rem"><a href="news-details.html"><img
-                                                    src="{{ url('assets/user/images/profile/norberta.png') }}"
-                                                    style="height: 20rem;" alt="main-post-image"></a></div>
-                                        <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">Norberta Garcia partilhará
-                                                    o seu percurso inspirador </a></div>
-                                            <p>Luanda, 13 de Março de 2025 – A empresária Norberta Garcia será uma das
-                                                oradoras da segunda edição da Conferência Anual de Jovens Mulheres
-                                                Empresárias de Angola, evento que se afirma como uma plataforma de
-                                                inspiração, empoderamento e networking entre mulheres líderes no ecossistema
-                                                empresarial angolano.</p>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html"
-                                                    class="post-author
+                                @foreach ($noticeSociety as $new)
+                                    <div class="col-xl-12 col-md-6 ">
+                                        <div class="rts-post-2 rts-post-2-wide mb--20">
+                                            <div class="post-picture atualization"><a href="news-details.html"><img
+                                                        src="{{ url('img/news/' . $new->image) }}"
+                                                        alt="main-post-image"></a></div>
+                                            <div class="contents">
+                                                <div class="post-title"><a href="news-details.html">{{ $new->title }}</a></div>
+                                                <p>{{ strip_tags($new->description) }}</p>
+                                                <div class="post-bottom-info">
+                                                    <a href="author.html"
+                                                        class="post-author
                                                                 item"><img
-                                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">By
-                                                    Jenny
-                                                    Wilson</a>
-                                                <span class="post-date item"><img
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">January
-                                                    16, 2024</span>
-                                                <span class="post-share item"><img
-                                                        src="{{ url('assets/user/images/share.svg') }}"
-                                                        alt="share-icon">16
-                                                    Shares</span>
+                                                            src="{{ url('assets/user/images/user.svg') }}"
+                                                            alt="user-icon">By
+                                                        Jenny
+                                                        Wilson</a>
+                                                    <span class="post-date item"><img
+                                                            src="{{ url('assets/user/images/date.svg') }}"
+                                                            alt="date-icon">J{{ $new->created_at->format('d M, Y') }}</span>
+                                                    <span class="post-share item"><img
+                                                            src="{{ url('assets/user/images/share.svg') }}"
+                                                            alt="share-icon">16
+                                                        Shares</span>
+                                                </div>
+                                                <a href="#0" class="read-more-btn">Read more</a>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-12 col-md-6">
+                                @endforeach
+                                {{-- <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture" style="width: 105rem"><a href="news-details.html"><img
                                                     src="{{ url('assets/user/images/profile/carolina.png') }}"
@@ -533,7 +483,7 @@
                                             <a href="#0" class="read-more-btn">Read more</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="post-pagination-area1 mt--20">
@@ -594,9 +544,9 @@
             </div>
         </div>
     </div>
-    <!--================= Sports Section End Here =================-->
+    <!--================= Sociedade e Cultura Section End Here =================-->
 
-    <!--================= Sports Section End Here =================-->
+    <!--================= Internacional Section End Here =================-->
     <div class="rts-sports-section section-gap-2" id="coluna-internacional" style="background: #e9ecec;">
         <div class="container">
             <div class="site-map-area section-gap-0">
@@ -606,77 +556,47 @@
                     </div>
                 </div>
             </div>
-            <div class="sports-section-banner page-section-banner fashion-page-banner mb--70"
-                style="background-image: url('{{ url('assets/user/images/profile/perola.jpg') }}');">
-                <div class="overview-content">
-                    <a href="#0" class="news-catagory-tag-2 highlight-bg">Internacional</a>
-                    <div class="contents">
-                        <div class="content-title mb--10"><a href="news-details.html">Pérola uma Diva da Música
-                                Angolana</a></div>
-                        <div class="overview-play-btn">
-                            <div class="post-bottom-info mb--25">
-                                <a href="author.html" class="post-author item"><img
-                                        src="{{ url('assets/user/images/icons/user-white.svg') }}" alt="user-icon">Ashley
-                                    Graham</a>
-                                <span class="post-comment item"><img
-                                        src="{{ url('assets/user/images/icons/comment-white.svg') }}"
-                                        alt="comment-icon">January
-                                    16, 2024</span>
-                                <span class="post-share item"><img
-                                        src="{{ url('assets/user/images/icons/share-white.svg') }}" alt="share-icon">16
-                                    Shares</span>
-                            </div>
-                            <a href="#0" class="border-btn">Read
-                                More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="sports-posts-section">
                 <div class="row">
                     <div class="col-xl-9">
                         <div class="rts-post-area trendingnews">
                             <div class="row">
-                                <div class="col-xl-12 col-md-6">
-                                    <div class="rts-post-2 rts-post-2-wide mb--20">
-                                        <div class="post-picture" style="width: 85rem"><a href="news-details.html"><img
-                                                    src="{{ url('assets/user/images/profile/kendra.jpg') }}"
-                                                    style="height: 20rem;"
-                                                    alt="main-post-image"></a></div>
-                                        <div class="contents">
-                                            <div class="post-title"><a href="news-details.html">Angolana Kendra Cordeiro
-                                                    pronta para conquistar Miss Supranational 2025</a></div>
-                                            <p>A modelo angolana Kendra Cordeiro já se encontra na Polónia, onde representa
-                                                Angola na prestigiada competição internacional Miss Supranational 2025, cuja
-                                                final acontece hoje. Esta é a sua primeira experiência internacional em
-                                                concursos de beleza, e marca um momento de grande relevância para a moda e
-                                                representação cultural angolana.</p>
-                                            <div class="post-bottom-info">
-                                                <a href="author.html"
-                                                    class="post-author
+                                @foreach ($noticeInternational as $new)
+                                    <div class="col-xl-12 col-md-6 ">
+                                        <div class="rts-post-2 rts-post-2-wide mb--20">
+                                            <div class="post-picture atualization"><a href="news-details.html"><img
+                                                        src="{{ url('img/news/' . $new->image) }}"
+                                                        alt="main-post-image"></a></div>
+                                            <div class="contents">
+                                                <div class="post-title"><a href="news-details.html">{{ $new->title }}</a></div>
+                                                <p>{{ strip_tags($new->description) }}</p>
+                                                <div class="post-bottom-info">
+                                                    <a href="author.html"
+                                                        class="post-author
                                                                 item"><img
-                                                        src="{{ url('assets/user/images/user.svg') }}" alt="user-icon">By
-                                                    Jenny
-                                                    Wilson</a>
-                                                <span class="post-date item"><img
-                                                        src="{{ url('assets/user/images/date.svg') }}"
-                                                        alt="date-icon">January
-                                                    16, 2024</span>
-                                                <span class="post-share item"><img
-                                                        src="{{ url('assets/user/images/share.svg') }}"
-                                                        alt="share-icon">16
-                                                    Shares</span>
+                                                            src="{{ url('assets/user/images/user.svg') }}"
+                                                            alt="user-icon">By
+                                                        Jenny
+                                                        Wilson</a>
+                                                    <span class="post-date item"><img
+                                                            src="{{ url('assets/user/images/date.svg') }}"
+                                                            alt="date-icon">J{{ $new->created_at->format('d M, Y') }}</span>
+                                                    <span class="post-share item"><img
+                                                            src="{{ url('assets/user/images/share.svg') }}"
+                                                            alt="share-icon">16
+                                                        Shares</span>
+                                                </div>
+                                                <a href="#0" class="read-more-btn">Read more</a>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-12 col-md-6">
+                                @endforeach
+
+                                {{-- <div class="col-xl-12 col-md-6">
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
                                                     src="{{ url('assets/user/images/profile/nayara.jpg') }}"
-                                                    style="height: 20rem;"
-                                                    alt="main-post-image"></a></div>
+                                                    style="height: 20rem;" alt="main-post-image"></a></div>
                                         <div class="contents">
                                             <div class="post-title"><a href="news-details.html">Bethânia Nayara celebra os
                                                     seus 15 anos com um baile de sonho em Luanda</a></div>
@@ -707,8 +627,7 @@
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture"><a href="news-details.html"><img
                                                     src="{{ url('assets/user/images/profile/assis.jpg') }}"
-                                                    style="height: 20rem;"
-                                                    alt="main-post-image"></a></div>
+                                                    style="height: 20rem;" alt="main-post-image"></a></div>
                                         <div class="contents">
                                             <div class="post-title"><a href="news-details.html">Núria Assis aprovada para
                                                     representar Angola no Miss World 2025</a></div>
@@ -734,7 +653,7 @@
                                             <a href="#0" class="read-more-btn">Read more</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="post-pagination-area1 mt--20">
@@ -795,7 +714,7 @@
             </div>
         </div>
     </div>
-    <!--================= Sports Section End Here =================-->
+    <!--================= Internacional Section End Here =================-->
 
 
     <!--================= Subscribe-banner Section Start Here =================-->

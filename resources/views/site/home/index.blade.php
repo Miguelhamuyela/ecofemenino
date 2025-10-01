@@ -627,52 +627,20 @@
             </div>
 
             <div class="row">
-                <div class="col-xl-4 col-md-4 col-sm-6">
-                    <div class="gallery-item">
-                        <a class="image-popup-vertical-fit"
-                            href="{{ url('assets/user/images/gallery/popup/auria.jpg') }}"
-                            style="height: 350px !important"
-                            title="<h5>Auria Machado</h5><p>Conhecida como 'Rainha dos Porcos', personalidade marcante no cenário cultural.</p>">
-                            <img src="{{ url('assets/user/images/gallery/auria.jpg') }}" alt="Auria Machado" />
-                        </a>
-                        <div class="contents">
-                            <h5 class="member-role">Rainha dos Porcos</h5>
-                            <a href="#" class="member-name">Auria Machado</a>
+                @foreach ($newsProfile as $new)
+                    <div class="col-xl-4 col-md-4 col-sm-6">
+                        <div class="gallery-item ">
+                            <a class="image-popup-vertical-fit image-m" href="{{ url('img/news/' . $new->image) }}"
+                                title="<h5>{{ $new->subtitle }}</h5><p>{{ strip_tags($new->description) }}</p>">
+                                <img src="{{ url('img/news/' . $new->image) }}" alt="Image_Perfil" />
+                            </a>
+                            <div class="contents">
+                                <h5 class="member-role">{{ $new->title }}</h5>
+                                <a href="#" class="member-name">{{ $new->subtitle }}</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-xl-4 col-md-4 col-sm-6">
-                    <div class="gallery-item">
-                        <a class="image-popup-vertical-fit"
-                            href="{{ url('assets/user/images/gallery/popup/Ana Lemos Apresentadora..jpg') }}"
-                            style="height: 350px !important"
-                            title="<h5>Ana Lemos</h5><p>Apresentadora reconhecida pela sua presença em programas televisivos.</p>">
-                            <img src="{{ url('assets/user/images/gallery/Ana Lemos Apresentadora..jpg') }}"
-                                alt="Ana Lemos" />
-                        </a>
-                        <div class="contents">
-                            <h5 class="member-role">Apresentadora</h5>
-                            <a href="#" class="member-name">Ana Lemos</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-4 col-sm-6">
-                    <div class="gallery-item">
-                        <a class="image-popup-vertical-fit"
-                            href="{{ url('assets/user/images/gallery/popup/Silvia Lutucuta Ministra da Saude.jpg') }}"
-                            style="height: 350px !important"
-                            title="<h5>Silvia Lutucuta</h5><p>Ministra da Saúde de Angola desde 2017. Médica cardiologista e professora universitária.</p>">
-                            <img src="{{ url('assets/user/images/gallery/Silvia Lutucuta Ministra da Saude.jpg') }}"
-                                alt="Silvia Lutucuta" />
-                        </a>
-                        <div class="contents">
-                            <h5 class="member-role">Ministra da Saúde</h5>
-                            <a href="#" class="member-name">Silvia Lutucuta</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
                 <div class="col-xl-6 mx-auto">
                     <a class="view-more-news" href="{{ route('site.news.profile') }}">
@@ -723,7 +691,7 @@
                                         <img src="assets/user/images/share.svg" alt="share-icon">16 Partilhas
                                     </span>
                                 </div>
-                                <p>{{ $new->description }}</p>
+                                <p>{{ strip_tags($new->description) }}</p>
                                 <a href="#0" class="read-more-btn">Ler Mais</a>
                             </div>
                         </div>
@@ -923,24 +891,24 @@
                                     <div class="rts-post-2 rts-post-2-wide mb--20">
                                         <div class="post-picture">
                                             <a class="image-popup-vertical-fit"
-                                                href="{{ url('img/news/' . $new->image)}}"
+                                                href="{{ url('img/news/' . $new->image) }}"
                                                 title="<h5>Jaqueline Ngulo</h5><p>Jaqueline Ngulo recentemente assumiu a direção da Women in Tech Angola, capítulo nacional da maior organização mundial dedicada a reduzir a desigualdade de género na tecnologia.</p>">
-                                                <img src="{{ url('img/news/' . $new->image)}}"
-                                                    alt="main-post-image">
+                                                <img src="{{ url('img/news/' . $new->image) }}" alt="main-post-image">
                                             </a>
                                         </div>
                                         <div class="contents">
                                             <div class="post-title">
                                                 <a href="news-details.html">{{ $new->title }}</a>
                                             </div>
-                                            <p>{{ $new->description }}</p>
+                                            <p>{{ strip_tags($new->description) }}</p>
                                             <div class="post-bottom-info">
                                                 <a href="author.html" class="post-author item">
                                                     <img src="assets/user/images/user.svg" alt="user-icon">Por Jenny
                                                     Wilson
                                                 </a>
                                                 <span class="post-date item">
-                                                    <img src="assets/user/images/date.svg" alt="date-icon">{{ $new->created_at->format('d \d\e F, Y') }}
+                                                    <img src="assets/user/images/date.svg"
+                                                        alt="date-icon">{{ $new->created_at->format('d \d\e F, Y') }}
                                                 </span>
                                             </div>
                                             <a href="#0" class="read-more-btn">Ler Mais</a>

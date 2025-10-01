@@ -23,8 +23,8 @@ Route::get('/news/profile', [NewsController::class, 'newsProfile'])->name('site.
 Route::get('/news/notice', [NewsController::class, 'newsNotice'])->name('site.news.notice');
 Route::get('/news/event', [NewsController::class, 'newsEvent'])->name('site.news.event');
 /* {{-- This Route need id event --}} */
-Route::get('/news/event/detail', [HomeController::class, 'newsEventDetail'])->name('site.news.event.detail');
-Route::get('/news/article', [HomeController::class, 'newsArticle'])->name('site.news.article');
+Route::get('/news/event/detail', [NewsController::class, 'newsEventDetail'])->name('site.news.event.detail');
+Route::get('/news/article', [NewsController::class, 'newsArticle'])->name('site.news.article');
 Route::get('/multimedia', [MultimediaController::class, 'index'])->name('site.multimedia');
 Route::get('/youth', [YouthController::class, 'index'])->name('site.youth');
 
