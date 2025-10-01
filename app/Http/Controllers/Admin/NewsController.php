@@ -56,7 +56,7 @@ class NewsController extends Controller
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,jfif|max:2048',
             'date' => 'required|date|after_or_equal:today',
-            'detach' => 'required|in:normal,destaque,urgente',
+            'detach' => 'required|in:normal,destaque,novidade,atualizacao',
             'category_id' => 'required|exists:categories,id',
         ], [
             'title.required' => 'O título é obrigatório.',
@@ -145,7 +145,7 @@ class NewsController extends Controller
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp,jfif|max:2048',
             'date' => 'required|date|after_or_equal:today',
-            'detach' => 'required|in:normal,destaque,urgente',
+            'detach' => 'required|in:normal,destaque,novidade,atualizacao',
             'category_id' => 'required|exists:categories,id',
         ], [
             'title.required' => 'O título é obrigatório.',

@@ -103,7 +103,7 @@
         .icon1 {
             width: 24px;
             height: 24px;
-            background-color: red;
+            background-color: #ff1856;
             /* cor que vai aplicar */
             -webkit-mask: url("assets/user/images/icons/email-icon.svg") no-repeat center;
             -webkit-mask-size: contain;
@@ -115,7 +115,7 @@
         .icon2 {
             width: 24px;
             height: 24px;
-            background-color: red;
+            background-color: #ff1856;
             /* cor que vai aplicar */
             -webkit-mask: url("assets/user/images/icons/phone-icon.svg") no-repeat center;
             -webkit-mask-size: contain;
@@ -127,7 +127,7 @@
         .icon3 {
             width: 24px;
             height: 24px;
-            background-color: red;
+            background-color: #ff1856;
             /* cor que vai aplicar */
             -webkit-mask: url("assets/user/images/icons/location-icon.svg") no-repeat center;
             -webkit-mask-size: contain;
@@ -139,7 +139,7 @@
         .icon4 {
             width: 24px;
             height: 24px;
-            background-color: red;
+            background-color: #ff1856;
             /* cor que vai aplicar */
             -webkit-mask: url("assets/user/images/icons/web-icon.svg") no-repeat center;
             -webkit-mask-size: contain;
@@ -148,7 +148,7 @@
             margin-right: 10px;
         }
         .post-comment-btn{
-            background-color: red !important;
+            background-color: #ff1856 !important;
         }
     </style>
 

@@ -20,55 +20,27 @@ class HomeController extends Controller
             ->orderByDesc('id')
             ->take(1)
             ->get();
-        $newsTrending2 = News::where('status', 'published')->orderByDesc('id')->take(2)->get();
+
+        $newsTrending2 = News::where('status', 'published')
+            ->orderByDesc('id')
+            ->take(2)
+            ->get();
+
+        $newness = News::where('status', 'published')
+            ->where('detach', 'novidade')
+            ->orderByDesc('description')
+            ->take(4)
+            ->get();
+
+        $atualizations = News::where('status', 'published')
+            ->where('detach', 'atualizacao')
+            ->orderByDesc('id')
+            ->take(4)
+            ->get();
+
         $videos = Video::where('type', 'video')->latest()->get();
         // Envia para a view
-        return view('site.home.index', compact('newsTrending', 'newsTrending2', 'videos'));
+        return view('site.home.index', compact('newsTrending', 'newsTrending2', 'newness', 'atualizations', 'videos'));
     }
 
-    public function contact()
-    {
-        // Envia para a view
-        return view('site.contact.index');
-    }
-    public function about()
-    {
-        // Envia para a view
-        return view('site.about.index');
-    }
-    public function news()
-    {
-        // Envia para a view
-        return view('site.news.index');
-    }
-
-    public function newsProfile()
-    {
-        // Envia para a view
-        return view('site.news.profile.index');
-    }
-
-    public function newsNotice()
-    {
-        // Envia para a view
-        return view('site.news.notice.index');
-    }
-
-    public function newsEvent()
-    {
-        // Envia para a view
-        return view('site.news.event.index');
-    }
-
-    public function newsEventDetail()
-    {
-        // Envia para a view
-        return view('site.news.event.detail.index');
-    }
-
-    public function newsArticle()
-    {
-        // Envia para a view
-        return view('site.news.article.index');
-    }
 }
