@@ -619,7 +619,7 @@
 
 
     <!--================= Gallery Section Start Here =================-->
-    <div class="rts-gallery-section gallary-page-section pt--40 mb--40">
+    <div class="rts-gallery-section gallary-page-section pt--40 mb--40" style="background: rgb(255, 195, 211)">
         <div class="container">
             <div class="news-topbar news-topbar-2">
                 <h2 class="section-title">Perfis Inspiradores</h2>
@@ -642,7 +642,7 @@
                     </div>
                 @endforeach
 
-                <div class="col-xl-6 mx-auto">
+                <div class="col-xl-6 mx-auto" style="margin-bottom: 1rem">
                     <a class="view-more-news" href="{{ route('site.news.profile') }}">
                         Ver Mais<i class="far fa-long-arrow-right"></i>
                     </a>
@@ -666,12 +666,12 @@
             </div>
             <div class="row">
                 @foreach ($newness as $new)
-                    <div class="col-xl-5 col-md-7">
-                        <div class="rts-post-2 mb--30">
+                    <div class="col-md-6 d-flex">
+                        <div class="rts-post-2 flex-fill mb--15">
                             <div class="post-picture">
-                                <a class="image-popup-vertical-fit" href="{{ url('img/news/' . $new->image) }}"
+                                <a class="image-popup-vertical-fit image-m" href="{{ url('img/news/' . $new->image) }}"
                                     title="<h5>Lesliana Pereira</h5><p>A modelo surpreendeu os fãs ao explicar que a produção não foi apenas uma escolha estética, mas também uma forma de transmitir confiança e autenticidade no tapete vermelho.</p>">
-                                    <img src="{{ url('img/news/' . $new->image) }}" alt="main-post-image">
+                                    <img src="{{ url('img/news/' . $new->image) }}" style="height: 20rem" alt="main-post-image">
                                 </a>
                             </div>
                             <div class="contents">

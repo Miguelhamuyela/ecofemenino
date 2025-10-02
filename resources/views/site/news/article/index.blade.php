@@ -2,7 +2,7 @@
 @section('title', 'Ecofemenino - Artigos de Notícias')
 @section('content')
 
-    <!--================= Author Profile Section Start Here =================-->
+    <!--================= Editorial Section Start Here =================-->
     <div class="rts-author-profile-area section-gap-2" style="background: #e9ecef !important;" id="editorial">
         <div class="container">
             <div class="news-topbar news-topbar-2">
@@ -45,9 +45,9 @@
             </div>
         </div>
     </div>
-    <!--================= Author Profile Section End Here =================-->
+    <!--================= Editorial Section End Here =================-->
 
-    <!--================= Featured video Section Start Here =================-->
+    <!--================= Debate Feminino Section Start Here =================-->
     <div class="rts-featured_video-section section-bg ptb--60 wow fadeIn" id="debate-femenino" data-wow-duration="1.5s">
         <div class="container">
             <div class="news-topbar news-topbar-2">
@@ -74,9 +74,9 @@
             </div>
         </div>
     </div>
-    <!--================= Featured video Section End Here =================-->
+    <!--================= Debate Feminino Section End Here =================-->
 
-    <!--================= Featured video Section Start Here =================-->
+    <!--================= Direitos Humanos Section Start Here =================-->
     <div class="rts-featured_video-section section-bg ptb--60 wow fadeIn" style="background: #e9ecef !important;"
         id="direitos-humanos" data-wow-duration="1.5s">
         <div class="container">
@@ -105,9 +105,9 @@
 
         </div>
     </div>
-    <!--================= Featured video Section End Here =================-->
+    <!--================= Direitos Humanos Section End Here =================-->
 
-    <!--================= Featured video Section Start Here =================-->
+    <!--================= Coluna Internacional Section Start Here =================-->
     <div class="rts-featured_video-section section-bg ptb--60 wow fadeIn" id="coluna-internacional"
         data-wow-duration="1.5s">
         <div class="container">
@@ -125,7 +125,7 @@
                     <a class="image-popup-vertical-fit" href="{{ url('assets/user/images/profile/keve.jpg') }}"
                         style="height: 350px !important"
                         title="<h5>Banco Keve marca presença na 1ª Edição da Expo Catoca 2025</h5><p>O Banco Keve confirma a sua participação na primeira edição da Expo Catoca — 30 Anos, a decorrer de 26 a 28 de Agosto de 2025, na Base de Luanda, em Talatona, a partir das 09h00, sob o lema: “Aqui, onde os diamantes encontram a comunidade”.
-A presença do Keve neste evento de referência, que reúne empresas do sector mineiro, instituições financeiras e entidades públicas, demonstra o compromisso contínuo do banco em apoiar o desenvolvimento do sector e reforçar parcerias estratégicas com empresas do segmento.</p>">
+                            A presença do Keve neste evento de referência, que reúne empresas do sector mineiro, instituições financeiras e entidades públicas, demonstra o compromisso contínuo do banco em apoiar o desenvolvimento do sector e reforçar parcerias estratégicas com empresas do segmento.</p>">
                         <img src="{{ url('assets/user/images/profile/keve.jpg') }}" alt="Vera Daves" />
                     </a>
                     <div class="contents">
@@ -136,7 +136,7 @@ A presença do Keve neste evento de referência, que reúne empresas do sector m
             </div>
         </div>
     </div>
-    <!--================= Featured video Section End Here =================-->
+    <!--================= Coluna Internacional Section End Here =================-->
 
     <style>
         html {

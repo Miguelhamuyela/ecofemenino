@@ -65,7 +65,41 @@ class NewsController extends Controller
         return view('site.news.notice.index', compact('noticePolitic', 'noticeEconomy', 'noticeSociety', 'noticeInternational'));
     }
 
-    public function newsEvent()
+    public function newsArticle()
+    {
+        $articleDebate = News::where('status', 'published')
+        ->whereHas('category', function ($query){
+                $query->where('name', 'Debate Feminino');
+            })
+        ->orderByDesc('id')
+        ->take(4)
+        ->get();
+
+        $articleRules = News::where('status', 'published')
+        ->whereHas('category', function ($query){
+                $query->where('name', 'Direitos Humanos e Género');
+            })
+        ->orderByDesc('id')
+        ->take(4)
+        ->get();
+
+        $articleInternacional = News::where('status', 'published')
+        ->whereHas('category', function ($query){
+                $query->where('name', 'Coluna Internacional');
+            })
+        ->orderByDesc('id')
+        ->take(4)
+        ->get();
+
+        // Envia para a view
+        return view('site.news.article.index', compact(
+            'articleDebate',
+            'articleRules',
+            'articleInternacional'
+        ));
+    }
+
+    /*public function newsEvent()
     {
         // Envia para a view
         return view('site.news.event.index');
@@ -75,11 +109,6 @@ class NewsController extends Controller
     {
         // Envia para a view
         return view('site.news.event.detail.index');
-    }
+    } */
 
-    public function newsArticle()
-    {
-        // Envia para a view
-        return view('site.news.article.index');
-    }
 }

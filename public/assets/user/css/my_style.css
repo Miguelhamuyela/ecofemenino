@@ -31,3 +31,14 @@
     height: 100%;
     object-fit: cover;
 }
+
+.sports-section-banner {
+  /* background-image: url("../images/sports-banner.jpg"); */
+  position: relative;
+  display: none;
+}
+.sports-section-banner2 {
+  /* background-image: url("../images/sports-banner.jpg"); */
+  position: relative;
+  /* display: none; */
+}
