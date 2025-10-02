@@ -619,7 +619,7 @@
 
 
     <!--================= Gallery Section Start Here =================-->
-    <div class="rts-gallery-section gallary-page-section pt--40 mb--40" style="background: rgb(255, 195, 211)">
+    <div class="rts-gallery-section gallary-page-section pt--40 mb--40" {{-- style="background: rgb(255, 195, 211)" --}}>
         <div class="container">
             <div class="news-topbar news-topbar-2">
                 <h2 class="section-title">Perfis Inspiradores</h2>
