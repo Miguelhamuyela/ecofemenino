@@ -42,3 +42,27 @@
   position: relative;
   /* display: none; */
 }
+
+.img-detail {
+    height: 38rem;
+    width: 100%;
+    overflow: hidden; /* podes até remover se não quiseres corte algum */
+}
+
+.img-detail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   
+}
+
+.img-related {
+    height: 15rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.img-related img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

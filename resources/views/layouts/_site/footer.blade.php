@@ -85,3 +85,15 @@
         </div>
     </div>
     <!--================= Footer End Here =================-->
+
+    {{-- <!-- Color switcher -->
+    <div class="modal-sidebar-scroll rts-dark-light">
+        <ul>
+            <li><span>Dark</span><i class="rts-go-dark fal fa-moon"></i></li>
+            <li><span>Light</span><i class="rts-go-light far fa-sun"></i></li>
+        </ul>
+    </div>
+
+    <!--================= Scroll to Top Start =================-->
+    <div class="scroll-top-btn"><i class="fas fa-angle-up arrow-up"></i><i class="fas fa-circle-notch"></i></div>
+    <!--================= Scroll to Top End =================--> --}}

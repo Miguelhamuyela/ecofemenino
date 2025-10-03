@@ -95,7 +95,7 @@
                                     </a>
                                     <div class="contents">
                                         <h5 class="member-role">{{ $new->title }}</h5>
-                                        <a href="#" class="member-name">{{ $new->subtitle }}</a>
+                                        <a href="{{ route('site.news.show', $new->id) }}" class="member-name">{{ $new->subtitle }}</a>
                                     </div>
                                 </div>
                             </div>

@@ -7,7 +7,7 @@ use App\Http\Controllers\Site\YouthController;
 use App\Http\Controllers\Site\ContactController;
 use App\Http\Controllers\Site\AboutController;
 use App\Http\Controllers\Site\NewsController;
-
+use App\Http\Controllers\Site\DetailController;
 
 
 /*-------------------------------------------------------
@@ -26,4 +26,6 @@ Route::get('/news/event/detail', [NewsController::class, 'newsEventDetail'])->na
 Route::get('/news/article', [NewsController::class, 'newsArticle'])->name('site.news.article');
 Route::get('/multimedia', [MultimediaController::class, 'index'])->name('site.multimedia');
 Route::get('/youth', [YouthController::class, 'index'])->name('site.youth');
+
+Route::get('/news/detail/{id}', [DetailController::class, 'show'])->name('site.news.show');
 

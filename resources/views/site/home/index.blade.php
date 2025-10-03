@@ -238,7 +238,7 @@
                                 <div class="contents">
                                     <a href="#0" class="news-catagory-tag-2">{{ $new->category->name }}</a>
                                     <div class="post-title">
-                                        <a href="news-details.html">{{ $new->title }}</a>
+                                        <a href="{{route('site.news.show', $new->id)}}">{{ $new->title }}</a>
                                     </div>
                                     <div class="post-bottom-info">
                                         {{-- <a href="author.html" class="post-author item">
@@ -272,7 +272,7 @@
                                         <div class="contents">
                                             <a href="#0" class="news-catagory-tag-2">{{ $new->category->name }}</a>
                                             <div class="post-title">
-                                                <a href="news-details.html">{{ $new->title }}</a>
+                                                <a href="{{route('site.news.show', $new->id)}}">{{ $new->title }}</a>
                                             </div>
                                             <div class="post-bottom-info">
                                                 {{-- <a href="author.html" class="post-author item">
@@ -677,7 +677,7 @@
                             <div class="contents">
                                 <a href="#0" class="news-catagory-tag-2">{{ $new->category->name }}</a>
                                 <div class="post-title">
-                                    <a href="news-details.html">{{ $new->title }}</a>
+                                    <a href="{{route('site.news.show', $new->id)}}">{{ Str::limit( $new->title, 40) }}</a>
                                 </div>
                                 <div class="post-bottom-info">
                                     <a href="author.html" class="post-author item">
@@ -691,8 +691,8 @@
                                         <img src="assets/user/images/share.svg" alt="share-icon">16 Partilhas
                                     </span>
                                 </div>
-                                <p>{{ strip_tags($new->description) }}</p>
-                                <a href="#0" class="read-more-btn">Ler Mais</a>
+                                {{-- <p>{{ strip_tags($new->description) }}</p> --}}
+                                <a href="{{ route('site.news.show', $new->id)}}" class="read-more-btn">Ler Mais</a>
                             </div>
                         </div>
                     </div>
@@ -898,7 +898,7 @@
                                         </div>
                                         <div class="contents">
                                             <div class="post-title">
-                                                <a href="news-details.html">{{ $new->title }}</a>
+                                                <a href="{{route('site.news.show', $new->id)}}">{{ Str::limit($new->title, 50) }}</a>
                                             </div>
                                             <p>{{ strip_tags($new->description) }}</p>
                                             <div class="post-bottom-info">
@@ -911,7 +911,7 @@
                                                         alt="date-icon">{{ $new->created_at->format('d \d\e F, Y') }}
                                                 </span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Ler Mais</a>
+                                            <a href="{{route('site.news.show', $new->id)}}" class="read-more-btn">Ler Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -1092,7 +1092,7 @@
                     </div>
                 </div>
                 <div class="col-xl-9">
-                    <a class="view-more-news" href="{{ route('site.news.notice') }}">Ler Mais Stories<i
+                    <a class="view-more-news" href="{{ route('site.news.notice') }}">Ler Mais Notícias<i
                             class="far fa-long-arrow-right"></i></a>
                 </div>
             </div>

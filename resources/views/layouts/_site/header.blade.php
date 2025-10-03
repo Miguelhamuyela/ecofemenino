@@ -6,7 +6,7 @@
 
     <!--================= Header Section Start Here =================-->
     <div class="anywere"></div>
-    <header id="rtsHeader">
+    <header id="rtsHeader" style="background: white">
         <div class="topbar-area">
             <div class="container">
                 <div class="topbar-inner">

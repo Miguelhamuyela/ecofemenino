@@ -48,11 +48,11 @@
                                 @foreach ($noticePolitic as $new)
                                     <div class="col-xl-12 col-md-6 ">
                                         <div class="rts-post-2 rts-post-2-wide mb--20">
-                                            <div class="post-picture atualization"><a href="news-details.html"><img
+                                            <div class="post-picture atualization"><a href="{{route('site.news.show', $new->id)}}"><img
                                                         src="{{ url('img/news/' . $new->image) }}"
                                                         alt="main-post-image"></a></div>
                                             <div class="contents">
-                                                <div class="post-title"><a href="news-details.html">{{ $new->title }}</a></div>
+                                                <div class="post-title"><a href="{{route('site.news.show', $new->id)}}">{{ Str::limit($new->title, 55) }}</a></div>
                                                 <p>{{ strip_tags($new->description) }}</p>
                                                 <div class="post-bottom-info">
                                                     <a href="author.html"
@@ -70,7 +70,7 @@
                                                             alt="share-icon">16
                                                         Shares</span>
                                                 </div>
-                                                <a href="#0" class="read-more-btn">Read more</a>
+                                                <a href="{{route('site.news.show', $new->id)}}" class="read-more-btn">Ler Mais</a>
                                             </div>
                                         </div>
                                     </div>
@@ -102,7 +102,7 @@
                                                         src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ler Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@
                                                         src="{{ url('assets/user/images/share.svg') }}" alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ler Mais</a>
                                         </div>
                                     </div>
                                 </div> --}}
@@ -215,15 +215,14 @@
                     <div class="col-xl-9">
                         <div class="rts-post-area trendingnews">
                             <div class="row">
-
                                 @foreach ($noticeEconomy as $new)
                                     <div class="col-xl-12 col-md-6 ">
                                         <div class="rts-post-2 rts-post-2-wide mb--20">
-                                            <div class="post-picture atualization"><a href="news-details.html"><img
+                                            <div class="post-picture atualization"><a href="{{route('site.news.show', $new->id)}}"><img
                                                         src="{{ url('img/news/' . $new->image) }}"
                                                         alt="main-post-image"></a></div>
                                             <div class="contents">
-                                                <div class="post-title"><a href="news-details.html">{{ $new->title }}</a></div>
+                                                <div class="post-title"><a href="{{route('site.news.show', $new->id)}}">{{ Str::limit($new->title, 55) }}</a></div>
                                                 <p>{{ strip_tags($new->description) }}</p>
                                                 <div class="post-bottom-info">
                                                     <a href="author.html"
@@ -241,7 +240,7 @@
                                                             alt="share-icon">16
                                                         Shares</span>
                                                 </div>
-                                                <a href="#0" class="read-more-btn">Read more</a>
+                                                <a href="{{route('site.news.show', $new->id)}}" class="read-more-btn">Ler Mais</a>
                                             </div>
                                         </div>
                                     </div>
@@ -274,7 +273,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ler Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -307,7 +306,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ler Mais</a>
                                         </div>
                                     </div>
                                 </div> --}}
@@ -391,11 +390,11 @@
                                 @foreach ($noticeSociety as $new)
                                     <div class="col-xl-12 col-md-6 ">
                                         <div class="rts-post-2 rts-post-2-wide mb--20">
-                                            <div class="post-picture atualization"><a href="news-details.html"><img
+                                            <div class="post-picture atualization"><a href="{{route('site.news.show', $new->id)}}"><img
                                                         src="{{ url('img/news/' . $new->image) }}"
                                                         alt="main-post-image"></a></div>
                                             <div class="contents">
-                                                <div class="post-title"><a href="news-details.html">{{ $new->title }}</a></div>
+                                                <div class="post-title"><a href="{{route('site.news.show', $new->id)}}">{{ Str::limit($new->title, 55) }}</a></div>
                                                 <p>{{ strip_tags($new->description) }}</p>
                                                 <div class="post-bottom-info">
                                                     <a href="author.html"
@@ -413,7 +412,7 @@
                                                             alt="share-icon">16
                                                         Shares</span>
                                                 </div>
-                                                <a href="#0" class="read-more-btn">Read more</a>
+                                                <a href="{{route('site.news.show', $new->id)}}" class="read-more-btn">Ler Mais</a>
                                             </div>
                                         </div>
                                     </div>
@@ -447,7 +446,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ler Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -480,7 +479,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ler Mais</a>
                                         </div>
                                     </div>
                                 </div> --}}
@@ -564,11 +563,11 @@
                                 @foreach ($noticeInternational as $new)
                                     <div class="col-xl-12 col-md-6 ">
                                         <div class="rts-post-2 rts-post-2-wide mb--20">
-                                            <div class="post-picture atualization"><a href="news-details.html"><img
+                                            <div class="post-picture atualization"><a href="{{route('site.news.show', $new->id)}}"><img
                                                         src="{{ url('img/news/' . $new->image) }}"
                                                         alt="main-post-image"></a></div>
                                             <div class="contents">
-                                                <div class="post-title"><a href="news-details.html">{{ $new->title }}</a></div>
+                                                <div class="post-title"><a href="{{route('site.news.show', $new->id)}}">{{ Str::limit($new->title, 55) }}</a></div>
                                                 <p>{{ strip_tags($new->description) }}</p>
                                                 <div class="post-bottom-info">
                                                     <a href="author.html"
@@ -586,7 +585,7 @@
                                                             alt="share-icon">16
                                                         Shares</span>
                                                 </div>
-                                                <a href="#0" class="read-more-btn">Read more</a>
+                                                <a href="{{route('site.news.show', $new->id)}}" class="read-more-btn">Ler Mais</a>
                                             </div>
                                         </div>
                                     </div>
@@ -619,7 +618,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ler Mais</a>
                                         </div>
                                     </div>
                                 </div>
@@ -650,7 +649,7 @@
                                                         alt="share-icon">16
                                                     Shares</span>
                                             </div>
-                                            <a href="#0" class="read-more-btn">Read more</a>
+                                            <a href="#0" class="read-more-btn">Ler Mais</a>
                                         </div>
                                     </div>
                                 </div> --}}
